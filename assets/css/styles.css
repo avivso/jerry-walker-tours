@@ -394,10 +394,7 @@ html[dir="rtl"] .cmethod-val{ text-align:right; }
    ============================================================ */
 .site-footer{ background:#0f1115; color:#cfd3da; padding-block:3.5rem; text-align:center; }
 .footer-logo{ height:54px; margin:0 auto 1rem; opacity:.95; }
-.footer-tag{ font-weight:300; color:#9aa0ab; margin-bottom:1.6rem; }
-.footer-nav{ display:flex; justify-content:center; gap:1.6rem; flex-wrap:wrap; margin-bottom:1.6rem; }
-.footer-nav a{ color:#cfd3da; font-size:.95rem; opacity:.85; transition:opacity .2s, color .2s; }
-.footer-nav a:hover{ opacity:1; color:var(--gold); }
+.footer-tag{ font-weight:300; color:#9aa0ab; margin-bottom:1.4rem; }
 .footer-copy{ font-size:.85rem; color:#6f7681; }
 
 /* ---- floating WA ---- */
@@ -482,7 +479,6 @@ html[dir="rtl"] .cmethod-val{ text-align:right; }
 }
 @media (max-width:420px){
   .gallery-grid{ columns:2 130px; }
-  .footer-nav{ gap:1rem; }
 }
 @media (prefers-reduced-motion:reduce){
   *{ animation-duration:.001ms !important; transition-duration:.01ms !important; }
