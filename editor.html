@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>עריכת הבלוג · ג'רי ווקר</title>
+  <link rel="icon" href="assets/img/logo-dark.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=8" />
+  <style>
+    .ed{ max-width:760px; margin:0 auto; padding:110px 5vw 4rem; }
+    .ed h1{ font-size:1.9rem; margin-bottom:.3rem; }
+    .ed .lead{ color:var(--text-soft); margin-bottom:1.6rem; }
+    .ed-box{ background:#fff; border:1px solid var(--line); border-radius:var(--r); padding:1.2rem 1.2rem 1.4rem; margin-bottom:1.2rem; box-shadow:var(--shadow-sm); }
+    .ed-box h2{ font-size:1.15rem; margin-bottom:.5rem; }
+    .ed label{ display:block; font-weight:600; font-size:.92rem; margin-bottom:.35rem; }
+    .ed input[type=password], .ed textarea{ width:100%; border:1px solid var(--line-2); border-radius:10px;
+      padding:.7rem .8rem; font-family:Heebo, system-ui, sans-serif; font-size:1rem; color:var(--ink); background:#fff; }
+    .ed textarea{ min-height:48vh; line-height:1.8; resize:vertical; }
+    .ed .row{ display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; margin-top:.9rem; }
+    .ed .muted{ color:var(--text-soft); font-size:.88rem; }
+    .ed a.link{ color:#1877f2; font-weight:600; }
+    .status{ padding:.8rem 1rem; border-radius:10px; margin:1rem 0; font-weight:500; display:none; }
+    .status.ok{ display:block; background:rgba(37,211,102,.14); color:#0c6b34; border:1px solid rgba(37,211,102,.4); }
+    .status.err{ display:block; background:#fdeaea; color:#a12121; border:1px solid #f3c0c0; }
+    .status.info{ display:block; background:var(--bg-soft); color:var(--text); border:1px solid var(--line); }
+    .ed .btn{ font-size:.98rem; }
+    details summary{ cursor:pointer; font-weight:600; }
+    code{ background:var(--bg-soft); padding:.1em .4em; border-radius:5px; }
+  </style>
+</head>
+<body>
+  <header class="site-header scrolled">
+    <div class="container header-inner">
+      <a href="index.html" class="brand"><img src="assets/img/logo-h-dark.png" alt="Jerry Walker" class="brand-logo" /></a>
+      <div class="header-cluster"><a class="main-nav" style="font-weight:600" href="blog.html">צפייה בבלוג ←</a></div>
+    </div>
+  </header>
+
+  <main class="ed">
+    <h1>עריכת הבלוג</h1>
+    <p class="lead">כאן כותבים ומפרסמים כתבות לבלוג, ישירות מהאתר, בלי GitHub.</p>
+
+    <!-- one-time connection -->
+    <div class="ed-box" id="setupBox">
+      <h2>חיבור חד-פעמי</h2>
+      <p class="muted">כדי לפרסם, צריך פעם אחת בלבד "מפתח" אישי. הוא נשמר במכשיר שלך בלבד.</p>
+      <ol class="muted" style="margin:.6rem 1.2rem; line-height:1.9">
+        <li>נכנסים לקישור הזה ולוחצים למטה על <b>Generate token</b>:
+          <br><a class="link" href="https://github.com/settings/tokens/new?scopes=public_repo&description=Jerry%20Walker%20Blog" target="_blank" rel="noopener">יצירת מפתח ב-GitHub</a></li>
+        <li>מעתיקים את המפתח (מתחיל ב-<code>ghp_</code>) ומדביקים כאן:</li>
+      </ol>
+      <label for="tok">המפתח שלך</label>
+      <input type="password" id="tok" placeholder="ghp_..." autocomplete="off" />
+      <div class="row">
+        <button class="btn btn-dark" id="saveTok">שמירת המפתח וטעינת הבלוג</button>
+        <button class="btn btn-ghost" id="forgetTok" style="display:none">ניתוק</button>
+      </div>
+    </div>
+
+    <div class="status" id="status"></div>
+
+    <!-- editor -->
+    <div class="ed-box" id="editBox" style="display:none">
+      <h2>הכתבות</h2>
+      <p class="muted">כל כתבה: שורה ראשונה = כותרת, שורה שנייה = תאריך (לא חובה), ואז הטקסט. מפרידים בין כתבות בשורה עם <code>===</code>. כתבה חדשה כדאי להוסיף למעלה.</p>
+      <div class="row" style="margin-bottom:.6rem">
+        <button class="btn btn-ghost" id="addPost">+ הוספת כתבה חדשה למעלה</button>
+      </div>
+      <textarea id="content" spellcheck="true" dir="rtl" placeholder="טוען..."></textarea>
+      <div class="row">
+        <button class="btn btn-wa" id="publish">שמירה ופרסום</button>
+        <a class="btn btn-ghost" href="blog.html" target="_blank" rel="noopener">תצוגה מקדימה של הבלוג</a>
+        <span class="muted" id="saveHint"></span>
+      </div>
+    </div>
+  </main>
+
+  <script>
+  (function(){
+    var REPO="avivso/jerry-walker-tours", PATH="blog/posts.md", BRANCH="main";
+    var API="https://api.github.com/repos/"+REPO+"/contents/"+PATH;
+    var sha=null;
+    var $=function(s){return document.querySelector(s);};
+    var statusEl=$("#status");
+    function show(kind,msg){ statusEl.className="status "+kind; statusEl.textContent=msg; }
+    function tok(){ return localStorage.getItem("jw_gh_token")||""; }
+    function headers(){ return { "Authorization":"Bearer "+tok(), "Accept":"application/vnd.github+json" }; }
+    function b64encode(str){ var bytes=new TextEncoder().encode(str), bin=""; for(var i=0;i<bytes.length;i++) bin+=String.fromCharCode(bytes[i]); return btoa(bin); }
+    function b64decode(b64){ var bin=atob((b64||"").replace(/\n/g,"")); var bytes=new Uint8Array(bin.length); for(var i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i); return new TextDecoder().decode(bytes); }
+
+    var TEMPLATE = "כותרת הכתבה\n" + new Date().toISOString().slice(0,10) + "\n\nכתבו כאן את הכתבה. שורה ריקה מתחילה פסקה חדשה.\n\n===\n\n";
+
+    async function loadFile(){
+      show("info","טוען את הכתבות...");
+      var r = await fetch(API+"?ref="+BRANCH+"&t="+Date.now(), { headers: headers() });
+      if(r.status===401){ throw new Error("המפתח שגוי או פג תוקף. צרו מפתח חדש."); }
+      if(!r.ok){ throw new Error("שגיאה בטעינה ("+r.status+")."); }
+      var j = await r.json(); sha=j.sha;
+      $("#content").value = b64decode(j.content);
+      $("#editBox").style.display="block";
+      $("#setupBox").querySelector("ol").style.display="none";
+      $("#setupBox").querySelector("h2").textContent="מחובר ✓";
+      $("#setupBox").querySelector(".muted").textContent="המפתח שמור במכשיר הזה. אפשר לכתוב ולפרסם.";
+      $("#tok").style.display="none"; $("#saveTok").style.display="none"; $("#forgetTok").style.display="inline-flex";
+      show("ok","מחובר. אפשר לערוך ולפרסם.");
+      setTimeout(function(){ statusEl.className="status"; }, 1500);
+    }
+
+    async function publish(){
+      if(!tok()){ show("err","קודם צריך לחבר את המפתח."); return; }
+      var btn=$("#publish"); btn.disabled=true; show("info","מפרסם...");
+      try{
+        var body={ message:"עדכון הבלוג מהאתר", content:b64encode($("#content").value), branch:BRANCH };
+        if(sha) body.sha=sha;
+        var r=await fetch(API,{ method:"PUT", headers:Object.assign({"Content-Type":"application/json"},headers()), body:JSON.stringify(body) });
+        var j=await r.json();
+        if(!r.ok){ throw new Error(j.message||("שגיאה "+r.status)); }
+        sha=j.content && j.content.sha;
+        show("ok","פורסם! הכתבות יעלו לאתר בתוך כדקה. רעננו את הבלוג כדי לראות.");
+      }catch(e){
+        if((e.message||"").indexOf("does not match")>-1 || (e.message||"").toLowerCase().indexOf("sha")>-1){
+          show("err","הקובץ עודכן במקום אחר. טוענים מחדש..."); try{ await loadFile(); }catch(_){}
+        } else { show("err","לא הצלחתי לפרסם: "+e.message); }
+      } finally { btn.disabled=false; }
+    }
+
+    $("#saveTok").addEventListener("click", async function(){
+      var v=$("#tok").value.trim();
+      if(!v){ show("err","הדביקו קודם את המפתח."); return; }
+      localStorage.setItem("jw_gh_token", v);
+      try{ await loadFile(); }catch(e){ show("err",e.message); localStorage.removeItem("jw_gh_token"); }
+    });
+    $("#forgetTok").addEventListener("click", function(){
+      localStorage.removeItem("jw_gh_token"); location.reload();
+    });
+    $("#addPost").addEventListener("click", function(){
+      var ta=$("#content"); ta.value=TEMPLATE+ta.value; ta.focus(); ta.setSelectionRange(0,11);
+      window.scrollTo(0, ta.getBoundingClientRect().top+window.scrollY-90);
+    });
+    $("#publish").addEventListener("click", publish);
+
+    // auto-connect if a key is already saved
+    if(tok()){ loadFile().catch(function(e){ show("err",e.message); }); }
+  })();
+  </script>
+</body>
+</html>

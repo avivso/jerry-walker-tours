@@ -179,11 +179,15 @@ html[lang="en"] .intro-lead{ max-width:28ch; }
 .tour-card{
   break-inside:avoid; margin-bottom:14px; position:relative; cursor:pointer;
   border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-sm);
-  background:#f0efea; transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+  background:#f0efea; transition:box-shadow .4s var(--ease);
   display:block;
 }
-.tour-card:hover{ transform:translateY(-5px); box-shadow:var(--shadow-md); }
-.tour-card img{ width:100%; height:auto; display:block; }
+/* NB: never transform the card itself. It lives in a CSS-columns (masonry)
+   container, and transforming a break-inside:avoid item makes it vanish in
+   Chrome. Zoom the inner image instead. */
+.tour-card:hover{ box-shadow:var(--shadow-md); }
+.tour-card img{ width:100%; height:auto; display:block; transition:transform .6s var(--ease); }
+.tour-card:hover img{ transform:scale(1.04); }
 .tour-card.is-photo{ aspect-ratio:4/5; }
 .tour-card.is-photo img{ width:100%; height:100%; object-fit:cover; }
 .tour-card__band{

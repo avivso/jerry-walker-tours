@@ -295,7 +295,7 @@
       const d = tr[LANG];
       const isPoster = !!tr.poster;
       const src = IMG(isPoster ? tr.poster : tr.img);
-      const cls = isPoster ? "tour-card is-poster reveal" : "tour-card is-photo reveal";
+      const cls = isPoster ? "tour-card is-poster" : "tour-card is-photo";
       const band = isPoster ? "" : `<div class="tour-card__band"><h3>${esc(d.title)}</h3></div>`;
       return `<article class="${cls}" data-tour="${i}" tabindex="0" role="button" style="--rd:${(i % 4) * 70}ms">
         <img src="${src}" alt="${esc(d.title)}" loading="lazy">
