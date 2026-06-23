@@ -289,8 +289,8 @@
   }
 
   function renderValues() {
-    $("#valueGrid").innerHTML = VALUES.map((v) => `
-      <div class="value-card reveal">
+    $("#valueGrid").innerHTML = VALUES.map((v, i) => `
+      <div class="value-card reveal" style="--rd:${i * 80}ms">
         ${svg(v.ico, "value-ico")}
         <h3>${esc(v[LANG].t)}</h3>
         <p>${esc(v[LANG].d)}</p>
@@ -300,8 +300,9 @@
   function renderTours() {
     $("#toursGrid").innerHTML = TOURS.map((tr, i) => {
       const d = tr[LANG];
-      return `<article class="tour-card reveal" data-tour="${i}" tabindex="0" role="button">
+      return `<article class="tour-card reveal" data-tour="${i}" tabindex="0" role="button" style="--rd:${(i % 3) * 90}ms">
         <div class="tour-card__img"><img src="${IMG(tr.img)}" alt="${esc(d.title)}" loading="lazy"></div>
+        <span class="tour-card__num">${String(i + 1).padStart(2, "0")}</span>
         <div class="tour-card__body">
           <span class="tour-card__dur">${svg("M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10V6h-2v7l5.2 3.1 1-1.7-4.2-2.4z", "")} ${esc(d.dur)}</span>
           <h3 class="tour-card__title">${esc(d.title)}</h3>
@@ -315,13 +316,13 @@
   }
 
   function renderTrips() {
-    $("#tripsGrid").innerHTML = TRIPS.map((tp) => {
+    $("#tripsGrid").innerHTML = TRIPS.map((tp, i) => {
       const d = tp[LANG];
       const cls = `trip-card reveal ${tp.size === "lg" ? "trip-card--lg" : "trip-card--sm"} ${tp.img ? "" : "no-photo"}`;
       const bg = tp.img ? `style="background-image:url('${IMG(tp.img)}')"` : "";
       const deco = tp.img ? "" : svg(tp.icon, "trip-card__deco");
       const watermark = tp.img ? "" : svg(tp.icon, "trip-card__watermark");
-      return `<article class="${cls}">
+      return `<article class="${cls}" style="--rd:${(i % 3) * 90}ms">
         <div class="trip-card__img" ${bg}>${watermark}</div>
         <span class="trip-card__tag">${esc(d.tag)}</span>
         <div class="trip-card__body">
@@ -334,9 +335,9 @@
   }
 
   function renderReviews() {
-    $("#reviewsGrid").innerHTML = REVIEWS.map((r) => {
+    $("#reviewsGrid").innerHTML = REVIEWS.map((r, i) => {
       const d = r[LANG];
-      return `<div class="review-card reveal">
+      return `<div class="review-card reveal" style="--rd:${i * 90}ms">
         <div class="review-stars">★★★★★</div>
         <p class="review-quote">${esc(d.q)}</p>
         <p class="review-name">— ${esc(d.n)}</p>
@@ -350,9 +351,9 @@
   }
 
   function renderBlog() {
-    $("#blogGrid").innerHTML = POSTS.map((p) => {
+    $("#blogGrid").innerHTML = POSTS.map((p, i) => {
       const d = p[LANG];
-      return `<a class="blog-card reveal" href="${p.link}" target="_blank" rel="noopener">
+      return `<a class="blog-card reveal" href="${p.link}" target="_blank" rel="noopener" style="--rd:${i * 90}ms">
         <div class="blog-card__img"><img src="${IMG(p.img)}" alt="${esc(d.t)}" loading="lazy"></div>
         <div class="blog-card__body">
           <span class="blog-card__cat">${esc(d.cat)}</span>
@@ -404,6 +405,24 @@
 
   // language toggle
   $("#langToggle").addEventListener("click", () => setLang(LANG === "he" ? "en" : "he"));
+
+  // scrollspy: highlight the nav link of the section currently in view
+  function initScrollSpy() {
+    if (!("IntersectionObserver" in window)) return;
+    const links = $$("#mainNav a");
+    const map = new Map();
+    links.forEach((a) => map.set(a.getAttribute("href").slice(1), a));
+    const sections = [...map.keys()].map((id) => document.getElementById(id)).filter(Boolean);
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          links.forEach((a) => a.classList.remove("active"));
+          const a = map.get(e.target.id); if (a) a.classList.add("active");
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    sections.forEach((s) => spy.observe(s));
+  }
 
   // hero slideshow
   function startHero() {
@@ -488,5 +507,6 @@
   renderGallery();
   setLang(LANG);
   startHero();
+  initScrollSpy();
   onScroll();
 })();
