@@ -1,5 +1,5 @@
 /* ============================================================
-   Jerry Walker — Private Paris Tours
+   Jerry Walker · Private Paris Tours
    Premium bilingual (HE/EN) landing page
    ============================================================ */
 
@@ -387,7 +387,6 @@ html[dir="rtl"] .cmethod-val{ text-align:right; }
   box-shadow:var(--shadow-lg); }
 .contact-card h3{ font-size:1.6rem; color:#fff; margin-bottom:.8rem; }
 .contact-card p{ color:#bcc0c9; font-weight:300; margin-bottom:1.6rem; }
-.contact-fineprint{ margin-top:1.2rem; text-align:center; font-size:.84rem; color:#8b909b; letter-spacing:.02em; }
 
 /* ============================================================
    FOOTER
