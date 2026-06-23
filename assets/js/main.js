@@ -290,21 +290,27 @@
       </div>`).join("");
   }
 
+  function tourCardHTML(tr, i) {
+    const d = tr[LANG];
+    const isPoster = !!tr.poster;
+    const src = IMG(isPoster ? tr.poster : tr.img);
+    const cls = isPoster ? "tour-card is-poster" : "tour-card is-photo";
+    const band = isPoster ? "" : `<div class="tour-card__band"><h3>${esc(d.title)}</h3></div>`;
+    return `<article class="${cls}" data-tour="${i}" tabindex="0" role="button">
+      <img src="${src}" alt="${esc(d.title)}" loading="lazy">
+      ${band}
+      <span class="tour-card__hint">${t("ui.more")} +</span>
+    </article>`;
+  }
+  let _toursCols = 0;
+  const toursColCount = () => { const w = window.innerWidth; return w <= 679 ? 2 : (w <= 979 ? 3 : 4); };
   function renderTours() {
-    $("#toursGrid").innerHTML = TOURS.map((tr, i) => {
-      const d = tr[LANG];
-      const isPoster = !!tr.poster;
-      const src = IMG(isPoster ? tr.poster : tr.img);
-      const cls = isPoster ? "tour-card is-poster" : "tour-card is-photo";
-      const band = isPoster ? "" : `<div class="tour-card__band"><h3>${esc(d.title)}</h3></div>`;
-      return `<article class="${cls}" data-tour="${i}" tabindex="0" role="button" style="--rd:${(i % 4) * 70}ms">
-        <img src="${src}" alt="${esc(d.title)}" loading="lazy">
-        ${band}
-        <span class="tour-card__hint">${t("ui.more")} +</span>
-      </article>`;
-    }).join("");
-    $("#toursNote").innerHTML = TOURS_NOTE[LANG].map((n) => `
-      <div class="note-pill reveal">${svg(n.ico, "")}<span>${esc(n.t)}</span></div>`).join("");
+    const n = _toursCols = toursColCount();
+    const cols = Array.from({ length: n }, () => []);
+    TOURS.forEach((tr, i) => cols[i % n].push(tourCardHTML(tr, i)));
+    $("#toursGrid").innerHTML = cols.map((c) => `<div class="tours-col">${c.join("")}</div>`).join("");
+    $("#toursNote").innerHTML = TOURS_NOTE[LANG].map((nt) => `
+      <div class="note-pill reveal">${svg(nt.ico, "")}<span>${esc(nt.t)}</span></div>`).join("");
   }
 
   function renderTrips() {
@@ -386,6 +392,13 @@
   const header = $("#siteHeader");
   const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 40);
   window.addEventListener("scroll", onScroll, { passive: true });
+
+  // re-flow the tours masonry when the column count changes
+  let _rsz;
+  window.addEventListener("resize", () => {
+    clearTimeout(_rsz);
+    _rsz = setTimeout(() => { if (toursColCount() !== _toursCols) { renderTours(); observeReveals(); } }, 200);
+  }, { passive: true });
 
   // mobile nav
   const burger = $("#navBurger"), nav = $("#mainNav");
