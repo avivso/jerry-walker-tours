@@ -9,26 +9,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=11" />
   <style>
-    .ed{ max-width:760px; margin:0 auto; padding:110px 5vw 4rem; }
-    .ed h1{ font-size:1.9rem; margin-bottom:.3rem; }
-    .ed .lead{ color:var(--text-soft); margin-bottom:1.6rem; }
-    .ed-box{ background:#fff; border:1px solid var(--line); border-radius:var(--r); padding:1.2rem 1.2rem 1.4rem; margin-bottom:1.2rem; box-shadow:var(--shadow-sm); }
-    .ed-box h2{ font-size:1.15rem; margin-bottom:.5rem; }
-    .ed label{ display:block; font-weight:600; font-size:.92rem; margin-bottom:.35rem; }
-    .ed input[type=password], .ed textarea{ width:100%; border:1px solid var(--line-2); border-radius:10px;
-      padding:.7rem .8rem; font-family:Heebo, system-ui, sans-serif; font-size:1rem; color:var(--ink); background:#fff; }
-    .ed textarea{ min-height:48vh; line-height:1.8; resize:vertical; }
-    .ed .row{ display:flex; gap:.6rem; flex-wrap:wrap; align-items:center; margin-top:.9rem; }
-    .ed .muted{ color:var(--text-soft); font-size:.88rem; }
+    .ed{ max-width:760px; margin:0 auto; padding:96px 5vw 5rem; }
+    .ed h1{ font-size:1.8rem; margin-bottom:.2rem; }
+    .ed .lead{ color:var(--text-soft); margin-bottom:1.4rem; }
+    .ed-box{ background:#fff; border:1px solid var(--line); border-radius:var(--r); padding:1.1rem 1.1rem 1.3rem; margin-bottom:1.1rem; box-shadow:var(--shadow-sm); }
+    .ed label{ display:block; font-weight:600; font-size:.86rem; margin:.7rem 0 .3rem; }
+    .ed input[type=text], .ed input[type=password], .ed textarea{ width:100%; border:1px solid var(--line-2); border-radius:10px;
+      padding:.65rem .8rem; font-family:Heebo, system-ui, sans-serif; font-size:1rem; color:var(--ink); background:#fff; }
+    .ed textarea.f-body{ min-height:34vh; line-height:1.8; resize:vertical; }
+    .ed .row{ display:flex; gap:.5rem; flex-wrap:wrap; align-items:center; margin-top:.8rem; }
+    .ed .muted{ color:var(--text-soft); font-size:.86rem; }
     .ed a.link{ color:#1877f2; font-weight:600; }
-    .status{ padding:.8rem 1rem; border-radius:10px; margin:1rem 0; font-weight:500; display:none; }
+    .ed-toolbar{ position:sticky; top:64px; z-index:20; background:rgba(255,255,255,.92); backdrop-filter:blur(8px);
+      border:1px solid var(--line); border-radius:999px; padding:.5rem .6rem; display:flex; gap:.5rem; align-items:center;
+      box-shadow:var(--shadow-sm); margin-bottom:1.1rem; }
+    .ed-toolbar .grow{ flex:1; }
+    .status{ padding:.7rem 1rem; border-radius:10px; margin:.8rem 0; font-weight:500; display:none; }
     .status.ok{ display:block; background:rgba(37,211,102,.14); color:#0c6b34; border:1px solid rgba(37,211,102,.4); }
     .status.err{ display:block; background:#fdeaea; color:#a12121; border:1px solid #f3c0c0; }
     .status.info{ display:block; background:var(--bg-soft); color:var(--text); border:1px solid var(--line); }
-    .ed .btn{ font-size:.98rem; }
-    details summary{ cursor:pointer; font-weight:600; }
+    .post-edit .ph{ font-size:.8rem; color:var(--text-soft); margin:.6rem 0 0; }
+    .f-body.drag{ outline:2px dashed var(--wa); outline-offset:2px; }
+    .btn-del{ background:#fdeaea; color:#a12121; }
+    .btn-del:hover{ background:#f8d6d6; }
     code{ background:var(--bg-soft); padding:.1em .4em; border-radius:5px; }
   </style>
 </head>
@@ -36,115 +41,177 @@
   <header class="site-header scrolled">
     <div class="container header-inner">
       <a href="index.html" class="brand"><img src="assets/img/logo-h-dark.png" alt="Jerry Walker" class="brand-logo" /></a>
-      <div class="header-cluster"><a class="main-nav" style="font-weight:600" href="blog.html">צפייה בבלוג ←</a></div>
+      <div class="header-cluster"><a class="main-nav" style="font-weight:600" href="blog.html" target="_blank">צפייה בבלוג ←</a></div>
     </div>
   </header>
 
   <main class="ed">
     <h1>עריכת הבלוג</h1>
-    <p class="lead">כאן כותבים ומפרסמים כתבות לבלוג, ישירות מהאתר, בלי GitHub.</p>
+    <p class="lead">כותבים, עורכים ומפרסמים כתבות, ישירות מהאתר.</p>
 
     <!-- one-time connection -->
     <div class="ed-box" id="setupBox">
-      <h2>חיבור חד-פעמי</h2>
-      <p class="muted">כדי לפרסם, צריך פעם אחת בלבד "מפתח" אישי. הוא נשמר במכשיר שלך בלבד.</p>
-      <ol class="muted" style="margin:.6rem 1.2rem; line-height:1.9">
-        <li>נכנסים לקישור הזה ולוחצים למטה על <b>Generate token</b>:
+      <h2 style="font-size:1.1rem;margin-bottom:.4rem">חיבור חד-פעמי</h2>
+      <p class="muted">פעם אחת בלבד צריך "מפתח" אישי. הוא נשמר במכשיר הזה בלבד.</p>
+      <ol class="muted" style="margin:.5rem 1.2rem; line-height:1.9">
+        <li>נכנסים לקישור ולוחצים למטה על <b>Generate token</b>:
           <br><a class="link" href="https://github.com/settings/tokens/new?scopes=public_repo&description=Jerry%20Walker%20Blog" target="_blank" rel="noopener">יצירת מפתח ב-GitHub</a></li>
         <li>מעתיקים את המפתח (מתחיל ב-<code>ghp_</code>) ומדביקים כאן:</li>
       </ol>
-      <label for="tok">המפתח שלך</label>
       <input type="password" id="tok" placeholder="ghp_..." autocomplete="off" />
       <div class="row">
-        <button class="btn btn-dark" id="saveTok">שמירת המפתח וטעינת הבלוג</button>
-        <button class="btn btn-ghost" id="forgetTok" style="display:none">ניתוק</button>
+        <button class="btn btn-dark" id="saveTok">חיבור וטעינת הכתבות</button>
       </div>
     </div>
 
-    <div class="status" id="status"></div>
-
     <!-- editor -->
-    <div class="ed-box" id="editBox" style="display:none">
-      <h2>הכתבות</h2>
-      <p class="muted">כל כתבה: שורה ראשונה = כותרת, שורה שנייה = תאריך (לא חובה), ואז הטקסט. מפרידים בין כתבות בשורה עם <code>===</code>. כתבה חדשה כדאי להוסיף למעלה.</p>
-      <div class="row" style="margin-bottom:.6rem">
-        <button class="btn btn-ghost" id="addPost">+ הוספת כתבה חדשה למעלה</button>
-      </div>
-      <textarea id="content" spellcheck="true" dir="rtl" placeholder="טוען..."></textarea>
-      <div class="row">
+    <div id="editArea" style="display:none">
+      <div class="ed-toolbar">
+        <button class="btn btn-ghost" id="addPost">+ כתבה חדשה</button>
+        <span class="grow"></span>
+        <span class="muted" id="connNote">מחובר ✓</span>
         <button class="btn btn-wa" id="publish">שמירה ופרסום</button>
-        <a class="btn btn-ghost" href="blog.html" target="_blank" rel="noopener">תצוגה מקדימה של הבלוג</a>
-        <span class="muted" id="saveHint"></span>
+      </div>
+      <div class="status" id="status"></div>
+      <div id="posts"></div>
+      <div class="row" style="justify-content:center;margin-top:1rem">
+        <button class="btn btn-wa" id="publish2">שמירה ופרסום</button>
+        <button class="btn btn-ghost" id="forgetTok">ניתוק</button>
       </div>
     </div>
   </main>
 
   <script>
   (function(){
-    var REPO="avivso/jerry-walker-tours", PATH="blog/posts.md", BRANCH="main";
-    var API="https://api.github.com/repos/"+REPO+"/contents/"+PATH;
+    var REPO="avivso/jerry-walker-tours", BRANCH="main", PATH="blog/posts.md";
+    var API="https://api.github.com/repos/"+REPO+"/contents/";
     var sha=null;
-    var $=function(s){return document.querySelector(s);};
-    var statusEl=$("#status");
-    function show(kind,msg){ statusEl.className="status "+kind; statusEl.textContent=msg; }
+    var $=function(s,r){return (r||document).querySelector(s);};
+    function show(kind,msg){ var e=$("#status"); e.className="status "+kind; e.textContent=msg; if(kind==="ok") setTimeout(function(){e.className="status";},4000); }
     function tok(){ return localStorage.getItem("jw_gh_token")||""; }
-    function headers(){ return { "Authorization":"Bearer "+tok(), "Accept":"application/vnd.github+json" }; }
-    function b64encode(str){ var bytes=new TextEncoder().encode(str), bin=""; for(var i=0;i<bytes.length;i++) bin+=String.fromCharCode(bytes[i]); return btoa(bin); }
-    function b64decode(b64){ var bin=atob((b64||"").replace(/\n/g,"")); var bytes=new Uint8Array(bin.length); for(var i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i); return new TextDecoder().decode(bytes); }
+    function auth(){ return { "Authorization":"Bearer "+tok(), "Accept":"application/vnd.github+json" }; }
+    function b64enc(bytes){ var bin="",ch=0x8000; for(var i=0;i<bytes.length;i+=ch){ bin+=String.fromCharCode.apply(null, bytes.subarray(i,i+ch)); } return btoa(bin); }
+    function b64encStr(str){ return b64enc(new TextEncoder().encode(str)); }
+    function b64decStr(b64){ var bin=atob((b64||"").replace(/\n/g,"")); var u=new Uint8Array(bin.length); for(var i=0;i<bin.length;i++) u[i]=bin.charCodeAt(i); return new TextDecoder().decode(u); }
+    function escAttr(s){ return String(s||"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;"); }
+    function escTa(s){ return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+    function today(){ return new Date().toISOString().slice(0,10); }
 
-    var TEMPLATE = "כותרת הכתבה\n" + new Date().toISOString().slice(0,10) + "\n\nכתבו כאן את הכתבה. שורה ריקה מתחילה פסקה חדשה.\n\n===\n\n";
+    function parsePosts(text){
+      return text.split(/\n=+\n/).map(function(c){return c.trim();}).filter(Boolean).map(function(ch){
+        var lines=ch.split("\n"); var i=0;
+        while(i<lines.length && !lines[i].trim()) i++;
+        var title=(lines[i]||"").replace(/^#+\s*/,"").trim(); i++;
+        var date="";
+        if(i<lines.length && /^(\d{4}-\d{2}-\d{2}|תאריך)/.test(lines[i].trim())){ date=lines[i].replace(/^תאריך[:：]\s*/,"").trim(); i++; }
+        var body=lines.slice(i).join("\n").trim();
+        return { title:title, date:date, body:body };
+      });
+    }
 
-    async function loadFile(){
-      show("info","טוען את הכתבות...");
-      var r = await fetch(API+"?ref="+BRANCH+"&t="+Date.now(), { headers: headers() });
-      if(r.status===401){ throw new Error("המפתח שגוי או פג תוקף. צרו מפתח חדש."); }
-      if(!r.ok){ throw new Error("שגיאה בטעינה ("+r.status+")."); }
-      var j = await r.json(); sha=j.sha;
-      $("#content").value = b64decode(j.content);
-      $("#editBox").style.display="block";
-      $("#setupBox").querySelector("ol").style.display="none";
-      $("#setupBox").querySelector("h2").textContent="מחובר ✓";
-      $("#setupBox").querySelector(".muted").textContent="המפתח שמור במכשיר הזה. אפשר לכתוב ולפרסם.";
-      $("#tok").style.display="none"; $("#saveTok").style.display="none"; $("#forgetTok").style.display="inline-flex";
-      show("ok","מחובר. אפשר לערוך ולפרסם.");
-      setTimeout(function(){ statusEl.className="status"; }, 1500);
+    function makeCard(post){
+      var el=document.createElement("div"); el.className="ed-box post-edit";
+      el.innerHTML =
+        '<label>כותרת</label><input type="text" class="f-title" value="'+escAttr(post.title)+'">'+
+        '<label>תאריך (אפשר להשאיר ריק)</label><input type="text" class="f-date" value="'+escAttr(post.date)+'" placeholder="'+today()+'">'+
+        '<label>תוכן הכתבה</label>'+
+        '<textarea class="f-body" dir="rtl">'+escTa(post.body)+'</textarea>'+
+        '<p class="ph">אפשר לגרור לכאן תמונה, או ללחוץ על "הוספת תמונה".</p>'+
+        '<div class="row">'+
+          '<button type="button" class="btn btn-ghost f-img">📷 הוספת תמונה</button>'+
+          '<input type="file" accept="image/*" class="f-file" style="display:none">'+
+          '<button type="button" class="btn btn-del f-del">🗑 מחיקת הכתבה</button>'+
+          '<span class="muted f-note"></span>'+
+        '</div>';
+      var ta=$(".f-body",el), note=$(".f-note",el);
+      $(".f-del",el).addEventListener("click", function(){ if(confirm("למחוק את הכתבה הזו?")) el.remove(); });
+      $(".f-img",el).addEventListener("click", function(){ $(".f-file",el).click(); });
+      $(".f-file",el).addEventListener("change", function(e){ if(e.target.files[0]) uploadImage(e.target.files[0], ta, note); });
+      ta.addEventListener("dragover", function(e){ e.preventDefault(); ta.classList.add("drag"); });
+      ta.addEventListener("dragleave", function(){ ta.classList.remove("drag"); });
+      ta.addEventListener("drop", function(e){ e.preventDefault(); ta.classList.remove("drag"); var f=e.dataTransfer.files[0]; if(f && f.type.indexOf("image")===0) uploadImage(f, ta, note); });
+      return el;
+    }
+
+    function insertAtCursor(ta, text){
+      var s=ta.selectionStart, e=ta.selectionEnd;
+      if(s==null){ ta.value+=text; } else { ta.value=ta.value.slice(0,s)+text+ta.value.slice(e); }
+      ta.focus(); var pos=(s==null?ta.value.length:s+text.length); ta.selectionStart=ta.selectionEnd=pos;
+    }
+
+    async function uploadImage(file, ta, note){
+      if(!tok()){ show("err","קודם מתחברים."); return; }
+      note.textContent="מעלה תמונה...";
+      try{
+        var buf=await file.arrayBuffer();
+        var safe=(file.name||"image.jpg").replace(/[^\w.\-]+/g,"-").toLowerCase();
+        var path="blog/images/"+Date.now()+"-"+safe;
+        var r=await fetch(API+path,{ method:"PUT", headers:Object.assign({"Content-Type":"application/json"},auth()),
+          body:JSON.stringify({ message:"הוספת תמונה לבלוג", content:b64enc(new Uint8Array(buf)), branch:BRANCH }) });
+        if(!r.ok){ var j=await r.json(); throw new Error(j.message||r.status); }
+        insertAtCursor(ta, "\n![]("+path+")\n");
+        note.textContent="התמונה נוספה ✓ (לא לשכוח לשמור)";
+      }catch(err){ note.textContent="שגיאה: "+err.message; }
+    }
+
+    function serialize(){
+      var cards=[].slice.call(document.querySelectorAll(".post-edit"));
+      var parts=cards.map(function(c){
+        var t=$(".f-title",c).value.trim(), d=$(".f-date",c).value.trim(), b=$(".f-body",c).value.trim();
+        if(!t && !b) return "";
+        var s=t+"\n"; if(d) s+=d+"\n"; s+="\n"+b; return s.trim();
+      }).filter(Boolean);
+      return parts.join("\n\n===\n\n")+"\n";
+    }
+
+    async function loadPosts(){
+      show("info","טוען...");
+      var r=await fetch(API+PATH+"?ref="+BRANCH+"&t="+Date.now(), { headers:auth() });
+      if(r.status===401) throw new Error("המפתח שגוי או פג תוקף. צרו מפתח חדש.");
+      if(!r.ok) throw new Error("שגיאה בטעינה ("+r.status+").");
+      var j=await r.json(); sha=j.sha;
+      var posts=parsePosts(b64decStr(j.content));
+      var box=$("#posts"); box.innerHTML="";
+      posts.forEach(function(p){ box.appendChild(makeCard(p)); });
+      $("#setupBox").style.display="none";
+      $("#editArea").style.display="block";
+      show("ok","מחובר. אפשר לערוך, להוסיף, למחוק ולפרסם.");
     }
 
     async function publish(){
-      if(!tok()){ show("err","קודם צריך לחבר את המפתח."); return; }
-      var btn=$("#publish"); btn.disabled=true; show("info","מפרסם...");
+      if(!tok()){ show("err","קודם מתחברים."); return; }
+      var btns=document.querySelectorAll("#publish,#publish2"); btns.forEach(function(b){b.disabled=true;});
+      show("info","מפרסם...");
       try{
-        var body={ message:"עדכון הבלוג מהאתר", content:b64encode($("#content").value), branch:BRANCH };
+        var body={ message:"עדכון הבלוג מהאתר", content:b64encStr(serialize()), branch:BRANCH };
         if(sha) body.sha=sha;
-        var r=await fetch(API,{ method:"PUT", headers:Object.assign({"Content-Type":"application/json"},headers()), body:JSON.stringify(body) });
+        var r=await fetch(API+PATH,{ method:"PUT", headers:Object.assign({"Content-Type":"application/json"},auth()), body:JSON.stringify(body) });
         var j=await r.json();
-        if(!r.ok){ throw new Error(j.message||("שגיאה "+r.status)); }
+        if(!r.ok) throw new Error(j.message||("שגיאה "+r.status));
         sha=j.content && j.content.sha;
-        show("ok","פורסם! הכתבות יעלו לאתר בתוך כדקה. רעננו את הבלוג כדי לראות.");
-      }catch(e){
-        if((e.message||"").indexOf("does not match")>-1 || (e.message||"").toLowerCase().indexOf("sha")>-1){
-          show("err","הקובץ עודכן במקום אחר. טוענים מחדש..."); try{ await loadFile(); }catch(_){}
-        } else { show("err","לא הצלחתי לפרסם: "+e.message); }
-      } finally { btn.disabled=false; }
+        show("ok","פורסם! תוך כדקה הכתבות יעלו לאתר. רעננו את הבלוג כדי לראות.");
+      }catch(e){ show("err","לא הצלחתי לפרסם: "+e.message+". אם הקובץ עודכן במקום אחר, רעננו את הדף."); }
+      finally{ btns.forEach(function(b){b.disabled=false;}); }
+    }
+
+    function addPost(){
+      var el=makeCard({ title:"", date:today(), body:"" });
+      var box=$("#posts"); box.insertBefore(el, box.firstChild);
+      el.scrollIntoView({behavior:"smooth", block:"center"});
+      $(".f-title",el).focus();
     }
 
     $("#saveTok").addEventListener("click", async function(){
-      var v=$("#tok").value.trim();
-      if(!v){ show("err","הדביקו קודם את המפתח."); return; }
+      var v=$("#tok").value.trim(); if(!v){ show("err","הדביקו קודם את המפתח."); return; }
       localStorage.setItem("jw_gh_token", v);
-      try{ await loadFile(); }catch(e){ show("err",e.message); localStorage.removeItem("jw_gh_token"); }
+      try{ await loadPosts(); }catch(e){ show("err",e.message); localStorage.removeItem("jw_gh_token"); }
     });
-    $("#forgetTok").addEventListener("click", function(){
-      localStorage.removeItem("jw_gh_token"); location.reload();
-    });
-    $("#addPost").addEventListener("click", function(){
-      var ta=$("#content"); ta.value=TEMPLATE+ta.value; ta.focus(); ta.setSelectionRange(0,11);
-      window.scrollTo(0, ta.getBoundingClientRect().top+window.scrollY-90);
-    });
+    $("#forgetTok").addEventListener("click", function(){ localStorage.removeItem("jw_gh_token"); location.reload(); });
+    $("#addPost").addEventListener("click", addPost);
     $("#publish").addEventListener("click", publish);
+    $("#publish2").addEventListener("click", publish);
 
-    // auto-connect if a key is already saved
-    if(tok()){ loadFile().catch(function(e){ show("err",e.message); }); }
+    if(tok()){ loadPosts().catch(function(e){ show("err",e.message); }); }
   })();
   </script>
 </body>
