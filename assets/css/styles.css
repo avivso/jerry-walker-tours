@@ -400,7 +400,6 @@ html[dir="rtl"] .cmethod-val{ text-align:right; }
 @media (min-width:680px){
   .hero-cta{ flex-direction:row; max-width:none; justify-content:center; }
   .value-grid{ grid-template-columns:repeat(4,1fr); }
-  .tours-grid{ columns:3; column-gap:16px; }
   .trips-grid{ grid-template-columns:repeat(2,1fr); gap:1.2rem; }
   .reviews-grid{ grid-template-columns:repeat(3,1fr); }
   .blog-grid{ grid-template-columns:repeat(3,1fr); gap:1.4rem; }
@@ -412,7 +411,6 @@ html[dir="rtl"] .cmethod-val{ text-align:right; }
 @media (min-width:980px){
   .hero{ padding-block:160px 80px; }
   .hero-badge{ width:120px; height:120px; }
-  .tours-grid{ columns:4; }
   .about-inner{ flex-direction:row; align-items:center; gap:3rem; }
   .about-inner > *{ flex:1; }
   .contact-inner{ flex-direction:row; align-items:flex-start; }
