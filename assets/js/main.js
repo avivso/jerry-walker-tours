@@ -35,8 +35,9 @@
       "reviews.kicker": "מטיילים מספרים", "reviews.title": "מה אומרים אחרי הסיור",
       "gallery.kicker": "תמונות מסיורים", "gallery.title": "רגעים מהשטח",
       "blog.kicker": "בלוג · כתבות · פוסטים", "blog.title": "סיפורים מפריז",
-      "blog.sub": "קטעים, סיפורים וטיפים שכתבתי על פריז לאורך השנה. הפוסטים המלאים מתפרסמים בעמוד הפייסבוק שלי.",
-      "blog.more": "לכל הפוסטים בפייסבוק",
+      "blog.sub": "קטעים, סיפורים וטיפים שכתבתי על פריז לאורך השנה.",
+      "blog.more": "לכל הכתבות בבלוג",
+      "blog.empty": "הכתבות בדרך. בקרוב יעלו כאן הסיפורים שכתבתי על פריז.",
       "contact.kicker": "בואו נתכנן את פריז שלכם", "contact.title": "מוכנים לצאת לדרך?",
       "contact.sub": "כתבו לי בוואטסאפ, בטלפון, במייל או בפייסבוק/אינסטגרם, ואחזור אליכם עם כל הפרטים והמחירים, ונתאים יחד את הסיור המושלם עבורכם.",
       "contact.phone": "טלפון", "contact.email": "אימייל",
@@ -66,8 +67,9 @@
       "reviews.kicker": "Travellers' words", "reviews.title": "What guests say afterwards",
       "gallery.kicker": "Photos from the tours", "gallery.title": "Moments on the ground",
       "blog.kicker": "Blog · Articles · Posts", "blog.title": "Stories from Paris",
-      "blog.sub": "Notes, stories and tips I've written about Paris over the year. The full posts are published on my Facebook page.",
-      "blog.more": "All posts on Facebook",
+      "blog.sub": "Notes, stories and tips I've written about Paris over the year.",
+      "blog.more": "Read the blog",
+      "blog.empty": "Posts are on the way. My Paris stories will appear here soon.",
       "contact.kicker": "Let's plan your Paris", "contact.title": "Ready to set out?",
       "contact.sub": "Reach me on WhatsApp, by phone, email or Facebook/Instagram, and I'll get back to you with all the details and pricing, and together we'll shape the perfect tour for you.",
       "contact.phone": "Phone", "contact.email": "Email",
@@ -98,7 +100,7 @@
   /* ---------- tours ---------- */
   const TOURS = [
     {
-      img: "tour-classic.jpg",
+      img: "tour-classic.jpg", poster: "poster-intro.jpg",
       he: { dur: "כ-4 שעות", title: "סיור היכרות מקיף בפריז",
         short: "סיור לאורך גדות הסן בין אתרי החובה של פריז: נוטרדם, הפונט נף, הלובר וגני הטווילרי. עשיר בסיפורים, באווירה נעימה ומשעשעת.",
         long: "הדרך היעילה והנעימה ביותר להכיר את פריז וליפול בקסמה. סיור לאורך גדות נהר הסן, העובר במגוון אתרי החובה ומעניק לכם הבנה של הרקע ההיסטורי, התרבותי והיומיומי של העיר, והכל באווירה נינוחה ומשעשעת. כולל הפסקת קפה באמצע.",
@@ -109,7 +111,7 @@
         hl: ["Saint-Michel bridge & the Latin Quarter", "Notre-Dame Cathedral & the Palais de Justice", "Pont Neuf & the Pont des Arts (the “love-locks”)", "The Louvre's Cour Carrée & glass pyramid", "Carrousel arch, Tuileries Gardens & Place de la Concorde"] },
     },
     {
-      img: "tour-revolution.jpg",
+      img: "tour-revolution.jpg", poster: "poster-revolution.jpg",
       he: { dur: "כ-3 שעות · כולל מטרו והפסקה", title: "בעקבות המהפכה הצרפתית ונפוליאון",
         short: "חובה לחובבי היסטוריה. נפסע בין התחנות שעיצבו את המהפכה וסימנו את עלייתו של נפוליאון בונפרטה.",
         long: "סיור חובה לחובבי היסטוריה. נפסע בין מספר תחנות שעיצבו את המהפכה הצרפתית וסימנו את עלייתו של נפוליאון. בסופו תבינו לעומק את ה-DNA של המהפכה ואת דמותו המורכבת של נפוליאון, הרבה מעבר למה שידעתם.",
@@ -120,7 +122,7 @@
         hl: ["Homes of revolutionaries Danton & Marat", "The oldest café in the world, which hosted Napoleon", "The Conciergerie & the Palais-Royal", "Place de la Concorde & the site of the guillotine", "One metro ride & a coffee break"] },
     },
     {
-      img: "tour-montmartre.jpg",
+      img: "tour-montmartre.jpg", poster: "poster-montmartre.jpg",
       he: { dur: "כ-3 שעות", title: "סיור ברובע מונמרטר",
         short: "טיפוס סוחף ברחובות המתפתלים של מונמרטר עד בזיליקת הלב הקדוש, בעקבות אמנים, אהבות והמולן רוז'.",
         long: "סיור סוחף ומרגש במעלה הגבעה הנישאה מונמרטר, עד הנקודה הגבוהה בפריז, בזיליקת הלב הקדוש (Sacré-Cœur). רחובות פסטורליים וססגוניים, רומנטיקה וסיפורי אמנים גדולים. * סיור זה כולל הליכה במעלה הגבעה.",
@@ -142,7 +144,7 @@
         hl: ["The Arc de Triomphe & its history", "The Champs-Élysées & the Petit Palais", "The finest Eiffel Tower viewpoint at Trocadéro", "The prettiest bridge in Paris", "Place de la Concorde & the gardens"] },
     },
     {
-      img: "tour-perelachaise.jpg",
+      img: "tour-perelachaise.jpg", poster: "poster-perelachaise.jpg",
       he: { dur: "כ-3 שעות", title: "בית הקברות פר לשז",
         short: "סיור מרתק ומקורי בבית הקברות האיקוני בעולם. סיפורים מפתיעים, מצבות מעוצבות ונופים מהממים. אולי הסיור הטוב שלי.",
         long: "סיור מרתק, מקורי ויחודי בבית הקברות המפורסם בעולם. בין המצבות המעוצבות והנופים המהממים נשמע סיפורים שלא תשכחו. אולי הסיור הטוב ביותר שלי.",
@@ -164,7 +166,7 @@
         hl: ["“Highlights”, 2 hrs: Mona Lisa, Venus, Samothrace & more", "“Classic Louvre”, ≈ 3 hrs: extended route", "“Signature Louvre”, 4-5 hrs: 20+ key works", "1-4 guests only, personal guiding", "My recommendation: the 3-hour route"] },
     },
     {
-      img: "tour-shadows.jpg",
+      img: "tour-shadows.jpg", poster: "poster-shadows.jpg",
       he: { dur: "כ-3 שעות", title: "פריז: עיר האורות והצללים",
         short: "מסע רגלי מקורי בעקבות פרשיות ריגול, חיסולים וסודות ביטחוניים ברחובות העיר היפה בעולם.",
         long: "סיור רגלי מרתק ומקורי, בעקבות פרשיות ריגול ופרשיות ביטחוניות שהתרחשו ברחובותיה של פריז. סיפורי ביון אמיתיים, מסתורין וצללים שלא תשמעו באף סיור אחר.",
@@ -175,7 +177,7 @@
         hl: ["Real-life espionage affairs", "Covert assassinations & security secrets", "The hidden side of the world's most beautiful city", "An original, one-of-a-kind walking journey"] },
     },
     {
-      img: "tour-marais.jpg",
+      img: "tour-marais.jpg", poster: "poster-marais.jpg",
       he: { dur: "כ-3 שעות", title: "הרובע היהודי: לה מארה",
         short: "צלילה אל הזהות והזיכרון ברובע המארה ההיסטורי: סיפורם של אבירי הטמפלרים ושל יהדות פריז. ופלאפל חם כלול!",
         long: "סיור עומק ברובע המארה הציורי, בין סמטאות מימי הביניים, בתי קפה ובוטיקים. נכיר את ההיסטוריה של אבירי הטמפלרים ואת סיפורה של הקהילה היהודית בפריז: זהות, זיכרון וחיים. ולא נצא בלי פלאפל חם ברחוב דה רוזיֶה.",
@@ -279,13 +281,6 @@
   const svg = (path, cls) => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${path}"/></svg>`;
   const arrow = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12l-5-5 1.4-1.4L21.8 12l-8.4 8.4L12 19l5-5H5z"/></svg>`;
 
-  function renderHero() {
-    const slides = ["hero-eiffel.jpg", "hero-seine-sunset.jpg", "hero-conciergerie.jpg", "hero-lafayette.jpg"];
-    $("#heroSlides").innerHTML = slides
-      .map((s, i) => `<div class="hero-slide${i === 0 ? " active" : ""}" style="background-image:url('${IMG(s)}')"></div>`)
-      .join("");
-  }
-
   function renderValues() {
     $("#valueGrid").innerHTML = VALUES.map((v, i) => `
       <div class="value-card reveal" style="--rd:${i * 80}ms">
@@ -298,15 +293,14 @@
   function renderTours() {
     $("#toursGrid").innerHTML = TOURS.map((tr, i) => {
       const d = tr[LANG];
-      return `<article class="tour-card reveal" data-tour="${i}" tabindex="0" role="button" style="--rd:${(i % 3) * 90}ms">
-        <div class="tour-card__img"><img src="${IMG(tr.img)}" alt="${esc(d.title)}" loading="lazy"></div>
-        <span class="tour-card__num">${String(i + 1).padStart(2, "0")}</span>
-        <div class="tour-card__body">
-          <span class="tour-card__dur">${svg("M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 10V6h-2v7l5.2 3.1 1-1.7-4.2-2.4z", "")} ${esc(d.dur)}</span>
-          <h3 class="tour-card__title">${esc(d.title)}</h3>
-          <p class="tour-card__desc">${esc(d.short)}</p>
-          <span class="tour-card__more">${t("ui.more")} ${arrow}</span>
-        </div>
+      const isPoster = !!tr.poster;
+      const src = IMG(isPoster ? tr.poster : tr.img);
+      const cls = isPoster ? "tour-card is-poster reveal" : "tour-card is-photo reveal";
+      const band = isPoster ? "" : `<div class="tour-card__band"><h3>${esc(d.title)}</h3></div>`;
+      return `<article class="${cls}" data-tour="${i}" tabindex="0" role="button" style="--rd:${(i % 4) * 70}ms">
+        <img src="${src}" alt="${esc(d.title)}" loading="lazy">
+        ${band}
+        <span class="tour-card__hint">${t("ui.more")} +</span>
       </article>`;
     }).join("");
     $("#toursNote").innerHTML = TOURS_NOTE[LANG].map((n) => `
@@ -336,9 +330,11 @@
     $("#reviewsGrid").innerHTML = REVIEWS.map((r, i) => {
       const d = r[LANG];
       return `<div class="review-card reveal" style="--rd:${i * 90}ms">
-        <div class="review-stars">★★★★★</div>
         <p class="review-quote">${esc(d.q)}</p>
-        <p class="review-name">${esc(d.n)}</p>
+        <div class="review-foot">
+          <span class="review-name">${esc(d.n)}</span>
+          <span class="review-stars" aria-label="5 stars">★★★★★</span>
+        </div>
       </div>`;
     }).join("");
   }
@@ -348,19 +344,20 @@
       <figure data-idx="${i}"><img src="${IMG(g + ".jpg")}" alt="Paris" loading="lazy"></figure>`).join("");
   }
 
+  let BLOG_POSTS = [];
   function renderBlog() {
-    $("#blogGrid").innerHTML = POSTS.map((p, i) => {
-      const d = p[LANG];
-      return `<a class="blog-card reveal" href="${p.link}" target="_blank" rel="noopener" style="--rd:${i * 90}ms">
-        <div class="blog-card__img"><img src="${IMG(p.img)}" alt="${esc(d.t)}" loading="lazy"></div>
+    const grid = $("#blogGrid");
+    if (!grid) return;
+    if (!BLOG_POSTS.length) { grid.innerHTML = `<p class="blog-empty">${t("blog.empty")}</p>`; return; }
+    grid.innerHTML = BLOG_POSTS.slice(0, 3).map((p, i) => `
+      <a class="blog-card reveal" href="blog.html#${p.id}" style="--rd:${i * 90}ms">
         <div class="blog-card__body">
-          <span class="blog-card__cat">${esc(d.cat)}</span>
-          <h3 class="blog-card__title">${esc(d.t)}</h3>
-          <p class="blog-card__excerpt">${esc(d.e)}</p>
+          ${p.date ? `<span class="blog-card__cat">${JWBlog.esc(p.date)}</span>` : ""}
+          <h3 class="blog-card__title">${JWBlog.esc(p.title)}</h3>
+          <p class="blog-card__excerpt">${JWBlog.esc(p.excerpt)}</p>
           <span class="blog-card__link">${t("ui.readmore")} →</span>
         </div>
-      </a>`;
-    }).join("");
+      </a>`).join("");
   }
 
   /* ---------- apply language ---------- */
@@ -422,20 +419,6 @@
     sections.forEach((s) => spy.observe(s));
   }
 
-  // hero slideshow
-  function startHero() {
-    const slides = $$("#heroSlides .hero-slide");
-    if (slides.length < 2) return;
-    let i = 0;
-    setInterval(() => {
-      slides[i].classList.remove("active");
-      i = (i + 1) % slides.length;
-      const s = slides[i];
-      s.style.animation = "none"; void s.offsetWidth; s.style.animation = "";
-      s.classList.add("active");
-    }, 5200);
-  }
-
   // scroll reveal
   let io, revealSafety;
   function observeReveals() {
@@ -456,10 +439,10 @@
     const tr = TOURS[idx], d = tr[LANG];
     modalImg.src = IMG(tr.img); modalImg.alt = d.title;
     modalBody.innerHTML = `
-      <span class="tour-card__dur">${esc(d.dur)}</span>
+      <span class="tour-dur">${esc(d.dur)}</span>
       <h3>${esc(d.title)}</h3>
       <p>${esc(d.long)}</p>
-      <h4 style="font-family:var(--serif);color:var(--gold-deep);margin-bottom:.6rem;font-size:1.05rem">${t("ui.highlights")}</h4>
+      <h4>${t("ui.highlights")}</h4>
       <ul>${d.hl.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>
       <a class="btn btn-wa btn-block btn-lg" href="${waHref(LANG)}" target="_blank" rel="noopener">
         <svg class="ico-wa" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.5 8.5 3.5 15.4c0 2.4.7 4.7 1.9 6.7L3 29l7.1-2.3c1.9 1 4 1.6 6 1.6 6.9 0 12.5-5.6 12.5-12.5S22.9 3 16 3zm5.7 14.9c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.4 8.4 0 0 1-2.5-1.5 9.3 9.3 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4z"/></svg>
@@ -501,10 +484,10 @@
 
   /* ---------- init ---------- */
   $("#year").textContent = new Date().getFullYear();
-  renderHero();
   renderGallery();
   setLang(LANG);
-  startHero();
   initScrollSpy();
   onScroll();
+  // load blog posts (from blog/posts.md) for the homepage teaser
+  if (window.JWBlog) JWBlog.load().then((posts) => { BLOG_POSTS = posts; renderBlog(); });
 })();
