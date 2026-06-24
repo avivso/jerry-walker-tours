@@ -17,22 +17,22 @@
   const I18N = {
     he: {
       "nav.tours": "סיורים בפריז", "nav.daytrips": "טיולי יום", "nav.gallery": "גלריה",
-      "nav.blog": "בלוג", "nav.about": "אודות", "nav.contact": "צור קשר",
-      "cta.whatsapp": "שריינו סיור בוואטסאפ",
+      "nav.blog": "בלוג", "nav.about": "אודות", "nav.contact": "צור קשר", "nav.reviews": "המלצות",
+      "cta.whatsapp": "שריינו סיור בוואטסאפ", "cta.book": "שריינו סיור פרטי", "details.title": "פירוט הסיורים",
       "hero.eyebrow": "מדריך אקדמאי מוסמך · סיורים פרטיים",
-      "hero.title": "פריז, בעיניים של מספר סיפורים",
-      "hero.sub": "סיורים פרטיים מודרכים בעברית, אנגלית וצרפתית. היסטוריה, אמנות וסיפורים, באווירה אישית ומשעשעת.",
+      "hero.title": "להפיק את המיטב מהביקור בפריז - לטייל ולהכיר אותה כמו מקומי/ת",
+      "hero.sub": "סיורים פרטיים בפריז ומחוצה לה. להכיר את ההיסטוריה, האמנות והתרבות המקומית באווירה נעימה ומשעשעת ובליווי סיפורים מרתקים.",
       "hero.explore": "גלו את הסיורים",
       "intro.lead": "לא עוד טיול עם המון. סיור פרטי, אישי ומעמיק, שנבנה סביבכם, סביב הקצב והסקרנות שלכם, ומלא בסיפורים שלא תשמעו בשום מקום אחר.",
-      "tours.kicker": "סיורים פרטיים ברחבי פריז", "tours.title": "סיורי עומק בלב פריז",
-      "tours.sub": "סיורים פרטיים ואיכותיים במיוחד. בחרו את הסיפור שמדבר אליכם, ואני אבנה סביבו את היום שלכם.",
+      "tours.kicker": "סיורים פרטיים ברחבי פריז", "tours.title": "הנה הסיורים שלנו",
+      "tours.sub": "לחצו על כרזה כדי לראות את פרטי הסיור.",
       "trips.kicker": "טיולי יום פרטיים מחוץ לעיר", "trips.title": "מעבר לפריז",
       "trips.sub": "טיולי יום פרטיים ומודרכים בעברית אל היעדים הקסומים שמסביב לעיר ובצפון צרפת.",
-      "about.kicker": "נעים להכיר, ג'רי", "about.title": "מדריך, חוקר ומספר סיפורים",
-      "about.p1": "מדריך אקדמאי מוסמך ומנוסה, מאוהב בפריז ובסיפורים שהיא מסתירה מאחורי כל פינה. בכל סיור אני משלב היסטוריה, אמנות ותרבות עם אנקדוטות מפתיעות והרבה הומור, כדי שתחזרו הביתה לא רק עם תמונות, אלא עם חוויה ועם הבנה אמיתית של העיר.",
-      "about.p2": "אני מדריך סיורים פרטיים בלבד, לקבוצות של 1 עד 12 מטיילים. איני מארגן קבוצות. הסיור הוא שלכם, בקצב שלכם.",
+      "about.kicker": "נעים להכיר", "about.title": "כמה מילים עליי",
+      "about.p1": "שמי ירון, אבל כולם קוראים לי ג'רי. אני מדריך ותיק ומנוסה. גרתי וחייתי בחו״ל שנים לא מעטות, בהן בפיליפינים, בבלגיה ובצרפת. אני מורה דרך מוסמך מטעם יד בן-צבי בירושלים, ובמהלך השנים השלמתי שני תארים מתקדמים (M.A) בהצטיינות: האחד מאוניברסיטת פריז-8 והשני מבר-אילן 🤓.",
+      "about.p2": "אני פריק של טיולים וחובב מושבע של היסטוריה, ומוסמך להדרכה בארבע שפות: אנגלית, צרפתית, עברית וערבית. הדרכתי מאות סיורים ואלפי מטיילים. אני אוהב להביא למטיילים שלי את הסיפורים המרתקים ביותר על פריז, וחשוב לי שכשתחזרו ארצה תרגישו שהביקור בעיר האורות היה משודרג ומושלם. ברחבי פריז אני מדריך כמה סיורי עומק מקוריים לגמרי, מדריך בעברית במוזיאון הלובר, ומוביל גם קבוצות ומשפחות לטיולים מרהיבים מחוץ לעיר לפי בקשה.",
       "about.cta": "דברו איתי בוואטסאפ", "about.badgeNum": "1-12", "about.badgeLabel": "מטיילים · פרטי בלבד",
-      "reviews.kicker": "מטיילים מספרים", "reviews.title": "מה אומרים אחרי הסיור",
+      "reviews.kicker": "מטיילים מספרים", "reviews.title": "המלצות של מבקרים שטיילו איתי",
       "gallery.kicker": "תמונות מסיורים", "gallery.title": "רגעים מהשטח",
       "blog.kicker": "בלוג · כתבות · פוסטים", "blog.title": "סיפורים מפריז",
       "blog.sub": "קטעים, סיפורים וטיפים שכתבתי על פריז לאורך השנה.",
@@ -49,22 +49,22 @@
     },
     en: {
       "nav.tours": "Paris Tours", "nav.daytrips": "Day Trips", "nav.gallery": "Gallery",
-      "nav.blog": "Blog", "nav.about": "About", "nav.contact": "Contact",
-      "cta.whatsapp": "Book on WhatsApp",
+      "nav.blog": "Blog", "nav.about": "About", "nav.contact": "Contact", "nav.reviews": "Reviews",
+      "cta.whatsapp": "Book on WhatsApp", "cta.book": "Book a private tour", "details.title": "Tour details",
       "hero.eyebrow": "Certified academic guide · Private tours",
-      "hero.title": "Paris, through a storyteller's eyes",
-      "hero.sub": "Private guided tours in Hebrew, English & French. History, art and stories, with a personal, witty touch.",
+      "hero.title": "Make the most of your visit to Paris - explore it like a local",
+      "hero.sub": "Private tours in Paris and beyond. Discover the history, art and local culture in a relaxed, entertaining atmosphere, with captivating stories along the way.",
       "hero.explore": "Explore the tours",
       "intro.lead": "Not another tour with the crowd. A private, personal, in-depth experience, built around you, your pace and your curiosity, and full of stories you won't hear anywhere else.",
-      "tours.kicker": "Private tours across Paris", "tours.title": "In-depth tours in the heart of Paris",
-      "tours.sub": "Exceptionally rich private tours. Pick the story that speaks to you, and I'll build your day around it.",
+      "tours.kicker": "Private tours across Paris", "tours.title": "Here are our tours",
+      "tours.sub": "Tap a poster to see the full tour details.",
       "trips.kicker": "Private day trips beyond the city", "trips.title": "Beyond Paris",
       "trips.sub": "Private guided day trips in Hebrew to the most magical destinations around the capital and across northern France.",
-      "about.kicker": "Meet Jerry", "about.title": "A guide, a researcher, a storyteller",
-      "about.p1": "A certified, experienced academic guide, in love with Paris and the stories it hides around every corner. On every tour I weave history, art and culture together with surprising anecdotes and plenty of humour, so you go home not just with photos, but with a real understanding of the city.",
-      "about.p2": "I guide private tours only, for groups of 1 to 12 travellers. I don't run mixed groups. The tour is yours, at your pace.",
+      "about.kicker": "Meet Jerry", "about.title": "A few words about me",
+      "about.p1": "My name is Yaron, but everyone calls me Jerry. I am a veteran, experienced guide. I lived abroad for many years, including in the Philippines, Belgium and France. I am a certified tour guide (Yad Ben-Zvi, Jerusalem), and over the years I completed two master's degrees (M.A) with honours: one from the University of Paris-8 and one from Bar-Ilan 🤓.",
+      "about.p2": "I am a travel fanatic and a die-hard history lover, certified to guide in four languages: English, French, Hebrew and Arabic. I have led hundreds of tours and thousands of travellers. I love bringing my guests the most fascinating stories about Paris, and it matters to me that when you go home you feel your visit to the City of Light was elevated and complete. Across Paris I guide several completely original in-depth tours, I guide the Louvre in Hebrew, and I also lead groups and families on stunning day trips outside the city on request.",
       "about.cta": "Message me on WhatsApp", "about.badgeNum": "1-12", "about.badgeLabel": "travellers · private only",
-      "reviews.kicker": "Travellers' words", "reviews.title": "What guests say afterwards",
+      "reviews.kicker": "Travellers' words", "reviews.title": "What travellers who toured with me say",
       "gallery.kicker": "Photos from the tours", "gallery.title": "Moments on the ground",
       "blog.kicker": "Blog · Articles · Posts", "blog.title": "Stories from Paris",
       "blog.sub": "Notes, stories and tips I've written about Paris over the year.",
@@ -100,92 +100,55 @@
   /* ---------- tours ---------- */
   const TOURS = [
     {
-      img: "tour-classic.jpg", poster: "poster-intro.jpg",
-      he: { dur: "כ-4 שעות", title: "סיור היכרות מקיף בפריז",
-        short: "סיור לאורך גדות הסן בין אתרי החובה של פריז: נוטרדם, הפונט נף, הלובר וגני הטווילרי. עשיר בסיפורים, באווירה נעימה ומשעשעת.",
-        long: "הדרך היעילה והנעימה ביותר להכיר את פריז וליפול בקסמה. סיור לאורך גדות נהר הסן, העובר במגוון אתרי החובה ומעניק לכם הבנה של הרקע ההיסטורי, התרבותי והיומיומי של העיר, והכל באווירה נינוחה ומשעשעת. כולל הפסקת קפה באמצע.",
-        hl: ["גשר סן מישל והרובע הלטיני", "כנסיית נוטרדם ופאלה דה-ז'וסטיס", "הפונט נף וגשר האמנויות (“המנעולים”)", "החצר המרובעת והפירמידה בלובר", "שער הקרוסל, גני הטווילרי וכיכר הקונקורד"] },
-      en: { dur: "≈ 4 hours", title: "The Ultimate Classic Intro",
-        short: "A walk along the Seine through Paris's must-sees: Notre-Dame, Pont Neuf, the Louvre and the Tuileries. Rich in stories, with a relaxed, witty mood.",
-        long: "The most efficient and enjoyable way to fall in love with Paris. A walk along the banks of the Seine through the city's iconic sites, giving you the historical, cultural and everyday background of Paris, all in a relaxed, entertaining atmosphere. Includes a coffee break.",
-        hl: ["Saint-Michel bridge & the Latin Quarter", "Notre-Dame Cathedral & the Palais de Justice", "Pont Neuf & the Pont des Arts (the “love-locks”)", "The Louvre's Cour Carrée & glass pyramid", "Carrousel arch, Tuileries Gardens & Place de la Concorde"] },
-    },
+      poster: "poster-intro.jpg", img: "tour-classic.jpg",
+      he: { dur: "כ-4 שעות", title: "סיור היכרות פרטי מקיף ומרתק בפריז",
+        long: "סיור עומק בלב פריז, בין איל-דה-לה-סיטה, הרובע הלטיני ושתי גדות נהר הסן. נכיר את האתרים החשובים ברובע ה-1 ובסמוך לו, נלמד כיצד התפתחה פריז, מהי הארכיטקטורה האופיינית לה ומי האנשים שעיצבו אותה. הסיור עובר במגוון אתרי חובה לאורך גדות הסן (נוטרדם, גשרי הסן, רחבת הלובר והפירמידה, שער הניצחון של הקרוסל ועוד) ומעניק היכרות עם הנופים היפים של העיר והבנה של הרקע ההיסטורי, התרבותי והיומיומי שלה." },
+      en: { dur: "about 4 hours", title: "Comprehensive Private Introduction to Paris",
+        long: "An in-depth walk through the heart of Paris, across the Île de la Cité, the Latin Quarter and both banks of the Seine. We get to know the key sites of the 1st arrondissement, learn how Paris grew, what its signature architecture is and who shaped it. The route passes a wealth of must-sees along the river (Notre-Dame, the Seine bridges, the Louvre plaza and pyramid, the Carrousel arch and more), with the city's finest views and a real grasp of its history, culture and daily life." } },
     {
-      img: "tour-revolution.jpg", poster: "poster-revolution.jpg",
-      he: { dur: "כ-3 שעות · כולל מטרו והפסקה", title: "בעקבות המהפכה הצרפתית ונפוליאון",
-        short: "חובה לחובבי היסטוריה. נפסע בין התחנות שעיצבו את המהפכה וסימנו את עלייתו של נפוליאון בונפרטה.",
-        long: "סיור חובה לחובבי היסטוריה. נפסע בין מספר תחנות שעיצבו את המהפכה הצרפתית וסימנו את עלייתו של נפוליאון. בסופו תבינו לעומק את ה-DNA של המהפכה ואת דמותו המורכבת של נפוליאון, הרבה מעבר למה שידעתם.",
-        hl: ["בתי המהפכנים ז'ורז' דנטון וז'אן-פול מארה", "בית הקפה העתיק בעולם שאירח גם את נפוליאון", "הקונסיירג'רי והפאלה רויאל", "כיכר הקונקורד ומקומה של הגיליוטינה", "נסיעת מטרו אחת והפסקת קפה"] },
-      en: { dur: "≈ 3 hours · incl. metro & break", title: "French Revolution & Napoleon",
-        short: "A must for history lovers. We trace the stations that shaped the Revolution and marked Napoleon Bonaparte's rise.",
-        long: "A must for history lovers. A narrative journey through the stations that shaped the French Revolution and marked Napoleon's rise. By the end you'll truly grasp the DNA of the Revolution and Napoleon's complex character, far better than you ever knew.",
-        hl: ["Homes of revolutionaries Danton & Marat", "The oldest café in the world, which hosted Napoleon", "The Conciergerie & the Palais-Royal", "Place de la Concorde & the site of the guillotine", "One metro ride & a coffee break"] },
-    },
-    {
-      img: "tour-montmartre.jpg", poster: "poster-montmartre.jpg",
-      he: { dur: "כ-3 שעות", title: "סיור ברובע מונמרטר",
-        short: "טיפוס סוחף ברחובות המתפתלים של מונמרטר עד בזיליקת הלב הקדוש, בעקבות אמנים, אהבות והמולן רוז'.",
-        long: "סיור סוחף ומרגש במעלה הגבעה הנישאה מונמרטר, עד הנקודה הגבוהה בפריז, בזיליקת הלב הקדוש (Sacré-Cœur). רחובות פסטורליים וססגוניים, רומנטיקה וסיפורי אמנים גדולים. * סיור זה כולל הליכה במעלה הגבעה.",
-        hl: ["צילומים ליד המולן רוז'", "אתרים מתוך הסרט “אמלי”", "סיפורי פיקאסו, מודיליאני וואן גוך", "בזיליקת הלב הקדוש (Sacré-Cœur)", "אווירה אינסטגרמית ברחובות הגבעה"] },
-      en: { dur: "≈ 3 hours", title: "Bohemian Montmartre",
-        short: "An evocative climb through Montmartre's winding lanes to Sacré-Cœur, in the footsteps of artists, loves and the Moulin Rouge.",
-        long: "A moving, evocative climb up Montmartre's hill to the highest point in Paris, the Basilica of Sacré-Cœur. Picturesque, colourful streets, romance and the stories of great artists. * This tour involves walking uphill.",
-        hl: ["Photo stop at the Moulin Rouge", "Locations from the film “Amélie”", "The stories of Picasso, Modigliani & Van Gogh", "The Basilica of Sacré-Cœur", "An Instagram-worthy atmosphere on the hill"] },
-    },
-    {
-      img: "tour-center.jpg",
-      he: { dur: "כ-3 שעות", title: "מרכז העיר, הרבעים 7 ו-8",
-        short: "משער הניצחון, לאורך השאנז אליזה, אל התצפית היפה על האייפל וגשר היפה בפריז, ועד כיכר הקונקורד.",
-        long: "סיור מהנה במרכז העיר. מתחילים ברחבת שער הניצחון וההיסטוריה המדהימה שלו, ממשיכים לאורך השדרה המפורסמת בעולם, ומגיעים אל כמה מהנקודות היפות ביותר בפריז.",
-        hl: ["שער הניצחון וההיסטוריה שלו", "שדרות השאנז אליזה והפטיט פאלה", "התצפית היפה על האייפל בטרוקדרו", "הגשר היפה ביותר בפריז", "כיכר הקונקורד ואזור הגנים"] },
-      en: { dur: "≈ 3 hours", title: "Heart of the City, the 7th & 8th",
-        short: "From the Arc de Triomphe, down the Champs-Élysées, to the finest view of the Eiffel Tower and the prettiest bridge in Paris, ending at Concorde.",
-        long: "An enjoyable tour through the heart of the city. We begin at the Arc de Triomphe and its astonishing history, stroll the world's most famous avenue, and reach some of the most beautiful spots in Paris.",
-        hl: ["The Arc de Triomphe & its history", "The Champs-Élysées & the Petit Palais", "The finest Eiffel Tower viewpoint at Trocadéro", "The prettiest bridge in Paris", "Place de la Concorde & the gardens"] },
-    },
-    {
-      img: "tour-perelachaise.jpg", poster: "poster-perelachaise.jpg",
-      he: { dur: "כ-3 שעות", title: "בית הקברות פר לשז",
-        short: "סיור מרתק ומקורי בבית הקברות האיקוני בעולם. סיפורים מפתיעים, מצבות מעוצבות ונופים מהממים. אולי הסיור הטוב שלי.",
-        long: "סיור מרתק, מקורי ויחודי בבית הקברות המפורסם בעולם. בין המצבות המעוצבות והנופים המהממים נשמע סיפורים שלא תשכחו. אולי הסיור הטוב ביותר שלי.",
-        hl: ["שופן, ביזה, וזמרת בארים שעלתה לגדולה", "אליל רוק אמריקאי אגדי", "מפענח כתב ההירוגליפים וכורה תעלת סואץ", "מרגל קג״ב שטמון כאן, וסיפור חיסול מבצעי", "זמרים מפורסמים ופוליטיקאים “שובבים”"] },
-      en: { dur: "≈ 3 hours", title: "Père-Lachaise Cemetery",
-        short: "A fascinating, original tour of the world's most iconic cemetery: surprising tales, sculpted graves and stunning scenery. Perhaps my very best tour.",
-        long: "A fascinating, original and unique tour of the world's most famous cemetery. Among the sculpted graves and stunning scenery we'll hear stories you won't forget. Perhaps my very best tour.",
-        hl: ["Chopin, Bizet & a cabaret singer who became a legend", "A legendary American rock idol", "The decipherer of hieroglyphs & the builder of Suez", "A KGB spy buried here & a covert assassination", "Famous singers & scandalous politicians"] },
-    },
+      poster: "poster-montmartre.jpg", img: "tour-montmartre.jpg",
+      he: { dur: "כ-3 שעות", title: "סיור פרטי מרתק ואינסטגרמי בשכונת המונמרטר",
+        long: "סיור של כ-3 שעות בעקבות אהבות ואמנים, בין רחובות יפים המתפתלים במעלה גבעת מונמרטר ועד הנקודה הגבוהה בפריז, בזיליקת הלב הקדוש (Sacré-Cœur). נבקר ונצטלם ליד המולן רוז', נפגוש אתרים מתוך הסרט 'אמלי', ונשמע את סיפורם של האמנים הגדולים שפעלו במונמרטר ופיתחו בה את סגנונותיהם, בהם פיקאסו, מודיליאני וואן גוך. סיור סוחף ומרגש ברחובות פסטורליים וססגוניים." },
+      en: { dur: "about 3 hours", title: "Captivating, Instagram-worthy Tour of Montmartre",
+        long: "A 3-hour journey in the footsteps of artists and love affairs, up the pretty winding lanes of Montmartre hill to the highest point in Paris, the Basilica of Sacré-Cœur. We photograph the Moulin Rouge, find spots from the film 'Amélie', and hear the stories of the great artists who worked here, among them Picasso, Modigliani and Van Gogh. A moving, sweeping walk through colourful, picturesque streets." } },
     {
       img: "tour-louvre.jpg",
-      he: { dur: "שעתיים / 3 / 4-5 שעות", title: "סיור פרטי מודרך במוזיאון הלובר",
-        short: "סיור איכותי ואינטימי (1-4 משתתפים) ביצירות הגדולות של המוזיאון החשוב בעולם, בלי ללכת לאיבוד. בשלוש גרסאות.",
-        long: "סיור המכסה את היצירות הגדולות והמוצגים היפים במיוחד, למי שרוצים להפיק את המירב מהביקור במוזיאון הגדול בעולם, מבלי ללכת לאיבוד. מיועד ל-1-4 משתתפים בלבד, להדרכה אישית ואינטימית. ההמלצה שלי: דווקא משום שהלובר גדול ומבלבל, מסלול 3 השעות עם הפסקה קצרה נעים ורגוע יותר.",
-        hl: ["“Highlights”, שעתיים: מונה ליזה, ונוס, סאמותרקי ועוד", "“Classic Louvre”, כ-3 שעות: מסלול מורחב", "“Signature Louvre”, 4-5 שעות: מעל 20 יצירות מפתח", "1-4 משתתפים בלבד, הדרכה אישית", "ההמלצה שלי: מסלול 3 השעות"] },
-      en: { dur: "2 / 3 / 4-5 hours", title: "The Louvre: Private Guided Visit",
-        short: "A high-quality, intimate visit (1-4 guests) to the masterpieces of the world's greatest museum, without getting lost. In three versions.",
-        long: "A visit covering the great masterpieces and most beautiful exhibits, for those who want to make the most of the world's greatest museum, without getting lost. For 1-4 guests only, for personal, intimate guiding. My recommendation: precisely because the Louvre is vast and confusing, the 3-hour route with a short break feels calmer and more enjoyable.",
-        hl: ["“Highlights”, 2 hrs: Mona Lisa, Venus, Samothrace & more", "“Classic Louvre”, ≈ 3 hrs: extended route", "“Signature Louvre”, 4-5 hrs: 20+ key works", "1-4 guests only, personal guiding", "My recommendation: the 3-hour route"] },
-    },
+      he: { dur: "כשעתיים וחצי", title: "סיור פרטי מודרך בעברית בלובר",
+        long: "סיור חובה למגיעים לפריז. הדרכה סוחפת ומרתקת בעברית בין מיטב יצירות האנושות: מהמונה ליזה ועד ונוס ממילוס, מאוצרות מצרים והמומיות ועד מצבת מישע, מהכתרת נפוליאון ועד מצבת חוקי חמורבי. כל הטוב הזה בהובלה יעילה במסדרונות המוזיאון החשוב בעולם, עם ההקשרים ההיסטוריים, התרבותיים והאמנותיים של כל יצירה. סקירה של למעלה מ-20 המוצגים המשמעותיים ביותר. כשעתיים וחצי." },
+      en: { dur: "about 2.5 hours", title: "Private Guided Visit to the Louvre",
+        long: "A must for anyone visiting Paris. A captivating guided walk among humanity's greatest works: from the Mona Lisa to the Venus de Milo, from the treasures and mummies of Egypt to the Mesha Stele, from Napoleon's coronation to the Code of Hammurabi. All led efficiently through the halls of the world's most important museum, with the historical, cultural and artistic context of each piece. Over 20 of the most significant exhibits. About two and a half hours." } },
     {
-      img: "tour-shadows.jpg", poster: "poster-shadows.jpg",
-      he: { dur: "כ-3 שעות", title: "פריז: עיר האורות והצללים",
-        short: "מסע רגלי מקורי בעקבות פרשיות ריגול, חיסולים וסודות ביטחוניים ברחובות העיר היפה בעולם.",
-        long: "סיור רגלי מרתק ומקורי, בעקבות פרשיות ריגול ופרשיות ביטחוניות שהתרחשו ברחובותיה של פריז. סיפורי ביון אמיתיים, מסתורין וצללים שלא תשמעו באף סיור אחר.",
-        hl: ["פרשיות ריגול אמיתיות", "חיסולים וסודות ביטחוניים", "הצד הנסתר של העיר היפה בעולם", "מסע רגלי מקורי וייחודי"] },
-      en: { dur: "≈ 3 hours", title: "Paris: City of Lights & Shadows",
-        short: "An original walking journey through espionage affairs, covert assassinations and security secrets on the streets of the world's most beautiful city.",
-        long: "A fascinating, original walking tour following espionage and security affairs that unfolded on the streets of Paris. True spy stories, mystery and shadows you won't hear on any other tour.",
-        hl: ["Real-life espionage affairs", "Covert assassinations & security secrets", "The hidden side of the world's most beautiful city", "An original, one-of-a-kind walking journey"] },
-    },
+      poster: "poster-marais.jpg", img: "tour-marais.jpg",
+      he: { dur: "כ-3 שעות", title: "סיור עומק פרטי בשכונת המארה הטרנדית",
+        long: "סיור מרתק ומהנה בשכונה שהפכה לשם דבר. נחרוש את הרחובות היפים, נגלה את ההיסטוריה של בתי הרובע, נחשוף שכבה אחר שכבה ונבין את המקום ואת המורשת היהודית בשכונה השיקית בפריז. כ-3 שעות." },
+      en: { dur: "about 3 hours", title: "In-depth Private Tour of the Trendy Marais",
+        long: "A fascinating, enjoyable tour of the neighbourhood that became a byword for cool. We comb its beautiful streets, uncover the history of its mansions layer by layer, and come to understand the place and the Jewish heritage of the chicest quarter in Paris. About 3 hours." } },
     {
-      img: "tour-marais.jpg", poster: "poster-marais.jpg",
-      he: { dur: "כ-3 שעות", title: "הרובע היהודי: לה מארה",
-        short: "צלילה אל הזהות והזיכרון ברובע המארה ההיסטורי: סיפורם של אבירי הטמפלרים ושל יהדות פריז. ופלאפל חם כלול!",
-        long: "סיור עומק ברובע המארה הציורי, בין סמטאות מימי הביניים, בתי קפה ובוטיקים. נכיר את ההיסטוריה של אבירי הטמפלרים ואת סיפורה של הקהילה היהודית בפריז: זהות, זיכרון וחיים. ולא נצא בלי פלאפל חם ברחוב דה רוזיֶה.",
-        hl: ["סמטאות מימי הביניים וכיכר הווז'", "ההיסטוריה של אבירי הטמפלרים", "סיפורה של יהדות פריז לאורך הדורות", "רחוב דה רוזיֶה, לב הרובע", "פלאפל חם כלול בסיור"] },
-      en: { dur: "≈ 3 hours", title: "Le Marais: Jewish Paris",
-        short: "A deep dive into identity and memory in the historic Marais: the story of the Templar knights and of Jewish Paris. A hot falafel is included!",
-        long: "An in-depth tour of the picturesque Marais, through medieval lanes, cafés and boutiques. We'll discover the history of the Templar knights and the story of the Jewish community in Paris: identity, memory and life. And we won't leave without a hot falafel on Rue des Rosiers.",
-        hl: ["Medieval lanes & the Place des Vosges", "The history of the Templar knights", "The story of Jewish Paris through the ages", "Rue des Rosiers, the heart of the quarter", "A hot falafel included"] },
+      poster: "poster-perelachaise.jpg", img: "tour-perelachaise.jpg",
+      he: { dur: "כשעתיים וחצי", title: "הסיור המושלם בבית הקברות האגדי \"פר לשז\"",
+        long: "סיור למתקדמים, למי שכבר ביקרו בפריז. הפנתיאון המפורסם בעולם: מסע מרתק ומרגש בין מצבות יפיפיות ועצים ירוקים בני 150 שנה במקום הקסום והנדיר הזה. נשמע על חייהם של ג'ים מוריסון סולן הדלתות, אדית פיאף, מרגלים, אנשי כמורה וראש ממשלה אחד, ועל חיסולים, אהבות ואמנים ואמניות. כשעתיים וחצי סוחפות." },
+      en: { dur: "about 2.5 hours", title: "The Perfect Tour of the Legendary Père-Lachaise",
+        long: "A tour for the seasoned traveller who has already seen Paris. The world's most famous cemetery: a moving, fascinating walk among gorgeous tombs and 150-year-old trees in this rare, magical place. We'll hear about the lives of Jim Morrison of The Doors, Édith Piaf, spies, clergy and one prime minister, and about assassinations, loves and artists. Two and a half captivating hours." } },
+    {
+      poster: "poster-revolution.jpg", img: "tour-revolution.jpg",
+      he: { dur: "כ-3.5 שעות, כולל הפסקה", title: "סיור פרטי בעקבות המהפכה הצרפתית ונפוליאון",
+        long: "סיור לחובבי היסטוריה, מקורי וייחודי, העובר בין רחובות פריז ברבעים 1, 2, 5 ו-6 ומעניק חוויה היסטורית שאין שנייה לה: הבנה מלאה של תהליכי העומק שהובילו למהפכה הצרפתית ולעלייתו של נפוליאון. נבקר באתרים שבהם קרו הדברים ונבין כיצד הפכה צרפת למי שהיא היום. כ-3.5 שעות, כולל הפסקה." },
+      en: { dur: "about 3.5 hours, incl. a break", title: "Private Tour: The French Revolution & Napoleon",
+        long: "An original, one-of-a-kind tour for history lovers, winding through the streets of the 1st, 2nd, 5th and 6th arrondissements and offering an unmatched historical experience: a full understanding of the deep currents that led to the French Revolution and the rise of Napoleon. We visit the places where it all happened and grasp how France became what it is today. About 3.5 hours, including a break." } },
+    {
+      poster: "poster-shadows.jpg", img: "tour-shadows.jpg",
+      he: { dur: "כשעתיים וחצי", title: "סיור פרטי \"פריז - עיר האורות והצללים\"",
+        long: "בעקבות פרשיות ביטחוניות, ריגול וחיסולים בעיר היפה בעולם. סיור מקורי וייחודי שאין שני לו, על הפרשיות העלומות והמוזרות ביותר שאירעו ברחובות פריז במאות השנים האחרונות. היסטוריה, מתח, אתרים יפים וקצב סוחף. כשעתיים וחצי." },
+      en: { dur: "about 2.5 hours", title: "Private Tour: Paris, City of Lights & Shadows",
+        long: "In the footsteps of security affairs, espionage and assassinations in the world's most beautiful city. An original, one-of-a-kind tour about the strangest, most mysterious affairs that took place on the streets of Paris over recent centuries. History, suspense, beautiful sites and a gripping pace. About two and a half hours." } },
+    {
+      img: "trip-daytrips.jpg",
+      he: { dur: "יום / חצי יום", title: "טיולי יום פרטיים אל מחוץ לעיר",
+        long: "הדרכה צמודה בעברית אל היעדים הקסומים שמסביב לפריז ובצפון צרפת. בין האפשרויות:",
+        hl: ["נורמנדי עילית: אונפלור היפה, צוקי הגיר של אטרטה ואחד הכפרים היפים בצרפת", "טירת שנטיי והכפר אובר-סור-אואז, מקום מגוריו האחרון של ואן גוך", "ארמון וורסאי והגנים (כחצי יום)", "ביתו וגניו של קלוד מונה בג'יברני והעיירה האינסטגרמית La Roche-Guyon", "העיירה הימי-ביניימית Provins (כחצי יום)", "עמק הלואר, כולל ביקור בשתי טירות קסומות", "הערים ריימס, טרואה (בית רש\"י ובית הכנסת) ורואן"] },
+      en: { dur: "full / half day", title: "Private Day Trips Outside the City",
+        long: "Personal Hebrew-language guiding to the magical destinations around Paris and across northern France. Options include:",
+        hl: ["Upper Normandy: lovely Honfleur, the chalk cliffs of Étretat and one of France's prettiest villages", "Château de Chantilly and the village of Auvers-sur-Oise, Van Gogh's final home", "The Palace of Versailles and its gardens (about half a day)", "Claude Monet's house and gardens in Giverny and the town of La Roche-Guyon", "The medieval town of Provins (about half a day)", "The Loire Valley, including two enchanting châteaux", "The cities of Reims, Troyes (Rashi's house and synagogue) and Rouen"] },
     },
   ];
 
@@ -240,12 +203,22 @@
 
   /* ---------- testimonials ---------- */
   const REVIEWS = [
-    { he: { q: "תודה רבה על הסיור המעניין, מאוד נהנינו.", n: "לילי ז'" },
-      en: { q: "Thank you so much for the fascinating tour, we truly enjoyed it.", n: "Lily Z." } },
-    { he: { q: "תודה על הסיור המאלף היום! העברת לנו חוויה שלא נשכח.", n: "אמיר ס'" },
-      en: { q: "Thank you for today's truly enlightening tour! An experience we won't forget.", n: "Amir S." } },
-    { he: { q: "הסיור בהדרכתך היה כניסה מושלמת לפריז. העברת לנו בדרך נעימה ומשעשעת ידע רב ומרשים. אתה מקצוען אמיתי. הרגשנו את ההשקעה ושאתה עושה זאת מכל הלב. נמליץ בחום לכל מכרינו.", n: "נדב ומיכל" },
-      en: { q: "Your tour was the perfect introduction to Paris. You shared impressive knowledge in a warm and entertaining way. You're a true professional. We felt the dedication and that you do this with all your heart. We'll warmly recommend you to everyone.", n: "Nadav & Michal" } },
+    { he: { q: "ג'רי, הסיור בהדרכתך היה כניסה מושלמת לפריז. העברת לנו בדרך נעימה ומשעשעת ידע רב ומרשים. אתה מקצוען אמיתי. הרגשנו את ההשקעה ושאתה עושה זאת מכל הלב. נמליץ בחום לכל מכרינו.", n: "מיכל ונדב" },
+      en: { q: "Jerry, your tour was the perfect introduction to Paris. You shared impressive knowledge in a warm and entertaining way. You're a true professional. We felt the dedication and that you do this with all your heart. We'll warmly recommend you to everyone.", n: "Michal & Nadav" } },
+    { he: { q: "ג'רי, תודה רבה על הסיור המעניין, מאוד נהנינו.", n: "לילי ז'" },
+      en: { q: "Jerry, thank you so much for the fascinating tour, we really enjoyed it.", n: "Lily Z." } },
+    { he: { q: "היינו בסיור של ג'רי בפריז, היה מצוין, מומלץ ממש! הסביר בסבלנות, סיפר סיפורים מעניינים כל הדרך, הביא הרבה ידע והיה מקצועי ביותר. שמחה מאוד שבחרנו להצטרף, בהחלט הוסיף לנו הרבה לטיול. תודה רבה!", n: "אסתר כהן" },
+      en: { q: "We took Jerry's tour in Paris and it was excellent, highly recommended! He explained patiently, told interesting stories the whole way, brought a wealth of knowledge and was extremely professional. So glad we joined, it really added a lot to our trip. Thank you!", n: "Esther Cohen" } },
+    { he: { q: "סיור פשוט נהדר! ג'רי מדריך נפלא, סבלני, מצחיק, ומעביר בחסד את ההיסטוריה הנפלאה של פריז! ממליצה בחום רב!", n: "גאיה פ." },
+      en: { q: "Simply a wonderful tour! Jerry is a lovely guide, patient, funny, and brings the wonderful history of Paris to life with grace. Warmly recommended!", n: "Gaia P." } },
+    { he: { q: "היום עשינו סיור משפחתי עם ג'רי המדריך. בהתחלה חששנו כי אנחנו צעירות שלא אוהבות היסטוריה משעממת... עשיתי הרבה סיורים בחיי אבל ג'רי באמת הצליח להפתיע אותי בתוכן בלתי נגמר ומרתק! מעניין ולא משעמם לרגע, סבלני לכל השאלות. שווה להקדיש שלוש שעות לסיור איתו, זה שווה כל שקל וכל דקה! הסיור פשוט חלף בשנייה ולא האמנו שעברו שלוש שעות!", n: "אוריה א'" },
+      en: { q: "Today we did a family tour with Jerry. At first we were worried, since we're young and don't love boring history... I've done many tours in my life, but Jerry truly managed to surprise me with endless, fascinating content. Interesting and never boring for a second, patient with all our questions. It's worth dedicating three hours to a tour with him, worth every shekel and every minute! The tour just flew by, we couldn't believe three hours had passed!", n: "Oria A." } },
+    { he: { q: "ממליצה בחום לכל מי שמגיע לפריז! משפחות, חברות, אחיות, זוגות! פשוט מומלץ ושווה!", n: "מירב א'" },
+      en: { q: "Warmly recommended to anyone coming to Paris! Families, friends, sisters, couples! Simply recommended and worth it!", n: "Merav A." } },
+    { he: { q: "ג'רי, תודה על הסיור המאלף היום!", n: "אמיר ס'" },
+      en: { q: "Jerry, thank you for today's truly enlightening tour!", n: "Amir S." } },
+    { he: { q: "ג'רי המדריך הכי טוב שאפשר להכיר! הייתה לנו זכות לטייל איתו יומיים בפריז, ואין לנו מילים לתאר כמה נהנינו. מהרגע הראשון הוא היה מקצועי, סבלני, אדיב ומלא ידע. הוא לקח אותנו לכל המקומות החשובים והיפים שחייבים לראות בפריז והפך את החוויה למיוחדת ומהנה הרבה יותר. מעבר לטיולים עצמם, הוא היה זמין עבורנו גם בוואטסאפ לאורך כל הדרך, ענה בשמחה על כל שאלה, נתן המלצות מצוינות ועזר בכל דבר. אם אתם מחפשים מדריך שיהפוך את הטיול לחוויה בלתי נשכחת, עם יחס אישי, אכפתיות והמון מקצועיות, אנחנו ממליצים עליו מכל הלב!", n: "מאריה ח'" },
+      en: { q: "Jerry is the best guide you could ever meet! We had the privilege of touring with him for two days in Paris, and we have no words to describe how much we enjoyed it. From the first moment he was professional, patient, kind and full of knowledge. He took us to all the important, beautiful must-sees in Paris and made the experience so much more special and fun. Beyond the tours, he was available for us on WhatsApp throughout, happily answered every question, gave great recommendations and helped with everything. If you're looking for a guide who'll turn your trip into an unforgettable experience, with a personal touch, care and tons of professionalism, we recommend him with all our hearts!", n: "Maria H." } },
   ];
 
   /* ---------- blog teasers ---------- */
@@ -303,31 +276,25 @@
     </article>`;
   }
   let _toursCols = 0;
-  const toursColCount = () => { const w = window.innerWidth; return w <= 679 ? 2 : (w <= 979 ? 3 : 4); };
+  const toursColCount = () => { const w = window.innerWidth; return w <= 679 ? 1 : (w <= 979 ? 2 : 3); };
   function renderTours() {
     const n = _toursCols = toursColCount();
     const cols = Array.from({ length: n }, () => []);
     TOURS.forEach((tr, i) => cols[i % n].push(tourCardHTML(tr, i)));
     $("#toursGrid").innerHTML = cols.map((c) => `<div class="tours-col">${c.join("")}</div>`).join("");
-    $("#toursNote").innerHTML = TOURS_NOTE[LANG].map((nt) => `
-      <div class="note-pill reveal">${svg(nt.ico, "")}<span>${esc(nt.t)}</span></div>`).join("");
   }
 
-  function renderTrips() {
-    $("#tripsGrid").innerHTML = TRIPS.map((tp, i) => {
-      const d = tp[LANG];
-      const cls = `trip-card reveal ${tp.size === "lg" ? "trip-card--lg" : "trip-card--sm"} ${tp.img ? "" : "no-photo"}`;
-      const bg = tp.img ? `style="background-image:url('${IMG(tp.img)}')"` : "";
-      const deco = tp.img ? "" : svg(tp.icon, "trip-card__deco");
-      const watermark = tp.img ? "" : svg(tp.icon, "trip-card__watermark");
-      return `<article class="${cls}" style="--rd:${(i % 3) * 90}ms">
-        <div class="trip-card__img" ${bg}>${watermark}</div>
-        <span class="trip-card__tag">${esc(d.tag)}</span>
-        <div class="trip-card__body">
-          ${deco}
-          <h3 class="trip-card__title">${esc(d.title)}</h3>
-          <p class="trip-card__desc">${esc(d.d)}</p>
-        </div>
+  function renderTourDetails() {
+    const box = $("#tourDetails"); if (!box) return;
+    box.innerHTML = TOURS.map((tr, i) => {
+      const d = tr[LANG];
+      const hl = d.hl ? `<ul class="det-list">${d.hl.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>` : "";
+      return `<article class="det reveal" id="det-${i}">
+        <span class="det-dur">${esc(d.dur)}</span>
+        <h3>${esc(d.title)}</h3>
+        <p>${esc(d.long)}</p>
+        ${hl}
+        <a class="btn btn-wa det-cta" href="${waHref(LANG)}" target="_blank" rel="noopener">${t("cta.book")}</a>
       </article>`;
     }).join("");
   }
@@ -335,12 +302,10 @@
   function renderReviews() {
     $("#reviewsGrid").innerHTML = REVIEWS.map((r, i) => {
       const d = r[LANG];
-      return `<div class="review-card reveal" style="--rd:${i * 90}ms">
+      return `<div class="review-card reveal" style="--rd:${i * 80}ms">
+        <div class="review-stars" aria-label="5 stars">★★★★★</div>
         <p class="review-quote">${esc(d.q)}</p>
-        <div class="review-foot">
-          <span class="review-name">${esc(d.n)}</span>
-          <span class="review-stars" aria-label="5 stars">★★★★★</span>
-        </div>
+        <p class="review-name">${esc(d.n)}</p>
       </div>`;
     }).join("");
   }
@@ -381,7 +346,7 @@
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "he" ? "rtl" : "ltr";
     applyStatic();
-    renderValues(); renderTours(); renderTrips(); renderReviews(); renderBlog();
+    renderTours(); renderTourDetails(); renderReviews(); renderBlog();
     observeReveals();
   }
 
@@ -446,35 +411,23 @@
     revealSafety = setTimeout(() => $$(".reveal").forEach((el) => el.classList.add("in")), 4000);
   }
 
-  // tour modal
-  const modal = $("#tourModal"), modalImg = $("#modalImg"), modalBody = $("#modalBody");
-  function openTour(idx) {
-    const tr = TOURS[idx], d = tr[LANG];
-    modalImg.src = IMG(tr.img); modalImg.alt = d.title;
-    modalBody.innerHTML = `
-      <span class="tour-dur">${esc(d.dur)}</span>
-      <h3>${esc(d.title)}</h3>
-      <p>${esc(d.long)}</p>
-      <h4>${t("ui.highlights")}</h4>
-      <ul>${d.hl.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>
-      <a class="btn btn-wa btn-block btn-lg" href="${waHref(LANG)}" target="_blank" rel="noopener">
-        <svg class="ico-wa" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.5 8.5 3.5 15.4c0 2.4.7 4.7 1.9 6.7L3 29l7.1-2.3c1.9 1 4 1.6 6 1.6 6.9 0 12.5-5.6 12.5-12.5S22.9 3 16 3zm5.7 14.9c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.4 8.4 0 0 1-2.5-1.5 9.3 9.3 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4z"/></svg>
-        ${t("ui.book")}
-      </a>`;
-    modal.classList.add("open"); modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+  // click a poster -> scroll down to its full details
+  function gotoDetail(idx) {
+    const el = document.getElementById("det-" + idx);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    // correct for any layout shift from lazy images finishing mid-scroll
+    setTimeout(() => el.scrollIntoView({ block: "start" }), 650);
+    setTimeout(() => el.scrollIntoView({ block: "start" }), 1400);
   }
-  function closeModal() { modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; }
   document.addEventListener("click", (e) => {
     const card = e.target.closest("[data-tour]");
-    if (card) openTour(+card.dataset.tour);
+    if (card) gotoDetail(+card.dataset.tour);
   });
   document.addEventListener("keydown", (e) => {
     const card = e.target.closest && e.target.closest("[data-tour]");
-    if (card && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openTour(+card.dataset.tour); }
+    if (card && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); gotoDetail(+card.dataset.tour); }
   });
-  $("#modalClose").addEventListener("click", closeModal);
-  modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
 
   // lightbox
   const lb = $("#lightbox"), lbImg = $("#lbImg");
@@ -492,7 +445,6 @@
       if (e.key === "ArrowRight") openLb(lbIdx + 1);
       if (e.key === "ArrowLeft") openLb(lbIdx - 1);
     }
-    if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
   });
 
   /* ---------- init ---------- */
