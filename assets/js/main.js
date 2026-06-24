@@ -276,7 +276,7 @@
     </article>`;
   }
   let _toursCols = 0;
-  const toursColCount = () => { const w = window.innerWidth; return w <= 679 ? 1 : (w <= 979 ? 2 : 3); };
+  const toursColCount = () => { const w = window.innerWidth; return w <= 679 ? 1 : (w <= 979 ? 2 : 4); };
   function renderTours() {
     const n = _toursCols = toursColCount();
     const cols = Array.from({ length: n }, () => []);
