@@ -132,8 +132,8 @@ html[lang="en"] .lang-toggle .lang-en{ opacity:1; filter:none; transform:scale(1
 }
 html[lang="he"] .hero-eyebrow{ letter-spacing:.04em; }
 .hero-eyebrow::before,.hero-eyebrow::after{ content:""; width:26px; height:1px; background:var(--gold); }
-.hero-title{ font-size:clamp(2rem, 6.5vw, 3.2rem); line-height:1.14; font-weight:700; color:var(--ink); }
-.hero-sub{ font-size:clamp(1.05rem, 3.2vw, 1.3rem); font-weight:400; color:var(--text-soft); margin-top:1rem; max-width:46ch; }
+.hero-title{ font-size:clamp(2.35rem, 8vw, 4.1rem); line-height:1.12; font-weight:700; color:var(--ink); letter-spacing:-.01em; }
+.hero-sub{ font-size:clamp(1.2rem, 4.2vw, 1.6rem); font-weight:700; color:var(--ink); margin-top:1.1rem; max-width:42ch; }
 .hero-cta{ display:flex; gap:.8rem; margin-top:1.6rem; }
 .hero-figure{ width:100%; max-width:540px; }
 .hero-figure img{ width:100%; border-radius:var(--r-lg); box-shadow:var(--shadow-lg); display:block; }
@@ -236,6 +236,7 @@ html[lang="en"] .intro-lead{ max-width:28ch; }
    ============================================================ */
 .about{ background:var(--bg); }
 .about-inner{ display:flex; flex-direction:column; gap:1.8rem; }
+.about-inner--text{ max-width:780px; margin-inline:auto; }
 .about-media{ position:relative; }
 .about-media img{ width:100%; border-radius:var(--r-lg); box-shadow:var(--shadow-md); aspect-ratio:1/1; object-fit:cover; }
 .about-badge{
