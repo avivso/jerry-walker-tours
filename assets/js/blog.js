@@ -43,9 +43,12 @@ window.JWBlog = (() => {
     return posts;
   }
 
-  async function load() {
+  async function load(lang) {
+    lang = lang || (localStorage.getItem("jw_lang") || "he");
+    const file = lang === "en" ? "blog/posts.en.md" : "blog/posts.md";
     try {
-      const r = await fetch("blog/posts.md", { cache: "no-cache" });
+      let r = await fetch(file, { cache: "no-cache" });
+      if (!r.ok && file !== "blog/posts.md") r = await fetch("blog/posts.md", { cache: "no-cache" });
       if (!r.ok) return [];
       return parse(await r.text());
     } catch (e) { return []; }

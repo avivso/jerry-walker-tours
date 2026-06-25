@@ -334,6 +334,11 @@
       </a>`).join("");
   }
 
+  function loadBlog() {
+    if (!window.JWBlog) return;
+    JWBlog.load(LANG).then((posts) => { BLOG_POSTS = posts; renderBlog(); observeReveals(); });
+  }
+
   /* ---------- apply language ---------- */
   function applyStatic() {
     $$("[data-i18n]").forEach((el) => {
@@ -349,7 +354,8 @@
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "he" ? "rtl" : "ltr";
     applyStatic();
-    renderTours(); renderTourDetails(); renderReviews(); renderBlog();
+    renderTours(); renderTourDetails(); renderReviews();
+    loadBlog();
     observeReveals();
   }
 
@@ -449,6 +455,6 @@
   setLang(LANG);
   initScrollSpy();
   onScroll();
-  // load blog posts (from blog/posts.md) for the homepage teaser
-  if (window.JWBlog) JWBlog.load().then((posts) => { BLOG_POSTS = posts; renderBlog(); observeReveals(); });
+  // load blog posts (HE/EN per language) for the homepage teaser
+  loadBlog();
 })();

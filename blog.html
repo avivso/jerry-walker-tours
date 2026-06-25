@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=22" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=23" />
 </head>
 <body>
   <header class="site-header scrolled" id="siteHeader">
@@ -18,9 +18,13 @@
         <img src="assets/img/logo-h-dark.png" alt="Jerry Walker" class="brand-logo" />
       </a>
       <div class="header-cluster">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language / החלפת שפה" title="עברית / English">
+          <span class="lang-he flag" aria-label="עברית"><svg viewBox="0 0 33 24" width="26" height="19" aria-hidden="true"><rect width="33" height="24" fill="#fff"/><rect width="33" height="3.2" y="3" fill="#0038b8"/><rect width="33" height="3.2" y="17.8" fill="#0038b8"/><g fill="none" stroke="#0038b8" stroke-width="1.1"><path d="M16.5 8.3l2.9 5h-5.8z"/><path d="M16.5 15.7l2.9-5h-5.8z"/></g></svg></span>
+          <span class="lang-en flag" aria-label="English"><svg viewBox="0 0 33 24" width="26" height="19" aria-hidden="true"><g fill="#b22234"><rect width="33" height="24"/></g><g fill="#fff"><rect width="33" height="1.85" y="1.85"/><rect width="33" height="1.85" y="5.54"/><rect width="33" height="1.85" y="9.23"/><rect width="33" height="1.85" y="12.92"/><rect width="33" height="1.85" y="16.62"/><rect width="33" height="1.85" y="20.31"/></g><rect width="14.5" height="12.92" fill="#3c3b6e"/><g fill="#fff"><circle cx="2.6" cy="2" r=".7"/><circle cx="5.8" cy="2" r=".7"/><circle cx="9" cy="2" r=".7"/><circle cx="12.2" cy="2" r=".7"/><circle cx="4.2" cy="4.4" r=".7"/><circle cx="7.4" cy="4.4" r=".7"/><circle cx="10.6" cy="4.4" r=".7"/><circle cx="2.6" cy="6.7" r=".7"/><circle cx="5.8" cy="6.7" r=".7"/><circle cx="9" cy="6.7" r=".7"/><circle cx="12.2" cy="6.7" r=".7"/><circle cx="4.2" cy="9" r=".7"/><circle cx="7.4" cy="9" r=".7"/><circle cx="10.6" cy="9" r=".7"/><circle cx="2.6" cy="11.2" r=".7"/><circle cx="5.8" cy="11.2" r=".7"/><circle cx="9" cy="11.2" r=".7"/><circle cx="12.2" cy="11.2" r=".7"/></g></svg></span>
+        </button>
         <a class="btn btn-wa header-wa" id="waBtn" target="_blank" rel="noopener">
           <svg class="ico-wa" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.5 8.5 3.5 15.4c0 2.4.7 4.7 1.9 6.7L3 29l7.1-2.3c1.9 1 4 1.6 6 1.6 6.9 0 12.5-5.6 12.5-12.5S22.9 3 16 3zm0 22.6c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.2 1.4 1.4-4.1-.2-.4a10.2 10.2 0 0 1-1.6-5.5c0-5.7 4.6-10.3 10.3-10.3S26.3 9.7 26.3 15.4 21.7 25.6 16 25.6zm5.7-7.7c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.4 8.4 0 0 1-2.5-1.5 9.3 9.3 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5s0-.4 0-.6l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
-          <span>שריינו סיור</span>
+          <span id="waLabel">שריינו סיור</span>
         </a>
       </div>
     </div>
@@ -28,11 +32,11 @@
 
   <main class="blogpage">
     <div class="container">
-      <a class="back-home" href="index.html">→ חזרה לאתר</a>
+      <a class="back-home" id="backHome" href="index.html">→ חזרה לאתר</a>
       <div class="blogpage-head">
-        <span class="kicker">בלוג · ג'רי ווקר</span>
-        <h1 class="section-title">סיפורים מפריז</h1>
-        <p class="section-sub">כתבות, סיפורים וטיפים שכתבתי על פריז.</p>
+        <span class="kicker" id="blogKicker">בלוג · ג'רי ווקר</span>
+        <h1 class="section-title" id="blogTitle">סיפורים מפריז</h1>
+        <p class="section-sub" id="blogSub">כתבות, סיפורים וטיפים שכתבתי על פריז.</p>
       </div>
       <div id="posts"></div>
     </div>
@@ -48,24 +52,68 @@
     </div>
   </footer>
 
-  <script src="assets/js/blog.js?v=22"></script>
+  <script src="assets/js/blog.js?v=23"></script>
   <script>
     (function () {
-      var wa = "https://wa.me/972504981145?text=" + encodeURIComponent("שלום ג'רי! הגעתי דרך הבלוג ואשמח לפרטים על סיור בפריז 🙂");
-      var b = document.getElementById("waBtn"); if (b) b.href = wa;
-      var f = document.getElementById("waFloat"); if (f) f.href = wa;
-      document.getElementById("year").textContent = new Date().getFullYear();
-      JWBlog.load().then(function (posts) {
-        var el = document.getElementById("posts");
-        if (!posts.length) { el.innerHTML = '<p class="blog-empty">הכתבות בדרך. בקרוב יעלו כאן הסיפורים שכתבתי על פריז.</p>'; return; }
-        el.innerHTML = posts.map(function (p) {
-          return '<article class="post" id="' + p.id + '">'
-            + '<h2>' + JWBlog.esc(p.title) + '</h2>'
-            + (p.date ? '<div class="post-date">' + JWBlog.esc(p.date) + '</div>' : '')
-            + '<div class="post-body">' + p.html + '</div></article>';
-        }).join("");
-        if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+      var I18N = {
+        he: {
+          title: "בלוג · ג'רי ווקר | סיפורים מפריז",
+          kicker: "בלוג · ג'רי ווקר", h1: "סיפורים מפריז",
+          sub: "כתבות, סיפורים וטיפים שכתבתי על פריז.",
+          back: "→ חזרה לאתר", wa: "שריינו סיור",
+          empty: "הכתבות בדרך. בקרוב יעלו כאן הסיפורים שכתבתי על פריז.",
+          waText: "שלום ג'רי! הגעתי דרך הבלוג ואשמח לפרטים על סיור בפריז 🙂"
+        },
+        en: {
+          title: "Blog · Jerry Walker | Stories from Paris",
+          kicker: "Blog · Jerry Walker", h1: "Stories from Paris",
+          sub: "Articles, stories and tips I've written about Paris.",
+          back: "← Back to the site", wa: "Book a tour",
+          empty: "Posts are on the way. My Paris stories will appear here soon.",
+          waText: "Hi Jerry! I found you through the blog and would love details about a Paris tour 🙂"
+        }
+      };
+      var LANG = localStorage.getItem("jw_lang") || "he";
+      var $ = function (id) { return document.getElementById(id); };
+
+      function renderPosts() {
+        JWBlog.load(LANG).then(function (posts) {
+          var el = $("posts");
+          if (!posts.length) { el.innerHTML = '<p class="blog-empty">' + I18N[LANG].empty + '</p>'; return; }
+          el.innerHTML = posts.map(function (p) {
+            return '<article class="post" id="' + p.id + '">'
+              + '<h2>' + JWBlog.esc(p.title) + '</h2>'
+              + (p.date ? '<div class="post-date">' + JWBlog.esc(p.date) + '</div>' : '')
+              + '<div class="post-body">' + p.html + '</div></article>';
+          }).join("");
+          if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function () { t.scrollIntoView(); }, 60); }
+        });
+      }
+
+      function applyLang() {
+        var d = I18N[LANG];
+        document.documentElement.lang = LANG;
+        document.documentElement.dir = LANG === "he" ? "rtl" : "ltr";
+        document.title = d.title;
+        $("blogKicker").textContent = d.kicker;
+        $("blogTitle").textContent = d.h1;
+        $("blogSub").textContent = d.sub;
+        $("backHome").textContent = d.back;
+        $("waLabel").textContent = d.wa;
+        var wa = "https://wa.me/972504981145?text=" + encodeURIComponent(d.waText);
+        if ($("waBtn")) $("waBtn").href = wa;
+        if ($("waFloat")) $("waFloat").href = wa;
+        renderPosts();
+      }
+
+      $("year").textContent = new Date().getFullYear();
+      var toggle = $("langToggle");
+      if (toggle) toggle.addEventListener("click", function () {
+        LANG = LANG === "he" ? "en" : "he";
+        localStorage.setItem("jw_lang", LANG);
+        applyLang();
       });
+      applyLang();
     })();
   </script>
 </body>
