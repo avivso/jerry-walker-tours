@@ -286,6 +286,32 @@ html[lang="en"] .intro-lead{ max-width:28ch; }
 .choice-cta-line{ font-weight:700; line-height:1.45; color:#fff;
   font-size:clamp(1.25rem,4.4vw,1.7rem); margin:0 auto 1.4rem; max-width:32ch; }
 .choice-cta .btn-wa{ box-shadow:0 10px 26px rgba(37,211,102,.4); }
+
+/* hero rating badge + rotating review snippet */
+.hero-rating{ display:flex; align-items:center; gap:.85rem; flex-wrap:wrap; margin:.1rem 0 1.5rem; }
+.hero-rating__badge{ display:inline-flex; align-items:center; gap:.4rem; background:#fff;
+  border:1px solid var(--line); border-radius:999px; padding:.4rem .85rem; box-shadow:var(--shadow-sm); white-space:nowrap; }
+.hero-rating__num{ font-weight:700; font-size:1.3rem; color:var(--ink); line-height:1; }
+.hero-rating__stars{ color:var(--star); letter-spacing:.04em; font-size:1.02rem; }
+.hero-rating__cap{ font-size:.78rem; color:var(--text-soft); }
+.hero-rating__quote{ flex:1; min-width:200px; margin:0; font-size:1rem; line-height:1.45;
+  color:var(--ink); font-weight:700; opacity:1; transition:opacity .38s var(--ease); }
+.hero-rating__quote::before{ content:"\201C"; } .hero-rating__quote::after{ content:"\201D"; }
+.hero-rating__quote.is-fading{ opacity:0; }
+
+/* tour details modal */
+.tour-modal{ position:fixed; inset:0; z-index:200; display:none; align-items:flex-start; justify-content:center;
+  padding:5vh 1rem; background:rgba(20,18,14,.62); backdrop-filter:blur(3px); overflow-y:auto; }
+.tour-modal.open{ display:flex; }
+.tour-modal__panel{ position:relative; background:#fff; border-radius:var(--r-lg); max-width:640px; width:100%;
+  padding:2.1rem 1.9rem 1.9rem; box-shadow:var(--shadow-md); animation:tmIn .3s var(--ease); }
+@keyframes tmIn{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:none; } }
+.tour-modal__close{ position:absolute; top:.5rem; inset-inline-end:.7rem; background:none; border:0;
+  font-size:2.1rem; line-height:1; cursor:pointer; color:var(--text-soft); padding:.2rem .5rem; }
+.tour-modal__close:hover{ color:var(--ink); }
+.tour-modal__body h3{ font-size:1.55rem; line-height:1.2; margin:.35rem 0 .6rem; }
+.tour-modal__body p{ color:var(--text-soft); font-size:1.05rem; line-height:1.75; }
+.tour-modal__body .tm-cta{ margin-top:1.4rem; }
 .det-list{ list-style:none; margin:.9rem 0 0; display:flex; flex-direction:column; gap:.5rem; }
 .det-list li{ display:flex; gap:.55rem; align-items:flex-start; font-size:1rem; color:var(--text); }
 .det-list li::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--ink); margin-top:.6em; flex:none; }

@@ -12,6 +12,11 @@
     en: "Hi Jerry! I found you through your website and would love details and pricing for a Paris tour 🙂",
   };
   const waHref = (lang) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT[lang])}`;
+  const WA_TEXT_TOUR = {
+    he: (name) => `שלום ג'רי! הגעתי דרך האתר ואשמח לשריין את הסיור "${name}" ולקבל פרטים ומחירים 🙂`,
+    en: (name) => `Hi Jerry! I came through your website and would love to book the "${name}" tour and get details and pricing 🙂`,
+  };
+  const waHrefTour = (lang, name) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_TOUR[lang](name))}`;
 
   /* ---------- static UI strings ---------- */
   const I18N = {
@@ -34,6 +39,7 @@
       "about.p2": "אני פריק של טיולים וחובב מושבע של היסטוריה, ומוסמך להדרכה בארבע שפות: אנגלית, צרפתית, עברית וערבית. הדרכתי מאות סיורים ואלפי מטיילים. אני אוהב להביא למטיילים שלי את הסיפורים המרתקים ביותר על פריז, וחשוב לי שכשתחזרו ארצה תרגישו שהביקור בעיר האורות היה משודרג ומושלם. ברחבי פריז אני מדריך כמה סיורי עומק מקוריים לגמרי, מדריך בעברית במוזיאון הלובר, ומוביל גם קבוצות ומשפחות לטיולים מרהיבים מחוץ לעיר לפי בקשה.",
       "about.cta": "שלחו לי וואטסאפ", "about.badgeNum": "1-12", "about.badgeLabel": "מטיילים · פרטי בלבד",
       "reviews.kicker": "מטיילים מספרים", "reviews.title": "מה אומרים עליי המטיילים שטיילו עמי בפריז?",
+      "rating.caption": "ממוצע דירוג המטיילים",
       "gallery.kicker": "תמונות מסיורים", "gallery.title": "רגעים מהשטח",
       "blog.kicker": "בלוג · כתבות · פוסטים", "blog.title": "סיפורים מפריז",
       "blog.sub": "קטעים, סיפורים וטיפים שכתבתי על פריז לאורך השנה.",
@@ -67,6 +73,7 @@
       "about.p2": "I am a travel fanatic and a die-hard history lover, certified to guide in four languages: English, French, Hebrew and Arabic. I have led hundreds of tours and thousands of travellers. I love bringing my guests the most fascinating stories about Paris, and it matters to me that when you go home you feel your visit to the City of Light was elevated and complete. Across Paris I guide several completely original in-depth tours, I guide the Louvre in Hebrew, and I also lead groups and families on stunning day trips outside the city on request.",
       "about.cta": "Send me a WhatsApp", "about.badgeNum": "1-12", "about.badgeLabel": "travellers · private only",
       "reviews.kicker": "Travellers' words", "reviews.title": "What travellers who toured Paris with me say",
+      "rating.caption": "average traveller rating",
       "gallery.kicker": "Photos from the tours", "gallery.title": "Moments on the ground",
       "blog.kicker": "Blog · Articles · Posts", "blog.title": "Stories from Paris",
       "blog.sub": "Notes, stories and tips I've written about Paris over the year.",
@@ -225,6 +232,24 @@
       en: { q: "Jerry is the best guide you could ever meet! We had the privilege of touring with him for two days in Paris, and we have no words to describe how much we enjoyed it. From the first moment he was professional, patient, kind and full of knowledge. He took us to all the important, beautiful must-sees in Paris and made the experience so much more special and fun. Beyond the tours, he was available for us on WhatsApp throughout, happily answered every question, gave great recommendations and helped with everything. If you're looking for a guide who'll turn your trip into an unforgettable experience, with a personal touch, care and tons of professionalism, we recommend him with all our hearts!", n: "Maria H." } },
   ];
 
+  /* ---------- short rotating review snippets (hero rating) ---------- */
+  const REVIEW_SNIPPETS = {
+    he: [
+      "ג'רי הוא מדריך הטיולים הכי טוב שנתקלנו בו, ועשינו מלא סיורים בחיינו",
+      "סיור פשוט נהדר! סבלני, מצחיק ומעביר את ההיסטוריה בחסד",
+      "תוכן בלתי נגמר ומרתק, לא משעמם לרגע",
+      "מקצוען אמיתי, מרגישים שהוא עושה את זה מכל הלב",
+      "שווה כל שקל וכל דקה, הסיור פשוט חלף בשנייה",
+    ],
+    en: [
+      "Jerry is the best tour guide we've ever come across, and we've done loads of tours",
+      "Simply a wonderful tour! Patient, funny, and brings history to life with grace",
+      "Endless, fascinating content, never boring for a second",
+      "A true professional, you feel he does it with all his heart",
+      "Worth every shekel and every minute, the tour just flew by",
+    ],
+  };
+
   /* ---------- blog teasers ---------- */
   const POSTS = [
     { img: "tour-classic.jpg", link: "https://www.facebook.com/JerryWalkerTrips/",
@@ -339,6 +364,20 @@
     JWBlog.load(LANG).then((posts) => { BLOG_POSTS = posts; renderBlog(); observeReveals(); });
   }
 
+  /* ---------- hero rating: rotating review snippet ---------- */
+  let ratingTimer;
+  function startRatingTicker() {
+    const el = $("#ratingQuote"); if (!el) return;
+    const arr = REVIEW_SNIPPETS[LANG] || REVIEW_SNIPPETS.he;
+    let i = 0;
+    clearInterval(ratingTimer);
+    el.textContent = arr[0];
+    ratingTimer = setInterval(() => {
+      el.classList.add("is-fading");
+      setTimeout(() => { i = (i + 1) % arr.length; el.textContent = arr[i]; el.classList.remove("is-fading"); }, 380);
+    }, 4200);
+  }
+
   /* ---------- apply language ---------- */
   function applyStatic() {
     $$("[data-i18n]").forEach((el) => {
@@ -354,8 +393,9 @@
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === "he" ? "rtl" : "ltr";
     applyStatic();
-    renderTours(); renderTourDetails(); renderReviews();
+    renderTours(); renderReviews();
     loadBlog();
+    startRatingTicker();
     observeReveals();
   }
 
@@ -413,22 +453,34 @@
     revealSafety = setTimeout(() => $$(".reveal").forEach((el) => el.classList.add("in")), 4000);
   }
 
-  // click a poster -> scroll down to its full details
-  function gotoDetail(idx) {
-    const el = document.getElementById("det-" + idx);
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-    // correct for any layout shift from lazy images finishing mid-scroll
-    setTimeout(() => el.scrollIntoView({ block: "start" }), 650);
-    setTimeout(() => el.scrollIntoView({ block: "start" }), 1400);
+  // click a poster -> open the tour details in a modal (no page-jumping)
+  const tm = $("#tourModal"), tmBody = $("#tourModalBody");
+  function openTour(idx) {
+    if (!tm) return;
+    const tr = TOURS[idx]; if (!tr) return;
+    const d = tr[LANG];
+    const hl = d.hl ? `<ul class="det-list">${d.hl.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>` : "";
+    const lead = d.lead ? `<p class="det-lead">${esc(d.lead)}</p>` : "";
+    tmBody.innerHTML = `
+      <span class="det-dur">${esc(d.dur)}</span>
+      <h3>${esc(d.title)}</h3>
+      ${lead}
+      <p>${esc(d.long)}</p>
+      ${hl}
+      <a class="btn btn-wa btn-block btn-lg tm-cta" href="${waHrefTour(LANG, d.title)}" target="_blank" rel="noopener">${t("cta.book")}</a>`;
+    tmBody.scrollTop = 0;
+    tm.classList.add("open"); tm.setAttribute("aria-hidden", "false"); document.body.style.overflow = "hidden";
   }
+  function closeTour() { if (!tm) return; tm.classList.remove("open"); tm.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; }
   document.addEventListener("click", (e) => {
     const card = e.target.closest("[data-tour]");
-    if (card) gotoDetail(+card.dataset.tour);
+    if (card) { openTour(+card.dataset.tour); return; }
+    if (e.target.closest("#tourModalClose") || e.target === tm) closeTour();
   });
   document.addEventListener("keydown", (e) => {
     const card = e.target.closest && e.target.closest("[data-tour]");
-    if (card && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); gotoDetail(+card.dataset.tour); }
+    if (card && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openTour(+card.dataset.tour); }
+    if (e.key === "Escape" && tm && tm.classList.contains("open")) closeTour();
   });
 
   // lightbox
