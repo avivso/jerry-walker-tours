@@ -442,7 +442,7 @@ html[dir="rtl"] .cmethod-val{ text-align:right; }
   .trips-grid{ grid-template-columns:repeat(3,1fr); }
   .trip-card--wide{ grid-column:span 2; }
   .tours-grid{ grid-template-columns:repeat(4,1fr); }     /* desktop: 2 rows of 4 */
-  .reviews-grid{ grid-template-columns:repeat(3,1fr); }   /* standing review cards */
+  .reviews-grid{ grid-template-columns:repeat(4,1fr); }   /* desktop: 2 rows of 4 */
 }
 @media (max-width:679px){
   .main-nav{ position:fixed; inset:0 0 0 auto; width:min(82vw,320px); background:#fff;
