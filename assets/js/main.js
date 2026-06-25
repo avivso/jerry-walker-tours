@@ -112,7 +112,7 @@
       en: { dur: "about 3 hours", title: "Captivating, Instagram-worthy Tour of Montmartre",
         long: "A 3-hour journey in the footsteps of artists and love affairs, up the pretty winding lanes of Montmartre hill to the highest point in Paris, the Basilica of Sacré-Cœur. We photograph the Moulin Rouge, find spots from the film 'Amélie', and hear the stories of the great artists who worked here, among them Picasso, Modigliani and Van Gogh. A moving, sweeping walk through colourful, picturesque streets." } },
     {
-      img: "tour-louvre.jpg",
+      img: "tour-louvre.jpg", poster: "poster-louvre.jpg",
       he: { dur: "כשעתיים וחצי", title: "סיור פרטי מודרך בעברית בלובר",
         long: "סיור חובה למגיעים לפריז. הדרכה סוחפת ומרתקת בעברית בין מיטב יצירות האנושות: מהמונה ליזה ועד ונוס ממילוס, מאוצרות מצרים והמומיות ועד מצבת מישע, מהכתרת נפוליאון ועד מצבת חוקי חמורבי. כל הטוב הזה בהובלה יעילה במסדרונות המוזיאון החשוב בעולם, עם ההקשרים ההיסטוריים, התרבותיים והאמנותיים של כל יצירה. סקירה של למעלה מ-20 המוצגים המשמעותיים ביותר. כשעתיים וחצי." },
       en: { dur: "about 2.5 hours", title: "Private Guided Visit to the Louvre",
