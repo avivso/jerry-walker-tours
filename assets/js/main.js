@@ -236,6 +236,8 @@
 
   /* ---------- gallery ---------- */
   const GALLERY = [
+    "gal-31","gal-32","gal-33","gal-34","gal-35","gal-36","gal-37","gal-38",
+    "gal-39","gal-40","gal-41","gal-42",
     "gal-05","gal-03","gal-06","gal-01","gal-02","gal-07","gal-08","gal-09",
     "gal-11","gal-12","gal-04","gal-14","gal-15","gal-10","gal-17","gal-18",
     "gal-20","gal-19","gal-16","gal-13",
