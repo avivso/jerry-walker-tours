@@ -120,15 +120,17 @@
     {
       poster: "poster-marais.jpg", img: "tour-marais.jpg",
       he: { dur: "כ-3 שעות", title: "סיור עומק פרטי בשכונת המארה הטרנדית",
-        long: "סיור מרתק ומהנה בשכונה שהפכה לשם דבר. נחרוש את הרחובות היפים, נגלה את ההיסטוריה של בתי הרובע, נחשוף שכבה אחר שכבה ונבין את המקום ואת המורשת היהודית בשכונה השיקית בפריז. כ-3 שעות." },
+        long: "סיור מרתק ומהנה בשכונה שהפכה לשם דבר. נחרוש את הרחובות היפים, נגלה את ההיסטוריה של בתי הרובע, נחשוף שכבה אחר שכבה ונבין את המקום ואת המורשת היהודית בשכונה השיקית בפריז. בסיור זה נגיע לכל הפינות הקסומות והיפות של המארה ונבין כיצד המהפכה הצרפתית שינתה את גורלם של יהודי צרפת. כ-3 שעות." },
       en: { dur: "about 3 hours", title: "In-depth Private Tour of the Trendy Marais",
-        long: "A fascinating, enjoyable tour of the neighbourhood that became a byword for cool. We comb its beautiful streets, uncover the history of its mansions layer by layer, and come to understand the place and the Jewish heritage of the chicest quarter in Paris. About 3 hours." } },
+        long: "A fascinating, enjoyable tour of the neighbourhood that became a byword for cool. We comb its beautiful streets, uncover the history of its mansions layer by layer, and come to understand the place and the Jewish heritage of the chicest quarter in Paris. On this tour we reach all the magical, beautiful corners of the Marais and understand how the French Revolution changed the fate of France's Jews. About 3 hours." } },
     {
       poster: "poster-perelachaise.jpg", img: "tour-perelachaise.jpg",
       he: { dur: "כשעתיים וחצי", title: "הסיור המושלם בבית הקברות האגדי \"פר לשז\"",
-        long: "סיור למתקדמים, למי שכבר ביקרו בפריז. הפנתיאון המפורסם בעולם: מסע מרתק ומרגש בין מצבות יפיפיות ועצים ירוקים בני 150 שנה במקום הקסום והנדיר הזה. נשמע על חייהם של ג'ים מוריסון סולן הדלתות, אדית פיאף, מרגלים, אנשי כמורה וראש ממשלה אחד, ועל חיסולים, אהבות ואמנים ואמניות. כשעתיים וחצי סוחפות." },
+        lead: "תשכחו כל מה שאתם יודעים או מדמיינים על בתי קברות!",
+        long: "זהו סיור למתקדמים, למי שכבר ביקרו בפריז. הפנתיאון המפורסם בעולם: מסע מרתק ומרגש בין מצבות יפיפיות ועצים ירוקים בני 150 שנה במקום הקסום והנדיר הזה. נשמע על חייהם של ג'ים מוריסון סולן הדלתות, אדית פיאף, מרגלים, אנשי כמורה וראש ממשלה אחד, ועל חיסולים, אהבות, אמנים ואמניות. כשעתיים וחצי סוחפות." },
       en: { dur: "about 2.5 hours", title: "The Perfect Tour of the Legendary Père-Lachaise",
-        long: "A tour for the seasoned traveller who has already seen Paris. The world's most famous cemetery: a moving, fascinating walk among gorgeous tombs and 150-year-old trees in this rare, magical place. We'll hear about the lives of Jim Morrison of The Doors, Édith Piaf, spies, clergy and one prime minister, and about assassinations, loves and artists. Two and a half captivating hours." } },
+        lead: "Forget everything you know or imagine about cemeteries!",
+        long: "This is a tour for the seasoned traveller who has already seen Paris. The world's most famous cemetery: a moving, fascinating walk among gorgeous tombs and 150-year-old trees in this rare, magical place. We'll hear about the lives of Jim Morrison of The Doors, Édith Piaf, spies, clergy and one prime minister, and about assassinations, loves and artists. Two and a half captivating hours." } },
     {
       poster: "poster-revolution.jpg", img: "tour-revolution.jpg",
       he: { dur: "כ-3 שעות", title: "סיור פרטי בעקבות המהפכה הצרפתית ונפוליאון",
@@ -145,10 +147,10 @@
       img: "trip-daytrips.jpg",
       he: { dur: "יום / חצי יום", title: "טיולי יום פרטיים אל מחוץ לעיר",
         long: "הדרכה צמודה בעברית אל היעדים הקסומים שמסביב לפריז ובצפון צרפת. בין האפשרויות:",
-        hl: ["נורמנדי עילית: אונפלור היפה, צוקי הגיר של אטרטה ואחד הכפרים היפים בצרפת", "טירת שנטיי והכפר אובר-סור-אואז, מקום מגוריו האחרון של ואן גוך", "ארמון וורסאי והגנים (כחצי יום)", "ביתו וגניו של קלוד מונה בג'יברני והעיירה האינסטגרמית La Roche-Guyon", "העיירה הימי-ביניימית Provins (כחצי יום)", "עמק הלואר, כולל ביקור בשתי טירות קסומות", "הערים ריימס, טרואה (בית רש\"י ובית הכנסת) ורואן"] },
+        hl: ["נורמנדי עלית: העיירה אונפלור היפה, צוקי הגיר של אֶטְרֶטַה (מנופים היפים באירופה), ולקינוח ביקור בכפר Veules-les-Roses, אחד היפים ביותר בצרפת (יום שלם)", "טירת שנטיי והכפר אובר-סור-אואז, מקום מגוריו האחרון של ואן גוך", "ארמון וורסאי והגנים (כחצי יום)", "ביתו וגניו של קלוד מונה בג'יברני והעיירה האינסטגרמית La Roche-Guyon", "העיירה הימי-ביניימית Provins (כחצי יום)", "עמק הלואר, כולל ביקור בשתי טירות קסומות", "הערים ריימס, טרואה (בית רש\"י ובית הכנסת) ורואן"] },
       en: { dur: "full / half day", title: "Private Day Trips Outside the City",
         long: "Personal Hebrew-language guiding to the magical destinations around Paris and across northern France. Options include:",
-        hl: ["Upper Normandy: lovely Honfleur, the chalk cliffs of Étretat and one of France's prettiest villages", "Château de Chantilly and the village of Auvers-sur-Oise, Van Gogh's final home", "The Palace of Versailles and its gardens (about half a day)", "Claude Monet's house and gardens in Giverny and the town of La Roche-Guyon", "The medieval town of Provins (about half a day)", "The Loire Valley, including two enchanting châteaux", "The cities of Reims, Troyes (Rashi's house and synagogue) and Rouen"] },
+        hl: ["Upper Normandy: the lovely town of Honfleur, the chalk cliffs of Étretat (among Europe's most beautiful views) and, to finish, a visit to Veules-les-Roses, one of France's prettiest villages (full day)", "Château de Chantilly and the village of Auvers-sur-Oise, Van Gogh's final home", "The Palace of Versailles and its gardens (about half a day)", "Claude Monet's house and gardens in Giverny and the town of La Roche-Guyon", "The medieval town of Provins (about half a day)", "The Loire Valley, including two enchanting châteaux", "The cities of Reims, Troyes (Rashi's house and synagogue) and Rouen"] },
     },
   ];
 
@@ -286,9 +288,11 @@
     box.innerHTML = TOURS.map((tr, i) => {
       const d = tr[LANG];
       const hl = d.hl ? `<ul class="det-list">${d.hl.map((h) => `<li>${esc(h)}</li>`).join("")}</ul>` : "";
+      const lead = d.lead ? `<p class="det-lead">${esc(d.lead)}</p>` : "";
       return `<article class="det reveal" id="det-${i}">
         <span class="det-dur">${esc(d.dur)}</span>
         <h3>${esc(d.title)}</h3>
+        ${lead}
         <p>${esc(d.long)}</p>
         ${hl}
         <a class="btn btn-wa det-cta" href="${waHref(LANG)}" target="_blank" rel="noopener">${t("cta.book")}</a>
