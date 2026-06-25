@@ -450,5 +450,5 @@
   initScrollSpy();
   onScroll();
   // load blog posts (from blog/posts.md) for the homepage teaser
-  if (window.JWBlog) JWBlog.load().then((posts) => { BLOG_POSTS = posts; renderBlog(); });
+  if (window.JWBlog) JWBlog.load().then((posts) => { BLOG_POSTS = posts; renderBlog(); observeReveals(); });
 })();

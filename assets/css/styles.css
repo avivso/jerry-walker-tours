@@ -253,13 +253,17 @@ html[lang="en"] .intro-lead{ max-width:28ch; }
    TESTIMONIALS  (stars at the END of each review)
    ============================================================ */
 .testimonials{ background:var(--bg-soft); }
-.reviews-grid{ display:grid; grid-template-columns:1fr; gap:1.1rem; }
+/* masonry wall: cards keep their natural height and pack evenly */
+.reviews-grid{ column-count:1; column-gap:1.1rem; }
 .review-card{
   background:#fff; border:1px solid var(--line); border-radius:var(--r-lg);
-  padding:1.8rem 1.6rem; box-shadow:var(--shadow-sm); display:flex; flex-direction:column;
+  padding:1.8rem 1.6rem; box-shadow:var(--shadow-sm);
+  break-inside:avoid; -webkit-column-break-inside:avoid; page-break-inside:avoid;
+  margin:0 0 1.1rem;
+  transform:none !important; /* opacity-only reveal; transforms inside CSS columns vanish in Chrome */
 }
 .review-stars{ color:var(--star); font-size:1.15rem; letter-spacing:.12em; white-space:nowrap; margin-bottom:.9rem; }
-.review-quote{ font-family:var(--serif); font-size:1.18rem; line-height:1.55; color:var(--ink); margin-bottom:1rem; flex:1; }
+.review-quote{ font-family:var(--serif); font-size:1.18rem; line-height:1.55; color:var(--ink); margin-bottom:1rem; }
 .review-name{ font-weight:600; color:var(--gold-deep,var(--text)); font-size:.98rem; }
 
 /* hero social row */
@@ -423,7 +427,7 @@ html[dir="rtl"] .cmethod-val{ text-align:right; }
   .value-grid{ grid-template-columns:repeat(4,1fr); }
   .trips-grid{ grid-template-columns:repeat(2,1fr); gap:1.2rem; }
   .tours-grid{ grid-template-columns:repeat(2,1fr); }
-  .reviews-grid{ grid-template-columns:repeat(2,1fr); }
+  .reviews-grid{ column-count:2; }
   .blog-grid{ grid-template-columns:repeat(3,1fr); gap:1.4rem; }
   .tours-note{ flex-direction:row; }
   .modal{ align-items:center; padding:4vw; }
@@ -442,7 +446,7 @@ html[dir="rtl"] .cmethod-val{ text-align:right; }
   .trips-grid{ grid-template-columns:repeat(3,1fr); }
   .trip-card--wide{ grid-column:span 2; }
   .tours-grid{ grid-template-columns:repeat(4,1fr); }     /* desktop: 2 rows of 4 */
-  .reviews-grid{ grid-template-columns:repeat(4,1fr); }   /* desktop: 2 rows of 4 */
+  .reviews-grid{ column-count:4; }   /* desktop: balanced 4-column wall */
 }
 @media (max-width:679px){
   .main-nav{ position:fixed; inset:0 0 0 auto; width:min(82vw,320px); background:#fff;
