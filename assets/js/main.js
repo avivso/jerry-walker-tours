@@ -20,19 +20,19 @@
       "nav.blog": "בלוג", "nav.about": "אודות", "nav.contact": "צור קשר", "nav.reviews": "המלצות",
       "cta.whatsapp": "שריינו סיור בוואטסאפ", "cta.book": "שריינו סיור פרטי", "details.title": "פירוט הסיורים",
       "hero.eyebrow": "מדריך אקדמאי מוסמך · סיורים פרטיים",
-      "hero.title": "להפיק את המיטב מהביקור בפריז - לטייל ולהכיר אותה כמו מקומי/ת",
-      "hero.sub": "סיורים פרטיים בפריז ומחוצה לה. להכיר את ההיסטוריה, האמנות והתרבות המקומית באווירה נעימה ומשעשעת ובליווי סיפורים מרתקים.",
+      "hero.title": "לטייל וליהנות מפריז כמו מדריך מקומי",
+      "hero.sub": "סיורי עומק פרטיים בפריז ומחוצה לה. היסטוריה ותרבות באווירה נעימה ומרתקת.",
       "hero.explore": "גלו את הסיורים",
       "intro.lead": "לא עוד טיול עם המון. סיור פרטי, אישי ומעמיק, שנבנה סביבכם, סביב הקצב והסקרנות שלכם, ומלא בסיפורים שלא תשמעו בשום מקום אחר.",
-      "tours.kicker": "סיורים פרטיים ברחבי פריז", "tours.title": "הנה הסיורים שלנו",
+      "tours.kicker": "סיורים פרטיים ברחבי פריז", "tours.title": "הנה הסיורים שאני מציע:",
       "tours.sub": "לחצו על כרזה כדי לראות את פרטי הסיור.",
       "trips.kicker": "טיולי יום פרטיים מחוץ לעיר", "trips.title": "מעבר לפריז",
       "trips.sub": "טיולי יום פרטיים ומודרכים בעברית אל היעדים הקסומים שמסביב לעיר ובצפון צרפת.",
       "about.kicker": "נעים להכיר", "about.title": "כמה מילים עליי",
       "about.p1": "שמי ירון, אבל כולם קוראים לי ג'רי. אני מדריך ותיק ומנוסה. גרתי וחייתי בחו״ל שנים לא מעטות, בהן בפיליפינים, בבלגיה ובצרפת. אני מורה דרך מוסמך מטעם יד בן-צבי בירושלים, ובמהלך השנים השלמתי שני תארים מתקדמים (M.A) בהצטיינות: האחד מאוניברסיטת פריז-8 והשני מבר-אילן 🤓.",
       "about.p2": "אני פריק של טיולים וחובב מושבע של היסטוריה, ומוסמך להדרכה בארבע שפות: אנגלית, צרפתית, עברית וערבית. הדרכתי מאות סיורים ואלפי מטיילים. אני אוהב להביא למטיילים שלי את הסיפורים המרתקים ביותר על פריז, וחשוב לי שכשתחזרו ארצה תרגישו שהביקור בעיר האורות היה משודרג ומושלם. ברחבי פריז אני מדריך כמה סיורי עומק מקוריים לגמרי, מדריך בעברית במוזיאון הלובר, ומוביל גם קבוצות ומשפחות לטיולים מרהיבים מחוץ לעיר לפי בקשה.",
-      "about.cta": "דברו איתי בוואטסאפ", "about.badgeNum": "1-12", "about.badgeLabel": "מטיילים · פרטי בלבד",
-      "reviews.kicker": "מטיילים מספרים", "reviews.title": "המלצות של מבקרים שטיילו איתי",
+      "about.cta": "שלחו לי וואטסאפ", "about.badgeNum": "1-12", "about.badgeLabel": "מטיילים · פרטי בלבד",
+      "reviews.kicker": "מטיילים מספרים", "reviews.title": "מה אומרים עליי המטיילים שטיילו עמי בפריז?",
       "gallery.kicker": "תמונות מסיורים", "gallery.title": "רגעים מהשטח",
       "blog.kicker": "בלוג · כתבות · פוסטים", "blog.title": "סיפורים מפריז",
       "blog.sub": "קטעים, סיפורים וטיפים שכתבתי על פריז לאורך השנה.",
@@ -52,19 +52,19 @@
       "nav.blog": "Blog", "nav.about": "About", "nav.contact": "Contact", "nav.reviews": "Reviews",
       "cta.whatsapp": "Book on WhatsApp", "cta.book": "Book a private tour", "details.title": "Tour details",
       "hero.eyebrow": "Certified academic guide · Private tours",
-      "hero.title": "Make the most of your visit to Paris - explore it like a local",
-      "hero.sub": "Private tours in Paris and beyond. Discover the history, art and local culture in a relaxed, entertaining atmosphere, with captivating stories along the way.",
+      "hero.title": "Explore and enjoy Paris like a local guide",
+      "hero.sub": "Private in-depth tours in Paris and beyond. History and culture in a warm, captivating atmosphere.",
       "hero.explore": "Explore the tours",
       "intro.lead": "Not another tour with the crowd. A private, personal, in-depth experience, built around you, your pace and your curiosity, and full of stories you won't hear anywhere else.",
-      "tours.kicker": "Private tours across Paris", "tours.title": "Here are our tours",
+      "tours.kicker": "Private tours across Paris", "tours.title": "Here are the tours I offer:",
       "tours.sub": "Tap a poster to see the full tour details.",
       "trips.kicker": "Private day trips beyond the city", "trips.title": "Beyond Paris",
       "trips.sub": "Private guided day trips in Hebrew to the most magical destinations around the capital and across northern France.",
       "about.kicker": "Meet Jerry", "about.title": "A few words about me",
       "about.p1": "My name is Yaron, but everyone calls me Jerry. I am a veteran, experienced guide. I lived abroad for many years, including in the Philippines, Belgium and France. I am a certified tour guide (Yad Ben-Zvi, Jerusalem), and over the years I completed two master's degrees (M.A) with honours: one from the University of Paris-8 and one from Bar-Ilan 🤓.",
       "about.p2": "I am a travel fanatic and a die-hard history lover, certified to guide in four languages: English, French, Hebrew and Arabic. I have led hundreds of tours and thousands of travellers. I love bringing my guests the most fascinating stories about Paris, and it matters to me that when you go home you feel your visit to the City of Light was elevated and complete. Across Paris I guide several completely original in-depth tours, I guide the Louvre in Hebrew, and I also lead groups and families on stunning day trips outside the city on request.",
-      "about.cta": "Message me on WhatsApp", "about.badgeNum": "1-12", "about.badgeLabel": "travellers · private only",
-      "reviews.kicker": "Travellers' words", "reviews.title": "What travellers who toured with me say",
+      "about.cta": "Send me a WhatsApp", "about.badgeNum": "1-12", "about.badgeLabel": "travellers · private only",
+      "reviews.kicker": "Travellers' words", "reviews.title": "What travellers who toured Paris with me say",
       "gallery.kicker": "Photos from the tours", "gallery.title": "Moments on the ground",
       "blog.kicker": "Blog · Articles · Posts", "blog.title": "Stories from Paris",
       "blog.sub": "Notes, stories and tips I've written about Paris over the year.",
@@ -101,9 +101,9 @@
   const TOURS = [
     {
       poster: "poster-intro.jpg", img: "tour-classic.jpg",
-      he: { dur: "כ-4 שעות", title: "סיור היכרות פרטי מקיף ומרתק בפריז",
+      he: { dur: "כ-3 שעות", title: "סיור היכרות פרטי מקיף ומרתק בפריז",
         long: "סיור עומק בלב פריז, בין איל-דה-לה-סיטה, הרובע הלטיני ושתי גדות נהר הסן. נכיר את האתרים החשובים ברובע ה-1 ובסמוך לו, נלמד כיצד התפתחה פריז, מהי הארכיטקטורה האופיינית לה ומי האנשים שעיצבו אותה. הסיור עובר במגוון אתרי חובה לאורך גדות הסן (נוטרדם, גשרי הסן, רחבת הלובר והפירמידה, שער הניצחון של הקרוסל ועוד) ומעניק היכרות עם הנופים היפים של העיר והבנה של הרקע ההיסטורי, התרבותי והיומיומי שלה." },
-      en: { dur: "about 4 hours", title: "Comprehensive Private Introduction to Paris",
+      en: { dur: "about 3 hours", title: "Comprehensive Private Introduction to Paris",
         long: "An in-depth walk through the heart of Paris, across the Île de la Cité, the Latin Quarter and both banks of the Seine. We get to know the key sites of the 1st arrondissement, learn how Paris grew, what its signature architecture is and who shaped it. The route passes a wealth of must-sees along the river (Notre-Dame, the Seine bridges, the Louvre plaza and pyramid, the Carrousel arch and more), with the city's finest views and a real grasp of its history, culture and daily life." } },
     {
       poster: "poster-montmartre.jpg", img: "tour-montmartre.jpg",
@@ -131,10 +131,10 @@
         long: "A tour for the seasoned traveller who has already seen Paris. The world's most famous cemetery: a moving, fascinating walk among gorgeous tombs and 150-year-old trees in this rare, magical place. We'll hear about the lives of Jim Morrison of The Doors, Édith Piaf, spies, clergy and one prime minister, and about assassinations, loves and artists. Two and a half captivating hours." } },
     {
       poster: "poster-revolution.jpg", img: "tour-revolution.jpg",
-      he: { dur: "כ-3.5 שעות, כולל הפסקה", title: "סיור פרטי בעקבות המהפכה הצרפתית ונפוליאון",
-        long: "סיור לחובבי היסטוריה, מקורי וייחודי, העובר בין רחובות פריז ברבעים 1, 2, 5 ו-6 ומעניק חוויה היסטורית שאין שנייה לה: הבנה מלאה של תהליכי העומק שהובילו למהפכה הצרפתית ולעלייתו של נפוליאון. נבקר באתרים שבהם קרו הדברים ונבין כיצד הפכה צרפת למי שהיא היום. כ-3.5 שעות, כולל הפסקה." },
-      en: { dur: "about 3.5 hours, incl. a break", title: "Private Tour: The French Revolution & Napoleon",
-        long: "An original, one-of-a-kind tour for history lovers, winding through the streets of the 1st, 2nd, 5th and 6th arrondissements and offering an unmatched historical experience: a full understanding of the deep currents that led to the French Revolution and the rise of Napoleon. We visit the places where it all happened and grasp how France became what it is today. About 3.5 hours, including a break." } },
+      he: { dur: "כ-3 שעות", title: "סיור פרטי בעקבות המהפכה הצרפתית ונפוליאון",
+        long: "סיור לחובבי היסטוריה, מקורי וייחודי, העובר בין רחובות פריז ברבעים 1, 2, 5 ו-6 ומעניק חוויה היסטורית שאין שנייה לה: הבנה מלאה של תהליכי העומק שהובילו למהפכה הצרפתית ולעלייתו של נפוליאון. נבקר באתרים שבהם קרו הדברים ונבין כיצד הפכה צרפת למי שהיא היום. כ-3 שעות." },
+      en: { dur: "about 3 hours", title: "Private Tour: The French Revolution & Napoleon",
+        long: "An original, one-of-a-kind tour for history lovers, winding through the streets of the 1st, 2nd, 5th and 6th arrondissements and offering an unmatched historical experience: a full understanding of the deep currents that led to the French Revolution and the rise of Napoleon. We visit the places where it all happened and grasp how France became what it is today. About 3 hours." } },
     {
       poster: "poster-shadows.jpg", img: "tour-shadows.jpg",
       he: { dur: "כשעתיים וחצי", title: "סיור פרטי \"פריז - עיר האורות והצללים\"",
@@ -275,13 +275,8 @@
       <span class="tour-card__hint">${t("ui.more")} +</span>
     </article>`;
   }
-  let _toursCols = 0;
-  const toursColCount = () => { const w = window.innerWidth; return w <= 679 ? 1 : (w <= 979 ? 2 : 4); };
   function renderTours() {
-    const n = _toursCols = toursColCount();
-    const cols = Array.from({ length: n }, () => []);
-    TOURS.forEach((tr, i) => cols[i % n].push(tourCardHTML(tr, i)));
-    $("#toursGrid").innerHTML = cols.map((c) => `<div class="tours-col">${c.join("")}</div>`).join("");
+    $("#toursGrid").innerHTML = TOURS.map((tr, i) => tourCardHTML(tr, i)).join("");
   }
 
   function renderTourDetails() {
@@ -357,13 +352,6 @@
   const header = $("#siteHeader");
   const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 40);
   window.addEventListener("scroll", onScroll, { passive: true });
-
-  // re-flow the tours masonry when the column count changes
-  let _rsz;
-  window.addEventListener("resize", () => {
-    clearTimeout(_rsz);
-    _rsz = setTimeout(() => { if (toursColCount() !== _toursCols) { renderTours(); observeReveals(); } }, 200);
-  }, { passive: true });
 
   // mobile nav
   const burger = $("#navBurger"), nav = $("#mainNav");
