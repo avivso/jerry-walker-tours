@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=19" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20" />
 
   <script type="application/ld+json">
   {
@@ -44,9 +44,9 @@
       </a>
       <div class="header-cluster">
         <nav class="main-nav" id="mainNav" aria-label="Main">
-          <a href="#about"    data-i18n="nav.about">אודות</a>
-          <a href="#reviews"  data-i18n="nav.reviews">המלצות</a>
           <a href="#tours"    data-i18n="nav.tours">הסיורים</a>
+          <a href="#reviews"  data-i18n="nav.reviews">המלצות</a>
+          <a href="#about"    data-i18n="nav.about">אודות</a>
           <a href="blog.html" data-i18n="nav.blog">בלוג</a>
           <a href="#contact"  data-i18n="nav.contact">צור קשר</a>
           <a href="#gallery"  data-i18n="nav.gallery">גלריה</a>
@@ -88,16 +88,33 @@
     </div>
   </section>
 
-  <!-- ======================= ABOUT ME ======================= -->
-  <section class="section about" id="about">
-    <div class="container about-inner about-inner--text">
-      <div class="about-text">
-        <span class="kicker" data-i18n="about.kicker">נעים להכיר</span>
-        <h2 class="section-title" data-i18n="about.title">כמה מילים עליי</h2>
-        <p data-i18n="about.p1"></p>
-        <p data-i18n="about.p2"></p>
-        <a class="btn btn-wa" data-wa target="_blank" rel="noopener" data-i18n="about.cta">שלחו לי וואטסאפ</a>
+  <!-- ======================= TOURS (posters) ======================= -->
+  <section class="section tours" id="tours">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker" data-i18n="tours.kicker">סיורים פרטיים ברחבי פריז</span>
+        <h2 class="section-title" data-i18n="tours.title">הנה הסיורים שלכם איתי:</h2>
+        <p class="section-sub" data-i18n="tours.sub">לחצו על כרזה כדי לראות את פרטי הסיור.</p>
       </div>
+      <div class="tours-grid" id="toursGrid"></div>
+    </div>
+  </section>
+
+  <!-- ======================= TOUR DETAILS ======================= -->
+  <section class="section tourdetails" id="tourdetails">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title" data-i18n="details.title">פירוט הסיורים</h2>
+      </div>
+      <div id="tourDetails"></div>
+    </div>
+  </section>
+
+  <!-- ======================= CHOICE CTA ======================= -->
+  <section class="section choice-cta" aria-label="עזרה בבחירת סיור">
+    <div class="container">
+      <p class="choice-cta-line" data-i18n="choice.line">הבחירה קשה ולא בטוחים איזה סיור לסגור? בדיוק בשביל זה אני כאן. דברו איתי, ואתאים לכם את הסיור המושלם עבורכם!</p>
+      <a class="btn btn-wa btn-lg" data-wa target="_blank" rel="noopener"><span data-i18n="cta.book">שריינו סיור פרטי</span></a>
     </div>
   </section>
 
@@ -112,25 +129,16 @@
     </div>
   </section>
 
-  <!-- ======================= TOURS (posters) ======================= -->
-  <section class="section tours" id="tours">
-    <div class="container">
-      <div class="section-head">
-        <span class="kicker" data-i18n="tours.kicker">סיורים פרטיים ברחבי פריז</span>
-        <h2 class="section-title" data-i18n="tours.title">הנה הסיורים שלנו</h2>
-        <p class="section-sub" data-i18n="tours.sub">לחצו על כרזה כדי לראות את פרטי הסיור.</p>
+  <!-- ======================= ABOUT ME ======================= -->
+  <section class="section about" id="about">
+    <div class="container about-inner about-inner--text">
+      <div class="about-text">
+        <span class="kicker" data-i18n="about.kicker">נעים להכיר</span>
+        <h2 class="section-title" data-i18n="about.title">כמה מילים עליי</h2>
+        <p data-i18n="about.p1"></p>
+        <p data-i18n="about.p2"></p>
+        <a class="btn btn-wa" data-wa target="_blank" rel="noopener" data-i18n="about.cta">שלחו לי וואטסאפ</a>
       </div>
-      <div class="tours-grid" id="toursGrid"></div>
-    </div>
-  </section>
-
-  <!-- ======================= TOUR DETAILS ======================= -->
-  <section class="section tourdetails" id="tourdetails">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title" data-i18n="details.title">פירוט הסיורים</h2>
-      </div>
-      <div id="tourDetails"></div>
     </div>
   </section>
 
@@ -227,7 +235,7 @@
     <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
   </div>
 
-  <script src="assets/js/blog.js?v=19"></script>
-  <script src="assets/js/main.js?v=19"></script>
+  <script src="assets/js/blog.js?v=20"></script>
+  <script src="assets/js/main.js?v=20"></script>
 </body>
 </html>
