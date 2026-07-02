@@ -17,13 +17,18 @@
     en: (name) => `Hi Jerry! I came through your website and would love to book the "${name}" tour and get details and pricing 🙂`,
   };
   const waHrefTour = (lang, name) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_TOUR[lang](name))}`;
+  const WA_TEXT_TRIP = {
+    he: "שלום ג'רי! אשמח להזמין טיול יום פרטי מחוץ לפריז ולקבל פרטים ומחירים 🙂",
+    en: "Hi Jerry! I'd love to book a private day trip outside Paris and get details and pricing 🙂",
+  };
+  const waHrefTrip = (lang) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_TRIP[lang])}`;
 
   /* ---------- static UI strings ---------- */
   const I18N = {
     he: {
       "nav.tours": "סיורים בפריז", "nav.daytrips": "טיולי יום", "nav.gallery": "גלריה",
       "nav.blog": "בלוג", "nav.about": "אודות", "nav.contact": "צור קשר", "nav.reviews": "המלצות",
-      "cta.whatsapp": "שריינו סיור בוואטסאפ", "cta.book": "שריינו סיור פרטי", "details.title": "פירוט הסיורים",
+      "cta.whatsapp": "שריינו סיור בוואטסאפ", "cta.book": "שריינו סיור פרטי", "cta.bookTrip": "הזמן טיול פרטי", "details.title": "פירוט הסיורים",
       "hero.eyebrow": "מדריך אקדמאי מוסמך · סיורים פרטיים",
       "hero.title": "לטייל וליהנות בפריז כמו מדריך מקומי",
       "hero.sub": "סיורי עומק פרטיים בפריז ומחוצה לה. היסטוריה ותרבות באווירה נעימה ומרתקת.",
@@ -57,7 +62,7 @@
     en: {
       "nav.tours": "Paris Tours", "nav.daytrips": "Day Trips", "nav.gallery": "Gallery",
       "nav.blog": "Blog", "nav.about": "About", "nav.contact": "Contact", "nav.reviews": "Reviews",
-      "cta.whatsapp": "Book on WhatsApp", "cta.book": "Book a private tour", "details.title": "Tour details",
+      "cta.whatsapp": "Book on WhatsApp", "cta.book": "Book a private tour", "cta.bookTrip": "Book a private day trip", "details.title": "Tour details",
       "hero.eyebrow": "Certified academic guide · Private tours",
       "hero.title": "Explore and enjoy Paris like a local guide",
       "hero.sub": "Private in-depth tours in Paris and beyond. History and culture in a warm, captivating atmosphere.",
@@ -153,7 +158,7 @@
       en: { dur: "about 2.5 hours", title: "Private Tour: Paris, City of Lights & Shadows",
         long: "In the footsteps of security affairs, espionage and assassinations in the world's most beautiful city. An original, one-of-a-kind tour about the strangest, most mysterious affairs that took place on the streets of Paris over recent centuries. History, suspense, beautiful sites and a gripping pace. About two and a half hours." } },
     {
-      img: "trip-daytrips.jpg",
+      img: "daytrips-scene.jpg", trip: true,
       he: { dur: "יום / חצי יום", title: "טיולי יום פרטיים אל מחוץ לעיר",
         long: "הדרכה צמודה בעברית אל היעדים הקסומים שמסביב לפריז ובצפון צרפת. בין האפשרויות:",
         hl: ["נורמנדי עלית: העיירה אונפלור היפה, צוקי הגיר של אֶטְרֶטַה (מנופים היפים באירופה), ולקינוח ביקור בכפר Veules-les-Roses, אחד היפים ביותר בצרפת (יום שלם)", "טירת שנטיי והכפר אובר-סור-אואז, מקום מגוריו האחרון של ואן גוך", "ארמון וורסאי והגנים (כחצי יום)", "ביתו וגניו של קלוד מונה בג'יברני והעיירה האינסטגרמית La Roche-Guyon, וסיור קניות באאוטלט המותגים הנחשב והמוצלח בג'יברני, McArthur Glen", "העיירה הימי-ביניימית Provins (כחצי יום)", "עמק הלואר, כולל ביקור בשתי טירות קסומות", "הערים ריימס, טרואה (בית רש\"י ובית הכנסת) ורואן"] },
@@ -299,7 +304,8 @@
     const isPoster = !!tr.poster;
     const src = IMG(isPoster ? tr.poster : tr.img);
     const cls = isPoster ? "tour-card is-poster" : "tour-card is-photo";
-    const band = isPoster ? "" : `<div class="tour-card__band"><h3>${esc(d.title)}</h3></div>`;
+    const cta = tr.trip ? `<a class="btn btn-wa tour-card__cta" href="${waHrefTrip(LANG)}" target="_blank" rel="noopener">${esc(t("cta.bookTrip"))}</a>` : "";
+    const band = isPoster ? "" : `<div class="tour-card__band"><h3>${esc(d.title)}</h3>${cta}</div>`;
     return `<article class="${cls}" data-tour="${i}" tabindex="0" role="button">
       <img src="${src}" alt="${esc(d.title)}" loading="lazy">
       ${band}
@@ -473,6 +479,7 @@
   }
   function closeTour() { if (!tm) return; tm.classList.remove("open"); tm.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; }
   document.addEventListener("click", (e) => {
+    if (e.target.closest(".tour-card__cta")) return; // let the "book a day trip" link work
     const card = e.target.closest("[data-tour]");
     if (card) { openTour(+card.dataset.tour); return; }
     if (e.target.closest("#tourModalClose") || e.target === tm) closeTour();

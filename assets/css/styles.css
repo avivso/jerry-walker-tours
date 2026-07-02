@@ -189,6 +189,8 @@ html[lang="en"] .intro-lead{ max-width:28ch; }
   background:linear-gradient(to top, rgba(10,10,14,.9), rgba(10,10,14,.15) 75%, transparent);
 }
 .tour-card__band h3{ color:#fff; font-size:1.3rem; line-height:1.15; }
+.tour-card__cta{ margin-top:.8rem; padding:.6em 1em; font-size:.92rem; box-shadow:0 8px 20px rgba(37,211,102,.35); }
+.tour-card__cta:hover{ transform:translateY(-2px); }
 .tour-card__hint{
   position:absolute; inset-block-start:.7rem; inset-inline-end:.7rem;
   background:rgba(255,255,255,.94); color:var(--ink); font-family:var(--sans);
