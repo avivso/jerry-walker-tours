@@ -54,8 +54,9 @@
       <h2 style="font-size:1.1rem;margin-bottom:.4rem">חיבור חד-פעמי</h2>
       <p class="muted">פעם אחת בלבד צריך "מפתח" אישי. הוא נשמר במכשיר הזה בלבד.</p>
       <ol class="muted" style="margin:.5rem 1.2rem; line-height:1.9">
-        <li>נכנסים לקישור ולוחצים למטה על <b>Generate token</b>:
-          <br><a class="link" href="https://github.com/settings/tokens/new?scopes=public_repo&description=Jerry%20Walker%20Blog" target="_blank" rel="noopener">יצירת מפתח ב-GitHub</a></li>
+        <li>נכנסים לקישור:
+          <br><a class="link" href="https://github.com/settings/tokens/new?scopes=public_repo&description=Jerry%20Walker%20Blog&default_expiration=none" target="_blank" rel="noopener">יצירת מפתח ב-GitHub</a></li>
+        <li><b>חשוב:</b> בשדה <b>Expiration</b> בוחרים <b>"No expiration"</b> (בלי תפוגה) - כדי שהמפתח לא יפוג ולא תצטרכו לחזור על זה שוב. אחר כך לוחצים למטה על <b>Generate token</b>.</li>
         <li>מעתיקים את המפתח (מתחיל ב-<code>ghp_</code>) ומדביקים כאן:</li>
       </ol>
       <input type="password" id="tok" placeholder="ghp_..." autocomplete="off" />
@@ -167,7 +168,7 @@
     async function loadPosts(){
       show("info","טוען...");
       var r=await fetch(API+PATH+"?ref="+BRANCH+"&t="+Date.now(), { headers:auth() });
-      if(r.status===401) throw new Error("המפתח שגוי או פג תוקף. צרו מפתח חדש.");
+      if(r.status===401) throw new Error("המפתח שגוי או פג תוקף. צרו מפתח חדש ב-GitHub (בחרו \"No expiration\") והתחברו מחדש.");
       if(!r.ok) throw new Error("שגיאה בטעינה ("+r.status+").");
       var j=await r.json(); sha=j.sha;
       var posts=parsePosts(b64decStr(j.content));
@@ -187,6 +188,7 @@
         if(sha) body.sha=sha;
         var r=await fetch(API+PATH,{ method:"PUT", headers:Object.assign({"Content-Type":"application/json"},auth()), body:JSON.stringify(body) });
         var j=await r.json();
+        if(r.status===401) throw new Error("המפתח פג תוקף או שגוי. צרו מפתח חדש ב-GitHub (בחרו \"No expiration\") והתחברו מחדש.");
         if(!r.ok) throw new Error(j.message||("שגיאה "+r.status));
         sha=j.content && j.content.sha;
         show("ok","פורסם! תוך כדקה הכתבות יעלו לאתר. רעננו את הבלוג כדי לראות.");
