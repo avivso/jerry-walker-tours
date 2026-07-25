@@ -152,11 +152,11 @@
       en: { dur: "about 3 hours", title: "Private Tour: The French Revolution & Napoleon",
         long: "An original, one-of-a-kind tour for history lovers, winding through the streets of the 1st, 2nd, 5th and 6th arrondissements and offering an unmatched historical experience: a full understanding of the deep currents that led to the French Revolution and the rise of Napoleon. We visit the places where it all happened and grasp how France became what it is today. About 3 hours." } },
     {
-      poster: "poster-shadows.jpg", img: "tour-shadows.jpg",
-      he: { dur: "כשעתיים וחצי", title: "סיור פרטי \"פריז - עיר האורות והצללים\"",
-        long: "בעקבות פרשיות ביטחוניות, ריגול וחיסולים בעיר היפה בעולם. סיור מקורי וייחודי שאין שני לו, על הפרשיות העלומות והמוזרות ביותר שאירעו ברחובות פריז במאות השנים האחרונות. היסטוריה, מתח, אתרים יפים וקצב סוחף. כשעתיים וחצי." },
-      en: { dur: "about 2.5 hours", title: "Private Tour: Paris, City of Lights & Shadows",
-        long: "In the footsteps of security affairs, espionage and assassinations in the world's most beautiful city. An original, one-of-a-kind tour about the strangest, most mysterious affairs that took place on the streets of Paris over recent centuries. History, suspense, beautiful sites and a gripping pace. About two and a half hours." } },
+      poster: "poster-secrets6.jpg", img: "tour-shadows.jpg",
+      he: { dur: "כשעתיים וחצי", title: "סודות הרובע השישי",
+        long: "בואו לגלות את אחד האזורים האלגנטיים, היפים והמסקרנים ביותר בפריז, הרובע השישי. במהלך הסיור נצא למסע בין סמטאות עתיקות, כיכרות ציוריות, בתי קפה איקוניים, נבקר בכנסיות מרשימות המסתירות סודות. בדרך נחשוף סיפורים שלא יאומנו, פרשיות היסטוריות מסעירות, מזימות וריגול בינלאומי, מהפכנים, פילוסופים, אמנים ואישים שעיצבו את פניה של צרפת. נגלה פינות חמד נסתרות שרוב המבקרים כלל אינם מגיעים אליהן ונקנח באחד הגנים היפים באירופה." },
+      en: { dur: "about 2.5 hours", title: "Secrets of the 6th Arrondissement",
+        long: "Come discover one of the most elegant, beautiful and intriguing areas of Paris: the 6th arrondissement. On this tour we set out on a journey through ancient alleys, picturesque squares and iconic cafés, and visit impressive churches that hide secrets. Along the way we uncover unbelievable stories, gripping historical affairs, international plots and espionage, revolutionaries, philosophers, artists and figures who shaped the face of France. We'll discover hidden corners that most visitors never reach, and finish in one of the most beautiful gardens in Europe." } },
     {
       img: "daytrips-scene.jpg", trip: true,
       he: { dur: "יום / חצי יום", title: "טיולי יום פרטיים אל מחוץ לעיר",
