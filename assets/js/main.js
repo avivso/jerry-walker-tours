@@ -11,17 +11,19 @@
     he: "שלום ג'רי! הגעתי דרך האתר ואשמח לקבל פרטים ומחירים על סיור בפריז 🙂",
     en: "Hi Jerry! I found you through your website and would love details and pricing for a Paris tour 🙂",
   };
-  const waHref = (lang) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT[lang])}`;
+  // appends "(הגעתי דרך: X)" when the visitor arrived from a tagged partner link
+  const refTail = (lang) => (window.JWRef ? JWRef.suffix(lang) : "");
+  const waHref = (lang) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT[lang] + refTail(lang))}`;
   const WA_TEXT_TOUR = {
     he: (name) => `שלום ג'רי! הגעתי דרך האתר ואשמח לשריין את הסיור "${name}" ולקבל פרטים ומחירים 🙂`,
     en: (name) => `Hi Jerry! I came through your website and would love to book the "${name}" tour and get details and pricing 🙂`,
   };
-  const waHrefTour = (lang, name) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_TOUR[lang](name))}`;
+  const waHrefTour = (lang, name) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_TOUR[lang](name) + refTail(lang))}`;
   const WA_TEXT_TRIP = {
     he: "שלום ג'רי! אשמח להזמין טיול יום פרטי מחוץ לפריז ולקבל פרטים ומחירים 🙂",
     en: "Hi Jerry! I'd love to book a private day trip outside Paris and get details and pricing 🙂",
   };
-  const waHrefTrip = (lang) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_TRIP[lang])}`;
+  const waHrefTrip = (lang) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_TRIP[lang] + refTail(lang))}`;
 
   /* ---------- static UI strings ---------- */
   const I18N = {

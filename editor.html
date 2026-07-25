@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=27" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=28" />
   <style>
     .ed{ max-width:760px; margin:0 auto; padding:96px 5vw 5rem; }
     .ed h1{ font-size:1.8rem; margin-bottom:.2rem; }
@@ -49,6 +49,20 @@
     <h1>עריכת הבלוג</h1>
     <p class="lead">כותבים, עורכים ומפרסמים כתבות, ישירות מהאתר.</p>
 
+    <!-- referral link maker -->
+    <div class="ed-box">
+      <h2 style="font-size:1.1rem;margin-bottom:.4rem">קישור מעקב לבלוגים ושותפים</h2>
+      <p class="muted">רושמים שם קצר באנגלית לכל בלוג/שותף ומקבלים קישור אישי לשלוח לו. מי שיגיע דרכו ויכתוב בוואטסאפ, ההודעה שלו תכלול את השם הזה, כדי שתדעו למי מגיע התשלום.</p>
+      <label for="refName">שם השותף (באנגלית, בלי רווחים)</label>
+      <input type="text" id="refName" placeholder="anon" autocomplete="off" />
+      <label for="refOut">הקישור לשליחה</label>
+      <input type="text" id="refOut" readonly value="https://jerrywalkertrips.com/?ref=" />
+      <div class="row">
+        <button class="btn btn-dark" id="copyRef" type="button">העתקת הקישור</button>
+        <span class="muted" id="refNote"></span>
+      </div>
+    </div>
+
     <!-- one-time connection -->
     <div class="ed-box" id="setupBox">
       <h2 style="font-size:1.1rem;margin-bottom:.4rem">חיבור חד-פעמי</h2>
@@ -83,6 +97,25 @@
   </main>
 
   <script>
+  /* referral link maker */
+  (function(){
+    var name=document.getElementById("refName"), out=document.getElementById("refOut"),
+        note=document.getElementById("refNote"), btn=document.getElementById("copyRef");
+    function build(){
+      var v=(name.value||"").trim().toLowerCase().replace(/[^a-z0-9_-]/g,"");
+      out.value="https://jerrywalkertrips.com/?ref="+v;
+      return v;
+    }
+    name.addEventListener("input", function(){ build(); note.textContent=""; });
+    btn.addEventListener("click", function(){
+      var v=build();
+      if(!v){ note.textContent="קודם רושמים שם."; return; }
+      out.select();
+      navigator.clipboard.writeText(out.value).then(function(){ note.textContent="הועתק ✓"; })
+        .catch(function(){ document.execCommand("copy"); note.textContent="הועתק ✓"; });
+    });
+  })();
+
   (function(){
     var REPO="avivso/jerry-walker-tours", BRANCH="main", PATH="blog/posts.md";
     var API="https://api.github.com/repos/"+REPO+"/contents/";
