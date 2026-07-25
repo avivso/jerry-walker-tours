@@ -1,4 +1,14 @@
 {
-  "anon": { "he": "אתר ״פרנקופילים אנונימיים״", "en": "the \"Anonymous Francophiles\" site" },
-  "israelim": { "he": "קבוצת הפייסבוק ״פריז לישראלים״", "en": "the \"Paris for Israelis\" Facebook group" }
+  "anon": {
+    "he": "אתר ״פרנקופילים אנונימיים״",
+    "en": "the \"Anonymous Francophiles\" site"
+  },
+  "israelim": {
+    "he": "קבוצת הפייסבוק ״פריז לישראלים״",
+    "en": "the \"Paris for Israelis\" Facebook group"
+  },
+  "aviv": {
+    "he": "אביב",
+    "en": "אביב"
+  }
 }
