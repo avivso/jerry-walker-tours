@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=29" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=30" />
   <style>
     .ed{ max-width:760px; margin:0 auto; padding:96px 5vw 5rem; }
     .ed h1{ font-size:1.8rem; margin-bottom:.2rem; }
@@ -52,11 +52,30 @@
     <!-- referral link maker -->
     <div class="ed-box">
       <h2 style="font-size:1.1rem;margin-bottom:.4rem">קישור מעקב לבלוגים ושותפים</h2>
-      <p class="muted">רושמים שם קצר באנגלית לכל בלוג/שותף ומקבלים קישור אישי לשלוח לו. מי שיגיע דרכו ויכתוב בוואטסאפ, ההודעה שלו תיפתח במילים "הגעתי דרך..." עם שם השותף, כדי שתדעו למי מגיע התשלום.<br>הקישורים הקיימים: <code>anon</code> (פרנקופילים אנונימיים), <code>israelim</code> (פריז לישראלים). לשותף חדש אפשר להשתמש בכל שם, ואם תרצו שיוצג בעברית יפה בהודעה, בקשו שיוסיפו אותו לרשימה.</p>
-      <label for="refName">שם השותף (באנגלית, בלי רווחים)</label>
+      <p class="muted">מייצרים כאן קישור אישי לכל בלוג או שותף. מי שיגיע דרכו ויכתוב בוואטסאפ, ההודעה שלו תפתח בשם השותף, כדי שתדעו למי מגיע התשלום.</p>
+
+      <label for="refDest">1. לאיזה עמוד הקישור יוביל?</label>
+      <select id="refDest">
+        <option value="https://jerrywalkertrips.com/">דף הבית</option>
+        <option value="https://jerrywalkertrips.com/#tours">דף הבית, ישר אל הסיורים</option>
+        <option value="https://jerrywalkertrips.com/blog.html">הבלוג</option>
+        <option value="__custom__">כתובת אחרת (להקליד ידנית)</option>
+      </select>
+      <input type="text" id="refDestCustom" placeholder="https://jerrywalkertrips.com/..." autocomplete="off" style="display:none;margin-top:.4rem" />
+
+      <label for="refName">2. שם קצר באנגלית (רק לזיהוי בקישור)</label>
       <input type="text" id="refName" placeholder="anon" autocomplete="off" />
-      <label for="refOut">הקישור לשליחה</label>
-      <input type="text" id="refOut" readonly value="https://jerrywalkertrips.com/?ref=" />
+
+      <label for="refLabel">3. איך זה ייכתב בהודעה?</label>
+      <input type="text" id="refLabel" placeholder="אתר ״פרנקופילים אנונימיים״" autocomplete="off" />
+      <p class="ph" style="margin:.35rem 0 0">ההודעה תהיה: "שלום ג'רי! הגעתי דרך <b>מה שתכתבו כאן</b> ואשמח..." - אז כדאי לכתוב <code>אתר ״שם הבלוג״</code> או <code>קבוצת הפייסבוק ״שם הקבוצה״</code>.</p>
+
+      <label>תצוגה מקדימה של ההודעה שתקבלו</label>
+      <div id="refPreview" style="background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:.7rem .85rem;line-height:1.7"></div>
+
+      <label for="refOut">הקישור לשליחה לשותף</label>
+      <input type="text" id="refOut" readonly />
+      <p class="ph" id="refHint" style="margin:.35rem 0 0"></p>
       <div class="row">
         <button class="btn btn-dark" id="copyRef" type="button">העתקת הקישור</button>
         <span class="muted" id="refNote"></span>
@@ -99,21 +118,62 @@
   <script>
   /* referral link maker */
   (function(){
-    var name=document.getElementById("refName"), out=document.getElementById("refOut"),
-        note=document.getElementById("refNote"), btn=document.getElementById("copyRef");
-    function build(){
-      var v=(name.value||"").trim().toLowerCase().replace(/[^a-z0-9_-]/g,"");
-      out.value="https://jerrywalkertrips.com/?ref="+v;
-      return v;
+    var KNOWN={ anon:"אתר ״פרנקופילים אנונימיים״", israelim:"קבוצת הפייסבוק ״פריז לישראלים״" };
+    var dest=document.getElementById("refDest"), custom=document.getElementById("refDestCustom"),
+        name=document.getElementById("refName"), label=document.getElementById("refLabel"),
+        out=document.getElementById("refOut"), prev=document.getElementById("refPreview"),
+        note=document.getElementById("refNote"), btn=document.getElementById("copyRef"),
+        hint=document.getElementById("refHint");
+
+    function baseUrl(){
+      var u = dest.value==="__custom__" ? (custom.value||"").trim() : dest.value;
+      if(!u) return "";
+      if(!/^https?:\/\//i.test(u)) u="https://"+u.replace(/^\/+/,"");
+      return u;
     }
-    name.addEventListener("input", function(){ build(); note.textContent=""; });
+    function build(){
+      var code=(name.value||"").trim().toLowerCase().replace(/[^a-z0-9_-]/g,"");
+      var text=(label.value||"").trim().slice(0,60);
+      var u=baseUrl();
+      // the source name shown in the message
+      var shown = text || KNOWN[code] || code || "האתר";
+      // preview the message the traveller will send
+      var isBlog=/blog\.html/i.test(u);
+      prev.textContent = isBlog
+        ? "שלום ג'רי! הגעתי דרך "+shown+" ואשמח לפרטים על סיור בפריז 🙂"
+        : "שלום ג'רי! הגעתי דרך "+shown+" ואשמח לקבל פרטים ומחירים על סיור בפריז 🙂";
+
+      if(!u || !code){ out.value=""; return ""; }
+      // the query has to sit before any #section
+      var hash="", i=u.indexOf("#");
+      if(i>-1){ hash=u.slice(i); u=u.slice(0,i); }
+      var q = (u.indexOf("?")>-1 ? "&" : "?") + "ref=" + encodeURIComponent(code);
+      // only carry the wording in the link when it differs from the built-in one
+      var usesVia = !!(text && text!==KNOWN[code]);
+      if(usesVia) q += "&via=" + encodeURIComponent(text);
+      out.value = u + q + hash;
+      hint.textContent = usesVia
+        ? "הקישור יוצא ארוך כי הניסוח בעברית מקודד בתוכו. הוא עובד מצוין, ואם הבלוג מציג אותו כטקסט לחיץ זה גם לא נראה. רוצים קישור קצר ונקי? בקשו להוסיף את השותף לרשימה הקבועה."
+                : "";
+      return code;
+    }
+
+    dest.addEventListener("change", function(){
+      custom.style.display = dest.value==="__custom__" ? "block" : "none";
+      if(dest.value==="__custom__") custom.focus();
+      build(); note.textContent="";
+    });
+    [custom,name,label].forEach(function(el){
+      el.addEventListener("input", function(){ build(); note.textContent=""; });
+    });
     btn.addEventListener("click", function(){
-      var v=build();
-      if(!v){ note.textContent="קודם רושמים שם."; return; }
+      var code=build();
+      if(!code){ note.textContent="צריך למלא שם קצר באנגלית (וכתובת)."; return; }
       out.select();
       navigator.clipboard.writeText(out.value).then(function(){ note.textContent="הועתק ✓"; })
         .catch(function(){ document.execCommand("copy"); note.textContent="הועתק ✓"; });
     });
+    build();
   })();
 
   (function(){

@@ -25,42 +25,49 @@ window.JWRef = (() => {
   };
 
   const clean = (s) => String(s || "").trim().replace(/[ -]/g, "").slice(0, 40);
+  // the wording shown in the message: plain text only, no line breaks
+  const cleanLabel = (s) => String(s || "").replace(/[\r\n\t]+/g, " ").trim().slice(0, 60);
 
-  function save(name) {
-    try { localStorage.setItem(KEY, JSON.stringify({ r: name, t: Date.now() })); } catch (e) {}
+  function save(code, label) {
+    try { localStorage.setItem(KEY, JSON.stringify({ r: code, n: label || "", t: Date.now() })); } catch (e) {}
   }
 
-  /* read ?ref= / ?utm_source=, otherwise fall back to the referring domain */
+  /* read ?ref= (+ optional &via= wording), otherwise fall back to the referring domain */
   function capture() {
     try {
       const q = new URLSearchParams(location.search);
       const tagged = clean(q.get("ref") || q.get("utm_source"));
-      if (tagged) { save(tagged); return tagged; }
+      if (tagged) { save(tagged, cleanLabel(q.get("via"))); return tagged; }
 
       const host = clean((document.referrer || "").split("/")[2] || "").replace(/^www\./i, "");
-      if (host && !OWN.test(host) && !get()) { save(host); return host; }
+      if (host && !OWN.test(host) && !get()) { save(host, ""); return host; }
     } catch (e) {}
     return get();
   }
 
-  /* the remembered code, or "" once it has expired */
-  function get() {
+  /* the whole stored record, or null once it has expired */
+  function stored() {
     try {
       const raw = localStorage.getItem(KEY);
-      if (!raw) return "";
+      if (!raw) return null;
       const o = JSON.parse(raw);
-      if (!o || !o.r) return "";
-      if (Date.now() - (o.t || 0) > TTL) { localStorage.removeItem(KEY); return ""; }
-      return o.r;
-    } catch (e) { return ""; }
+      if (!o || !o.r) return null;
+      if (Date.now() - (o.t || 0) > TTL) { localStorage.removeItem(KEY); return null; }
+      return o;
+    } catch (e) { return null; }
   }
 
-  /* how to name the source inside the message, or "" when there is none */
+  /* the remembered code, or "" */
+  function get() { const o = stored(); return o ? o.r : ""; }
+
+  /* how to name the source inside the message, or "" when there is none.
+     wording from the link (&via=) wins, then the built-in list, then the raw code. */
   function source(lang) {
-    const code = get();
-    if (!code) return "";
-    const known = SOURCES[code.toLowerCase()];
-    return known ? (known[lang] || known.he) : code;
+    const o = stored();
+    if (!o) return "";
+    if (o.n) return o.n;
+    const known = SOURCES[String(o.r).toLowerCase()];
+    return known ? (known[lang] || known.he) : o.r;
   }
 
   capture();
