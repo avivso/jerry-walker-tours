@@ -466,7 +466,9 @@
 
   // click a poster -> open the tour details in a modal (no page-jumping)
   const tm = $("#tourModal"), tmBody = $("#tourModalBody");
+  let openTourIdx = -1;
   function openTour(idx) {
+    openTourIdx = idx;
     if (!tm) return;
     const tr = TOURS[idx]; if (!tr) return;
     const d = tr[LANG];
@@ -517,6 +519,15 @@
   $("#year").textContent = new Date().getFullYear();
   renderGallery();
   setLang(LANG);
+  // the partner list arrives a moment after load, so refresh the WhatsApp
+  // links once it does (until then they carry the raw partner code)
+  if (window.JWRef) JWRef.whenReady(() => {
+    $$("[data-wa]").forEach((a) => (a.href = waHref(LANG)));
+    renderTours();
+    if (tm && tm.classList.contains("open") && openTourIdx > -1) openTour(openTourIdx);
+    observeReveals();
+  });
+
   initScrollSpy();
   onScroll();
   // load blog posts (HE/EN per language) for the homepage teaser

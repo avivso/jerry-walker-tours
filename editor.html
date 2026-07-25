@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=30" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=31" />
   <style>
     .ed{ max-width:760px; margin:0 auto; padding:96px 5vw 5rem; }
     .ed h1{ font-size:1.8rem; margin-bottom:.2rem; }
@@ -63,12 +63,17 @@
       </select>
       <input type="text" id="refDestCustom" placeholder="https://jerrywalkertrips.com/..." autocomplete="off" style="display:none;margin-top:.4rem" />
 
-      <label for="refName">2. שם קצר באנגלית (רק לזיהוי בקישור)</label>
-      <input type="text" id="refName" placeholder="anon" autocomplete="off" />
-
-      <label for="refLabel">3. איך זה ייכתב בהודעה?</label>
-      <input type="text" id="refLabel" placeholder="אתר ״פרנקופילים אנונימיים״" autocomplete="off" />
-      <p class="ph" style="margin:.35rem 0 0">ההודעה תהיה: "שלום ג'רי! הגעתי דרך <b>מה שתכתבו כאן</b> ואשמח..." - אז כדאי לכתוב <code>אתר ״שם הבלוג״</code> או <code>קבוצת הפייסבוק ״שם הקבוצה״</code>.</p>
+      <label for="refName">2. השותף</label>
+      <select id="refPartner"></select>
+      <div id="refNewRow" style="display:none">
+        <input type="text" id="refName" placeholder="שם קצר באנגלית, למשל dana" autocomplete="off" style="margin-top:.4rem" />
+        <input type="text" id="refLabel" placeholder="איך ייכתב בהודעה, למשל: הבלוג של דנה" autocomplete="off" style="margin-top:.4rem" />
+        <p class="ph" style="margin:.35rem 0 0">ההודעה תהיה: "שלום ג'רי! הגעתי דרך <b>מה שתכתבו כאן</b> ואשמח..." - אז כדאי לכתוב <code>אתר ״שם הבלוג״</code> או <code>קבוצת הפייסבוק ״שם הקבוצה״</code>.</p>
+        <div class="row">
+          <button class="btn btn-dark" id="addPartner" type="button">הוספת השותף ושמירה</button>
+          <span class="muted" id="partnerNote"></span>
+        </div>
+      </div>
 
       <label>תצוגה מקדימה של ההודעה שתקבלו</label>
       <div id="refPreview" style="background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:.7rem .85rem;line-height:1.7"></div>
@@ -80,6 +85,11 @@
         <button class="btn btn-dark" id="copyRef" type="button">העתקת הקישור</button>
         <span class="muted" id="refNote"></span>
       </div>
+
+      <details style="margin-top:1rem">
+        <summary class="muted" style="cursor:pointer">רשימת השותפים הקיימים</summary>
+        <div id="partnerList" style="margin-top:.6rem"></div>
+      </details>
     </div>
 
     <!-- one-time connection -->
@@ -116,14 +126,44 @@
   </main>
 
   <script>
-  /* referral link maker */
+  /* referral link maker + partner list (published to assets/data/partners.json) */
   (function(){
-    var KNOWN={ anon:"אתר ״פרנקופילים אנונימיים״", israelim:"קבוצת הפייסבוק ״פריז לישראלים״" };
+    var REPO="avivso/jerry-walker-tours", BRANCH="main", PFILE="assets/data/partners.json";
+    var API="https://api.github.com/repos/"+REPO+"/contents/";
+    var PARTNERS={}, psha=null;
+
     var dest=document.getElementById("refDest"), custom=document.getElementById("refDestCustom"),
+        picker=document.getElementById("refPartner"), newRow=document.getElementById("refNewRow"),
         name=document.getElementById("refName"), label=document.getElementById("refLabel"),
+        addBtn=document.getElementById("addPartner"), pNote=document.getElementById("partnerNote"),
         out=document.getElementById("refOut"), prev=document.getElementById("refPreview"),
         note=document.getElementById("refNote"), btn=document.getElementById("copyRef"),
-        hint=document.getElementById("refHint");
+        hint=document.getElementById("refHint"), listBox=document.getElementById("partnerList");
+
+    function tok(){ return localStorage.getItem("jw_gh_token")||""; }
+    function auth(){ return { "Authorization":"Bearer "+tok(), "Accept":"application/vnd.github+json" }; }
+    function b64encStr(str){ var b=new TextEncoder().encode(str),s="",ch=0x8000;
+      for(var i=0;i<b.length;i+=ch){ s+=String.fromCharCode.apply(null,b.subarray(i,i+ch)); } return btoa(s); }
+    function esc(s){ return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+    function nameOf(code){ var v=PARTNERS[code]; return !v?"":(typeof v==="string"?v:(v.he||v.en||"")); }
+
+    function fillPicker(sel){
+      var codes=Object.keys(PARTNERS).sort();
+      picker.innerHTML = codes.map(function(c){
+        return '<option value="'+esc(c)+'">'+esc(nameOf(c))+"  ("+esc(c)+")</option>";
+      }).join("") + '<option value="__new__">+ שותף חדש...</option>';
+      if(sel && PARTNERS[sel]) picker.value=sel;
+      onPick();
+      listBox.innerHTML = codes.length
+        ? codes.map(function(c){ return '<div class="muted" style="padding:.25rem 0">• <code>'+esc(c)+"</code> - "+esc(nameOf(c))+"</div>"; }).join("")
+        : '<div class="muted">אין עדיין שותפים.</div>';
+    }
+    function onPick(){
+      var isNew = picker.value==="__new__";
+      newRow.style.display = isNew ? "block" : "none";
+      if(isNew){ name.focus(); }
+      build();
+    }
 
     function baseUrl(){
       var u = dest.value==="__custom__" ? (custom.value||"").trim() : dest.value;
@@ -132,48 +172,83 @@
       return u;
     }
     function build(){
-      var code=(name.value||"").trim().toLowerCase().replace(/[^a-z0-9_-]/g,"");
-      var text=(label.value||"").trim().slice(0,60);
+      var isNew = picker.value==="__new__";
+      var code = isNew ? (name.value||"").trim().toLowerCase().replace(/[^a-z0-9_-]/g,"") : picker.value;
+      var shownName = isNew ? (label.value||"").trim().slice(0,60) : nameOf(code);
       var u=baseUrl();
-      // the source name shown in the message
-      var shown = text || KNOWN[code] || code || "האתר";
-      // preview the message the traveller will send
+      var shown = shownName || code || "האתר";
       var isBlog=/blog\.html/i.test(u);
       prev.textContent = isBlog
         ? "שלום ג'רי! הגעתי דרך "+shown+" ואשמח לפרטים על סיור בפריז 🙂"
         : "שלום ג'רי! הגעתי דרך "+shown+" ואשמח לקבל פרטים ומחירים על סיור בפריז 🙂";
 
-      if(!u || !code){ out.value=""; return ""; }
-      // the query has to sit before any #section
+      if(!u || !code){ out.value=""; hint.textContent=""; return ""; }
       var hash="", i=u.indexOf("#");
       if(i>-1){ hash=u.slice(i); u=u.slice(0,i); }
-      var q = (u.indexOf("?")>-1 ? "&" : "?") + "ref=" + encodeURIComponent(code);
-      // only carry the wording in the link when it differs from the built-in one
-      var usesVia = !!(text && text!==KNOWN[code]);
-      if(usesVia) q += "&via=" + encodeURIComponent(text);
-      out.value = u + q + hash;
-      hint.textContent = usesVia
-        ? "הקישור יוצא ארוך כי הניסוח בעברית מקודד בתוכו. הוא עובד מצוין, ואם הבלוג מציג אותו כטקסט לחיץ זה גם לא נראה. רוצים קישור קצר ונקי? בקשו להוסיף את השותף לרשימה הקבועה."
-                : "";
+      out.value = u + (u.indexOf("?")>-1?"&":"?") + "ref=" + encodeURIComponent(code) + hash;
+      hint.textContent = (isNew && !PARTNERS[code])
+        ? "השותף עוד לא נשמר. לוחצים על ״הוספת השותף ושמירה״ כדי שהשם יופיע בהודעה."
+        : "";
       return code;
     }
+
+    async function loadPartners(){
+      try{
+        var r=await fetch(PFILE+"?t="+Date.now(), { cache:"no-cache" });
+        if(r.ok) PARTNERS=await r.json();
+      }catch(e){}
+      fillPicker();
+    }
+
+    async function savePartners(){
+      if(!tok()) throw new Error("קודם מתחברים למטה (חיבור חד-פעמי).");
+      // fetch the current sha so we do not overwrite a newer version
+      var g=await fetch(API+PFILE+"?ref="+BRANCH+"&t="+Date.now(), { headers:auth() });
+      if(g.ok){ var j=await g.json(); psha=j.sha; } else if(g.status===401){ throw new Error("המפתח פג תוקף. התחברו מחדש."); }
+      var body={ message:"עדכון רשימת השותפים מהאתר", content:b64encStr(JSON.stringify(PARTNERS,null,2)+"\n"), branch:BRANCH };
+      if(psha) body.sha=psha;
+      var r=await fetch(API+PFILE,{ method:"PUT", headers:Object.assign({"Content-Type":"application/json"},auth()), body:JSON.stringify(body) });
+      var jj=await r.json();
+      if(r.status===401) throw new Error("המפתח פג תוקף. התחברו מחדש.");
+      if(!r.ok) throw new Error(jj.message||("שגיאה "+r.status));
+      psha=jj.content && jj.content.sha;
+    }
+
+    addBtn.addEventListener("click", async function(){
+      var code=(name.value||"").trim().toLowerCase().replace(/[^a-z0-9_-]/g,"");
+      var text=(label.value||"").trim().slice(0,60);
+      if(!code || !text){ pNote.textContent="צריך למלא גם שם קצר באנגלית וגם איך זה ייכתב."; return; }
+      addBtn.disabled=true; pNote.textContent="שומר...";
+      PARTNERS[code]={ he:text, en:text };
+      try{
+        await savePartners();
+        pNote.textContent="נשמר ✓ תוך כדקה הקישור הקצר יעבוד.";
+        name.value=""; label.value="";
+        fillPicker(code);
+      }catch(e){
+        delete PARTNERS[code];
+        pNote.textContent="לא נשמר: "+e.message;
+      }finally{ addBtn.disabled=false; }
+    });
 
     dest.addEventListener("change", function(){
       custom.style.display = dest.value==="__custom__" ? "block" : "none";
       if(dest.value==="__custom__") custom.focus();
       build(); note.textContent="";
     });
+    picker.addEventListener("change", function(){ onPick(); note.textContent=""; pNote.textContent=""; });
     [custom,name,label].forEach(function(el){
       el.addEventListener("input", function(){ build(); note.textContent=""; });
     });
     btn.addEventListener("click", function(){
       var code=build();
-      if(!code){ note.textContent="צריך למלא שם קצר באנגלית (וכתובת)."; return; }
+      if(!code){ note.textContent="צריך לבחור שותף (וכתובת)."; return; }
       out.select();
       navigator.clipboard.writeText(out.value).then(function(){ note.textContent="הועתק ✓"; })
         .catch(function(){ document.execCommand("copy"); note.textContent="הועתק ✓"; });
     });
-    build();
+
+    loadPartners();
   })();
 
   (function(){

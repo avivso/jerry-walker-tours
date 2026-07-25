@@ -18,11 +18,35 @@ window.JWRef = (() => {
   const TTL = 30 * 24 * 60 * 60 * 1000; // 30 days
   const OWN = /(^|\.)jerrywalkertrips\.com$|(^|\.)avivso\.github\.io$|^localhost$|^127\.0\.0\.1$/i;
 
-  /* ?ref=code  ->  how the source is named inside the message */
+  /* ?ref=code  ->  how the source is named inside the message.
+     Loaded from assets/data/partners.json, which Jerry edits from the editor page,
+     so every partner link can stay short (just ?ref=code). */
   const SOURCES = {
     anon:     { he: "אתר ״פרנקופילים אנונימיים״",      en: 'the "Anonymous Francophiles" site' },
     israelim: { he: "קבוצת הפייסבוק ״פריז לישראלים״",  en: 'the "Paris for Israelis" Facebook group' },
   };
+
+  let ready = false;
+  let waiting = [];
+  function markReady() {
+    ready = true;
+    waiting.forEach((fn) => { try { fn(); } catch (e) {} });
+    waiting = [];
+  }
+  /* run cb once the partner list has loaded (or immediately if it already has) */
+  function whenReady(cb) { if (ready) { cb(); } else { waiting.push(cb); } }
+
+  fetch("assets/data/partners.json", { cache: "no-cache" })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((list) => {
+      if (!list) return;
+      Object.keys(list).forEach((code) => {
+        const v = list[code];
+        SOURCES[String(code).toLowerCase()] = typeof v === "string" ? { he: v, en: v } : v;
+      });
+    })
+    .catch(() => {})
+    .then(markReady);
 
   const clean = (s) => String(s || "").trim().replace(/[ -]/g, "").slice(0, 40);
   // the wording shown in the message: plain text only, no line breaks
@@ -71,5 +95,5 @@ window.JWRef = (() => {
   }
 
   capture();
-  return { capture, get, source, SOURCES };
+  return { capture, get, source, whenReady, SOURCES };
 })();

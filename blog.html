@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=30" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=31" />
 </head>
 <body>
   <header class="site-header scrolled" id="siteHeader">
@@ -52,8 +52,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/ref.js?v=30"></script>
-  <script src="assets/js/blog.js?v=30"></script>
+  <script src="assets/js/ref.js?v=31"></script>
+  <script src="assets/js/blog.js?v=31"></script>
   <script>
     (function () {
       var I18N = {
@@ -118,6 +118,14 @@
         applyLang();
       });
       applyLang();
+      // refresh once the partner list has loaded
+      if (window.JWRef) JWRef.whenReady(function () {
+        var d = I18N[LANG];
+        var src = JWRef.source(LANG) || d.waSrc;
+        var wa = "https://wa.me/972504981145?text=" + encodeURIComponent(d.waText(src));
+        if ($("waBtn")) $("waBtn").href = wa;
+        if ($("waFloat")) $("waFloat").href = wa;
+      });
     })();
   </script>
 </body>
