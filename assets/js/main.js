@@ -7,23 +7,26 @@
 
   /* ---------- contact constants ---------- */
   const WA_NUMBER = "972504981145"; // 050-498-1145
+  // where the visitor came from, named inside the sentence itself
+  // (a tagged partner link, otherwise just "האתר")
+  const waSource = (lang) =>
+    (window.JWRef && JWRef.source(lang)) || (lang === "he" ? "האתר" : "your website");
+
   const WA_TEXT = {
-    he: "שלום ג'רי! הגעתי דרך האתר ואשמח לקבל פרטים ומחירים על סיור בפריז 🙂",
-    en: "Hi Jerry! I found you through your website and would love details and pricing for a Paris tour 🙂",
+    he: (src) => `שלום ג'רי! הגעתי דרך ${src} ואשמח לקבל פרטים ומחירים על סיור בפריז 🙂`,
+    en: (src) => `Hi Jerry! I found you through ${src} and would love details and pricing for a Paris tour 🙂`,
   };
-  // appends "(הגעתי דרך: X)" when the visitor arrived from a tagged partner link
-  const refTail = (lang) => (window.JWRef ? JWRef.suffix(lang) : "");
-  const waHref = (lang) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT[lang] + refTail(lang))}`;
+  const waHref = (lang) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT[lang](waSource(lang)))}`;
   const WA_TEXT_TOUR = {
-    he: (name) => `שלום ג'רי! הגעתי דרך האתר ואשמח לשריין את הסיור "${name}" ולקבל פרטים ומחירים 🙂`,
-    en: (name) => `Hi Jerry! I came through your website and would love to book the "${name}" tour and get details and pricing 🙂`,
+    he: (name, src) => `שלום ג'רי! הגעתי דרך ${src} ואשמח לשריין את הסיור "${name}" ולקבל פרטים ומחירים 🙂`,
+    en: (name, src) => `Hi Jerry! I came through ${src} and would love to book the "${name}" tour and get details and pricing 🙂`,
   };
-  const waHrefTour = (lang, name) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_TOUR[lang](name) + refTail(lang))}`;
+  const waHrefTour = (lang, name) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_TOUR[lang](name, waSource(lang)))}`;
   const WA_TEXT_TRIP = {
-    he: "שלום ג'רי! אשמח להזמין טיול יום פרטי מחוץ לפריז ולקבל פרטים ומחירים 🙂",
-    en: "Hi Jerry! I'd love to book a private day trip outside Paris and get details and pricing 🙂",
+    he: (src) => `שלום ג'רי! הגעתי דרך ${src} ואשמח להזמין טיול יום פרטי מחוץ לפריז ולקבל פרטים ומחירים 🙂`,
+    en: (src) => `Hi Jerry! I came through ${src} and would love to book a private day trip outside Paris and get details and pricing 🙂`,
   };
-  const waHrefTrip = (lang) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_TRIP[lang] + refTail(lang))}`;
+  const waHrefTrip = (lang) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_TEXT_TRIP[lang](waSource(lang)))}`;
 
   /* ---------- static UI strings ---------- */
   const I18N = {

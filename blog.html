@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=28" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=29" />
 </head>
 <body>
   <header class="site-header scrolled" id="siteHeader">
@@ -52,8 +52,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/ref.js?v=28"></script>
-  <script src="assets/js/blog.js?v=28"></script>
+  <script src="assets/js/ref.js?v=29"></script>
+  <script src="assets/js/blog.js?v=29"></script>
   <script>
     (function () {
       var I18N = {
@@ -63,7 +63,8 @@
           sub: "כתבות, סיפורים וטיפים שכתבתי על פריז.",
           back: "→ חזרה לאתר", wa: "שריינו סיור",
           empty: "הכתבות בדרך. בקרוב יעלו כאן הסיפורים שכתבתי על פריז.",
-          waText: "שלום ג'רי! הגעתי דרך הבלוג ואשמח לפרטים על סיור בפריז 🙂"
+          waText: function (src) { return "שלום ג'רי! הגעתי דרך " + src + " ואשמח לפרטים על סיור בפריז 🙂"; },
+          waSrc: "הבלוג"
         },
         en: {
           title: "Blog · Jerry Walker | Stories from Paris",
@@ -71,7 +72,8 @@
           sub: "Articles, stories and tips I've written about Paris.",
           back: "← Back to the site", wa: "Book a tour",
           empty: "Posts are on the way. My Paris stories will appear here soon.",
-          waText: "Hi Jerry! I found you through the blog and would love details about a Paris tour 🙂"
+          waText: function (src) { return "Hi Jerry! I found you through " + src + " and would love details about a Paris tour 🙂"; },
+          waSrc: "the blog"
         }
       };
       var LANG = localStorage.getItem("jw_lang") || "he";
@@ -101,8 +103,8 @@
         $("blogSub").textContent = d.sub;
         $("backHome").textContent = d.back;
         $("waLabel").textContent = d.wa;
-        var refTail = window.JWRef ? JWRef.suffix(LANG) : "";
-        var wa = "https://wa.me/972504981145?text=" + encodeURIComponent(d.waText + refTail);
+        var src = (window.JWRef && JWRef.source(LANG)) || d.waSrc;
+        var wa = "https://wa.me/972504981145?text=" + encodeURIComponent(d.waText(src));
         if ($("waBtn")) $("waBtn").href = wa;
         if ($("waFloat")) $("waFloat").href = wa;
         renderPosts();
