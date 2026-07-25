@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=31" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=32" />
   <style>
     .ed{ max-width:760px; margin:0 auto; padding:96px 5vw 5rem; }
     .ed h1{ font-size:1.8rem; margin-bottom:.2rem; }
@@ -89,6 +89,7 @@
       <details style="margin-top:1rem">
         <summary class="muted" style="cursor:pointer">רשימת השותפים הקיימים</summary>
         <div id="partnerList" style="margin-top:.6rem"></div>
+        <p class="ph" id="listNote" style="margin:.5rem 0 0"></p>
       </details>
     </div>
 
@@ -138,7 +139,8 @@
         addBtn=document.getElementById("addPartner"), pNote=document.getElementById("partnerNote"),
         out=document.getElementById("refOut"), prev=document.getElementById("refPreview"),
         note=document.getElementById("refNote"), btn=document.getElementById("copyRef"),
-        hint=document.getElementById("refHint"), listBox=document.getElementById("partnerList");
+        hint=document.getElementById("refHint"), listBox=document.getElementById("partnerList"),
+        listNote=document.getElementById("listNote");
 
     function tok(){ return localStorage.getItem("jw_gh_token")||""; }
     function auth(){ return { "Authorization":"Bearer "+tok(), "Accept":"application/vnd.github+json" }; }
@@ -155,7 +157,16 @@
       if(sel && PARTNERS[sel]) picker.value=sel;
       onPick();
       listBox.innerHTML = codes.length
-        ? codes.map(function(c){ return '<div class="muted" style="padding:.25rem 0">• <code>'+esc(c)+"</code> - "+esc(nameOf(c))+"</div>"; }).join("")
+        ? codes.map(function(c){
+            return '<div class="p-row" data-code="'+esc(c)+'" style="display:flex;align-items:center;gap:.5rem;padding:.45rem 0;border-bottom:1px solid var(--line)">'
+              + '<span class="muted" style="flex:1;min-width:0">'+esc(nameOf(c))+' <code>'+esc(c)+'</code></span>'
+              + '<button type="button" class="btn btn-del p-del" style="padding:.3em .75em;font-size:.8rem">מחיקה</button>'
+              + '<span class="p-confirm" style="display:none;align-items:center;gap:.4rem">'
+              +   '<span class="muted">למחוק?</span>'
+              +   '<button type="button" class="btn btn-del p-yes" style="padding:.3em .75em;font-size:.8rem">כן</button>'
+              +   '<button type="button" class="btn btn-ghost p-no" style="padding:.3em .75em;font-size:.8rem">ביטול</button>'
+              + '</span></div>';
+          }).join("")
         : '<div class="muted">אין עדיין שותפים.</div>';
     }
     function onPick(){
@@ -229,6 +240,37 @@
         delete PARTNERS[code];
         pNote.textContent="לא נשמר: "+e.message;
       }finally{ addBtn.disabled=false; }
+    });
+
+    /* delete a partner, in two steps so nothing goes by accident */
+    listBox.addEventListener("click", async function(e){
+      var row=e.target.closest(".p-row"); if(!row) return;
+      var code=row.getAttribute("data-code");
+      var del=row.querySelector(".p-del"), conf=row.querySelector(".p-confirm");
+
+      if(e.target.closest(".p-del")){            // step 1: ask
+        del.style.display="none"; conf.style.display="inline-flex";
+        listNote.textContent="שימו לב: קישורים ישנים של השותף הזה עדיין יעבדו, אבל בהודעה יופיע הקוד במקום השם.";
+        return;
+      }
+      if(e.target.closest(".p-no")){             // step 2a: cancel
+        conf.style.display="none"; del.style.display="inline-flex"; listNote.textContent="";
+        return;
+      }
+      if(e.target.closest(".p-yes")){            // step 2b: confirm
+        var backup=PARTNERS[code];
+        delete PARTNERS[code];
+        conf.innerHTML='<span class="muted">מוחק...</span>';
+        try{
+          await savePartners();
+          listNote.textContent="נמחק ✓";
+          fillPicker();
+        }catch(err){
+          PARTNERS[code]=backup;
+          fillPicker();
+          listNote.textContent="לא נמחק: "+err.message;
+        }
+      }
     });
 
     dest.addEventListener("change", function(){
