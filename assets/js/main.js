@@ -7,6 +7,13 @@
 
   /* ---------- contact constants ---------- */
   const WA_NUMBER = "972504981145"; // 050-498-1145
+
+  /* ---------- Google reviews ----------
+     Update these two numbers when the Google rating / review count changes.
+     Source of truth: the Google Business profile linked below. */
+  const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/8Wr8nkBKFtFrFZjH7";
+  const GOOGLE_RATING = "5.0";
+  const GOOGLE_REVIEWS_COUNT = 19;
   // where the visitor came from, named inside the sentence itself
   // (a tagged partner link, otherwise just "האתר")
   const waSource = (lang) =>
@@ -49,7 +56,8 @@
       "about.p2": "אני פריק של טיולים וחובב מושבע של היסטוריה, ומוסמך להדרכה בארבע שפות: אנגלית, צרפתית, עברית וערבית. הדרכתי מאות סיורים ואלפי מטיילים. אני אוהב להביא למטיילים שלי את הסיפורים המרתקים ביותר על פריז, וחשוב לי שכשתחזרו ארצה תרגישו שהביקור בעיר האורות היה משודרג ומושלם. ברחבי פריז אני מדריך כמה סיורי עומק מקוריים לגמרי, מדריך בעברית במוזיאון הלובר, ומוביל גם קבוצות ומשפחות לטיולים מרהיבים מחוץ לעיר לפי בקשה.",
       "about.cta": "שלחו לי וואטסאפ", "about.badgeNum": "1-12", "about.badgeLabel": "מטיילים · פרטי בלבד",
       "reviews.kicker": "מטיילים מספרים", "reviews.title": "מה אומרים עליי המטיילים שטיילו עמי בפריז?",
-      "rating.caption": "ממוצע דירוג המטיילים",
+      "rating.caption": "{n} ביקורות בגוגל",
+      "reviews.google": "קראו את כל הביקורות בגוגל",
       "gallery.kicker": "תמונות מסיורים", "gallery.title": "רגעים מהשטח",
       "blog.kicker": "בלוג · כתבות · פוסטים", "blog.title": "סיפורים מפריז",
       "blog.sub": "קטעים, סיפורים וטיפים שכתבתי על פריז לאורך השנה.",
@@ -83,7 +91,8 @@
       "about.p2": "I am a travel fanatic and a die-hard history lover, certified to guide in four languages: English, French, Hebrew and Arabic. I have led hundreds of tours and thousands of travellers. I love bringing my guests the most fascinating stories about Paris, and it matters to me that when you go home you feel your visit to the City of Light was elevated and complete. Across Paris I guide several completely original in-depth tours, I guide the Louvre in Hebrew, and I also lead groups and families on stunning day trips outside the city on request.",
       "about.cta": "Send me a WhatsApp", "about.badgeNum": "1-12", "about.badgeLabel": "travellers · private only",
       "reviews.kicker": "Travellers' words", "reviews.title": "What travellers who toured Paris with me say",
-      "rating.caption": "average traveller rating",
+      "rating.caption": "{n} Google reviews",
+      "reviews.google": "Read all our Google reviews",
       "gallery.kicker": "Photos from the tours", "gallery.title": "Moments on the ground",
       "blog.kicker": "Blog · Articles · Posts", "blog.title": "Stories from Paris",
       "blog.sub": "Notes, stories and tips I've written about Paris over the year.",
@@ -396,6 +405,19 @@
       if (I18N[LANG][k] != null) el.textContent = I18N[LANG][k];
     });
     $$("[data-wa]").forEach((a) => (a.href = waHref(LANG)));
+    renderGoogleRating();
+  }
+
+  /* the real Google rating + a link straight to the reviews */
+  function renderGoogleRating() {
+    $$("[data-google]").forEach((a) => {
+      a.href = GOOGLE_REVIEWS_URL;
+      a.setAttribute("aria-label", t("reviews.google"));
+    });
+    const num = $(".hero-rating__num");
+    if (num) num.textContent = GOOGLE_RATING;
+    const cap = $(".hero-rating__cap");
+    if (cap) cap.textContent = t("rating.caption").replace("{n}", GOOGLE_REVIEWS_COUNT);
   }
 
   function setLang(lang) {

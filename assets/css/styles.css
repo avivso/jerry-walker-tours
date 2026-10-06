@@ -301,6 +301,19 @@ html[lang="en"] .intro-lead{ max-width:28ch; }
 .hero-rating__quote::before{ content:"\201C"; } .hero-rating__quote::after{ content:"\201D"; }
 .hero-rating__quote.is-fading{ opacity:0; }
 
+/* the rating badge is a link to the Google reviews */
+a.hero-rating__badge{ text-decoration:none; cursor:pointer;
+  transition:transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease); }
+a.hero-rating__badge:hover{ transform:translateY(-2px); box-shadow:var(--shadow-md); border-color:var(--gold); }
+.g-ico{ width:16px; height:16px; flex:none; display:block; }
+
+/* "read all our Google reviews" button under the testimonials */
+.reviews-cta{ display:flex; justify-content:center; margin-top:2rem; }
+.btn-google{ background:#fff; color:var(--ink); border:1px solid var(--line-2);
+  box-shadow:var(--shadow-sm); gap:.6em; }
+.btn-google:hover{ background:#fff; border-color:var(--gold); transform:translateY(-2px); box-shadow:var(--shadow-md); }
+.btn-google .g-ico{ width:19px; height:19px; }
+
 /* tour details modal */
 .tour-modal{ position:fixed; inset:0; z-index:200; display:none; align-items:flex-start; justify-content:center;
   padding:5vh 1rem; background:rgba(20,18,14,.62); backdrop-filter:blur(3px); overflow-y:auto; }
