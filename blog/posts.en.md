@@ -50,6 +50,8 @@ If you're looking for a place where time stood still, this is it: Provins, an ho
 
 Warmly recommended for anyone who loves quiet, beauty and a lot of character.
 
+Related private tour (guided in Hebrew): [Private day trips from Paris](day-trips-from-paris-hebrew/)
+
 ===
 
 A culinary surprise beneath the Madeleine church
@@ -78,6 +80,8 @@ Surprise! The Paris Commercial Court building
 
 Paris has a secret place most people walk past without realizing they can step inside. Tucked right next to the Conciergerie on the Île de la Cité, the Paris Commercial Court (Tribunal de commerce) hides one of the most breathtaking interiors in the city: soaring columns, carved stone staircases, a dome that feels like a cathedral, and that golden light that makes every photo look staged. The best part is that entry is free. You just need to pass a quick security check at the entrance, then you're suddenly in a world of quiet grandeur, far from the crowds outside. If you're in central Paris and want a "wow" moment that isn't a museum ticket or a long queue, save this spot.
 
+Related private tour (guided in Hebrew): [Private introductory tour of Paris](private-paris-tour-hebrew/)
+
 ===
 
 A few words about Molière in Paris
@@ -97,6 +101,8 @@ Even after his death he found no peace. Because he was an actor, the Church init
 Today Molière is buried in the Père-Lachaise cemetery in Paris, alongside Chopin, Edith Piaf, Oscar Wilde, Jim Morrison and other giants. Justice was done.
 
 Want to discover the stories behind the gravestones and the people who shaped Paris? Feel free to contact me for a fascinating, surprising tour of the Père-Lachaise cemetery, including a visit to Molière's grave and other wild stories.
+
+Related private tour (guided in Hebrew): [Private tour of Père Lachaise](pere-lachaise-tour-hebrew/)
 
 ===
 
@@ -144,6 +150,8 @@ On my private tours of Paris I try to take people not only to the places themsel
 
 If you're coming to Paris and want to experience it not as a tourist for a moment, but with a moving experience that stays with you when you get home, don't hesitate. Get in touch by private message and book a private tour with a professional guide.
 
+Related private tour (guided in Hebrew): [Private introductory tour of Paris](private-paris-tour-hebrew/)
+
 ===
 
 The Great Synagogue of Paris: an architectural and historical gem
@@ -175,6 +183,8 @@ I'm a professional, certified guide living in Paris, where I lead no fewer than 
 Among other things, I run a fascinating tour of the Marais following the history and the Jewish community of Paris, along with other captivating sites.
 
 You're welcome to send a private message and reserve your unforgettable experience on your next visit.
+
+Related private tour (guided in Hebrew): [Private tour of the Marais](marais-tour-hebrew/)
 
 ===
 
@@ -225,6 +235,8 @@ When the siege ended in January 1871, Parisians emerged into daylight as if awak
 The animals eaten during the siege came mainly from two places that still exist today: the Jardin des Plantes in the 5th arrondissement, one of Europe's oldest zoos, and the Jardin d'Acclimatation in the Bois de Boulogne, now a family park that once housed camels, kangaroos, bears, and many others. These places still stand, quieter now, but full of echoes.
 
 If you want to explore the hidden, astonishing stories of Paris, the stories beneath the postcards, this is exactly the kind of history I bring to life on my guided tours.
+
+Related private tour (guided in Hebrew): [Private tour of Montmartre](montmartre-tour-hebrew/)
 
 ===
 
@@ -281,6 +293,8 @@ And when I stand in front of this statue with travelers in Paris, I always ask t
 The answer is far more complex than it seems.
 
 If you love history, royal gossip, intrigue, forbidden loves and the stories that made Paris what it is today, you're welcome to join a private tour in Paris.
+
+Related private tour (guided in Hebrew): [Private tour: the French Revolution and Napoleon](french-revolution-tour-hebrew/)
 
 ===
 
@@ -378,6 +392,8 @@ Maybe that's why I love so much to bring travelers here. Behind one of the most 
 
 If you're coming to Paris and looking for a different experience, send a private message and book a private tour with a certified guide and history lover.
 
+Related private tour (guided in Hebrew): [Private tour of Montmartre](montmartre-tour-hebrew/)
+
 ===
 
 A scandal in the heart of Paris in the middle of the 17th century
@@ -401,6 +417,8 @@ Every time I pass Saint-Germain-l'Auxerrois with travelers, I remind them that t
 And I still haven't told you about another drama connected to this place that happened a hundred years earlier, more on that in a separate post.
 
 If you're coming to Paris and looking to get to know the city's secrets on a tour that goes beyond the ordinary, get in touch and let's meet!
+
+Related private tour (guided in Hebrew): [Private tour of the Louvre](louvre-tour-hebrew/)
 
 ===
 
@@ -432,6 +450,8 @@ In a city where every corner tells a story, Le Procope is not just another resta
 
 To see and experience Paris the way it should be, with a local guide who lives and breathes the city, you're welcome to send a private message.
 
+Related private tour (guided in Hebrew): [Secrets of the 6th Arrondissement, a private tour](paris-6th-arrondissement-tour-hebrew/)
+
 ===
 
 Giverny: Claude Monet's home and gardens
@@ -443,6 +463,8 @@ Just an hour from Paris, you can step into the world that inspired Claude Monet'
 In Giverny, Monet turned his garden into a living masterpiece, a dreamscape of reflections, willow trees, and flowers bursting with color. Walking along the pond and the iconic green bridge feels like entering one of his paintings, where art and nature blend in perfect harmony.
 
 Join me for a private day trip from Paris to explore the magic of Monet's garden, peaceful, poetic, and unforgettable.
+
+Related private tour (guided in Hebrew): [Private day trips from Paris](day-trips-from-paris-hebrew/)
 
 ===
 
@@ -457,3 +479,5 @@ Walk along the coastal path, feel the ocean wind on your face, and watch how the
 It's nature's own masterpiece, carved by time and tide.
 
 Join me for a private day trip from Paris and discover the magic of Normandy's wild coast, a place where beauty, peace, and wonder meet.
+
+Related private tour (guided in Hebrew): [Private day trips from Paris](day-trips-from-paris-hebrew/)

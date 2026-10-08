@@ -15,7 +15,10 @@ window.JWBlog = (() => {
       if (!b) return "";
       const img = b.match(/^!\[[^\]]*\]\(([^)]+)\)$/); // ![](url)
       if (img) return `<img src="${esc(img[1])}" alt="" loading="lazy">`;
-      return `<p>${esc(b).replace(/\n/g, "<br>")}</p>`;
+      // [text](url) -> link (internal pages and https links only)
+      const linked = esc(b).replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/|[a-z0-9-]+\/|blog\.html)[^)\s]*)\)/gi,
+        (m, txt, url) => `<a href="${url}"${/^https?:/i.test(url) ? ' target="_blank" rel="noopener"' : ""}>${txt}</a>`);
+      return `<p>${linked.replace(/\n/g, "<br>")}</p>`;
     }).join("");
   }
 
@@ -33,7 +36,7 @@ window.JWBlog = (() => {
       }
       rest = lines.slice(li);
       if (!title) return;
-      const plain = rest.join(" ").replace(/!\[[^\]]*\]\([^)]+\)/g, "").replace(/\s+/g, " ").trim();
+      const plain = rest.join(" ").replace(/!\[[^\]]*\]\([^)]+\)/g, "").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\s+/g, " ").trim();
       posts.push({
         id: slug(title, i), title, date,
         html: bodyToHtml(rest),

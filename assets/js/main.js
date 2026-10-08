@@ -39,11 +39,11 @@
   const I18N = {
     he: {
       "nav.tours": "סיורים בפריז", "nav.daytrips": "טיולי יום", "nav.gallery": "גלריה",
-      "nav.blog": "בלוג", "nav.about": "אודות", "nav.contact": "צור קשר", "nav.reviews": "המלצות",
+      "nav.blog": "בלוג", "nav.about": "אודות", "nav.contact": "צור קשר", "nav.reviews": "המלצות", "nav.faq": "שאלות נפוצות",
       "cta.whatsapp": "שריינו סיור בוואטסאפ", "cta.book": "שריינו סיור פרטי", "cta.bookTrip": "הזמן טיול פרטי", "details.title": "פירוט הסיורים",
       "hero.eyebrow": "מדריך אקדמאי מוסמך · סיורים פרטיים",
       "hero.title": "ג'רי ווקר - מדריך ישראלי לסיורים פרטיים בעברית בפריז",
-      "hero.sub": "סיורי עומק פרטיים בפריז ומחוצה לה. היסטוריה ותרבות באווירה נעימה ומרתקת.",
+      "hero.sub": "סיורי עומק פרטיים בעברית לזוגות, משפחות וקבוצות קטנות בפריז ובסביבתה, עם מדריך מוסמך המתגורר בפריז.",
       "hero.explore": "גלו את הסיורים",
       "intro.lead": "לא עוד טיול עם המון. סיור פרטי, אישי ומעמיק, שנבנה סביבכם, סביב הקצב והסקרנות שלכם, ומלא בסיפורים שלא תשמעו בשום מקום אחר.",
       "tours.kicker": "סיורים פרטיים ברחבי פריז", "tours.title": "הנה הסיורים שלכם איתי:",
@@ -54,7 +54,7 @@
       "about.kicker": "נעים להכיר", "about.title": "כמה מילים עליי",
       "about.p1": "שמי ירון, אבל כולם קוראים לי ג'רי. אני מדריך ותיק ומנוסה. גרתי וחייתי בחו״ל שנים לא מעטות, בהן בפיליפינים, בבלגיה ובצרפת. אני מורה דרך מוסמך מטעם יד בן-צבי בירושלים, ובמהלך השנים השלמתי שני תארים מתקדמים (M.A) בהצטיינות: האחד מאוניברסיטת פריז-8 והשני מבר-אילן 🤓.",
       "about.p2": "אני פריק של טיולים וחובב מושבע של היסטוריה, ומוסמך להדרכה בארבע שפות: אנגלית, צרפתית, עברית וערבית. הדרכתי מאות סיורים ואלפי מטיילים. אני אוהב להביא למטיילים שלי את הסיפורים המרתקים ביותר על פריז, וחשוב לי שכשתחזרו ארצה תרגישו שהביקור בעיר האורות היה משודרג ומושלם. ברחבי פריז אני מדריך כמה סיורי עומק מקוריים לגמרי, מדריך בעברית במוזיאון הלובר, ומוביל גם קבוצות ומשפחות לטיולים מרהיבים מחוץ לעיר לפי בקשה.",
-      "about.cta": "שלחו לי וואטסאפ", "about.badgeNum": "1-12", "about.badgeLabel": "מטיילים · פרטי בלבד",
+      "about.more": "להכרות המלאה עם ג'רי ווקר ←", "about.cta": "שלחו לי וואטסאפ", "about.badgeNum": "1-12", "about.badgeLabel": "מטיילים · פרטי בלבד",
       "reviews.kicker": "מטיילים מספרים", "reviews.title": "מה אומרים עליי המטיילים שטיילו עמי בפריז?",
       "rating.caption": "{n} ביקורות בגוגל",
       "reviews.google": "קראו את כל הביקורות בגוגל",
@@ -68,17 +68,17 @@
       "contact.phone": "טלפון", "contact.email": "אימייל",
       "contact.cardTitle": "קבלת מידע ומחירים",
       "contact.cardText": "המחירים נקבעים לפי הסיור והרכב המטיילים. הדרך המהירה לקבל הצעה היא הודעת וואטסאפ. אני בדרך כלל זמין ועונה מהר.",
-      "footer.tag": "סיורים פרטיים מודרכים בעברית · פריז וסביבתה",
+      "footer.tag": "ג'רי ווקר - מדריך ישראלי לסיורים פרטיים בעברית בפריז",
       "ui.more": "לפרטים נוספים", "ui.book": "לשריון הסיור בוואטסאפ",
       "ui.highlights": "מה רואים בסיור", "ui.readmore": "להמשך קריאה",
     },
     en: {
       "nav.tours": "Paris Tours", "nav.daytrips": "Day Trips", "nav.gallery": "Gallery",
-      "nav.blog": "Blog", "nav.about": "About", "nav.contact": "Contact", "nav.reviews": "Reviews",
+      "nav.blog": "Blog", "nav.about": "About", "nav.contact": "Contact", "nav.reviews": "Reviews", "nav.faq": "FAQ",
       "cta.whatsapp": "Book on WhatsApp", "cta.book": "Book a private tour", "cta.bookTrip": "Book a private day trip", "details.title": "Tour details",
       "hero.eyebrow": "Certified academic guide · Private tours",
       "hero.title": "Jerry Walker - Israeli Guide for Private Hebrew Tours in Paris",
-      "hero.sub": "Private in-depth tours in Paris and beyond. History and culture in a warm, captivating atmosphere.",
+      "hero.sub": "Private in-depth tours in Hebrew for couples, families and small groups in Paris and beyond, with a certified guide who lives in Paris.",
       "hero.explore": "Explore the tours",
       "intro.lead": "Not another tour with the crowd. A private, personal, in-depth experience, built around you, your pace and your curiosity, and full of stories you won't hear anywhere else.",
       "tours.kicker": "Private tours across Paris", "tours.title": "Here are your tours with me:",
@@ -89,7 +89,7 @@
       "about.kicker": "Meet Jerry", "about.title": "A few words about me",
       "about.p1": "My name is Yaron, but everyone calls me Jerry. I am a veteran, experienced guide. I lived abroad for many years, including in the Philippines, Belgium and France. I am a certified tour guide (Yad Ben-Zvi, Jerusalem), and over the years I completed two master's degrees (M.A) with honours: one from the University of Paris-8 and one from Bar-Ilan 🤓.",
       "about.p2": "I am a travel fanatic and a die-hard history lover, certified to guide in four languages: English, French, Hebrew and Arabic. I have led hundreds of tours and thousands of travellers. I love bringing my guests the most fascinating stories about Paris, and it matters to me that when you go home you feel your visit to the City of Light was elevated and complete. Across Paris I guide several completely original in-depth tours, I guide the Louvre in Hebrew, and I also lead groups and families on stunning day trips outside the city on request.",
-      "about.cta": "Send me a WhatsApp", "about.badgeNum": "1-12", "about.badgeLabel": "travellers · private only",
+      "about.more": "Get to know Jerry →", "about.cta": "Send me a WhatsApp", "about.badgeNum": "1-12", "about.badgeLabel": "travellers · private only",
       "reviews.kicker": "Travellers' words", "reviews.title": "What travellers who toured Paris with me say",
       "rating.caption": "{n} Google reviews",
       "reviews.google": "Read all our Google reviews",
@@ -103,7 +103,7 @@
       "contact.phone": "Phone", "contact.email": "Email",
       "contact.cardTitle": "Get details & pricing",
       "contact.cardText": "Prices depend on the tour and your group. The fastest way to a quote is a WhatsApp message. I'm usually available and reply quickly.",
-      "footer.tag": "Private guided tours in Hebrew · Paris & beyond",
+      "footer.tag": "Jerry Walker - Israeli Guide for Private Hebrew Tours in Paris",
       "ui.more": "Learn more", "ui.book": "Book this tour on WhatsApp",
       "ui.highlights": "On this tour", "ui.readmore": "Read more",
     },
@@ -128,31 +128,31 @@
   /* ---------- tours ---------- */
   const TOURS = [
     {
-      poster: "poster-intro.jpg", img: "tour-classic.jpg",
+      slug: "private-paris-tour-hebrew", poster: "poster-intro.jpg", img: "tour-classic.jpg",
       he: { dur: "כ-3 שעות", title: "סיור היכרות פרטי מקיף ומרתק בפריז",
         long: "סיור עומק בלב פריז, בין איל-דה-לה-סיטה, הרובע הלטיני ושתי גדות נהר הסן. נכיר את האתרים החשובים ברובע ה-1 ובסמוך לו, נלמד כיצד התפתחה פריז, מהי הארכיטקטורה האופיינית לה ומי האנשים שעיצבו אותה. הסיור עובר במגוון אתרי חובה לאורך גדות הסן (נוטרדם, גשרי הסן, רחבת הלובר והפירמידה, שער הניצחון של הקרוסל ועוד) ומעניק היכרות עם הנופים היפים של העיר והבנה של הרקע ההיסטורי, התרבותי והיומיומי שלה." },
       en: { dur: "about 3 hours", title: "Comprehensive Private Introduction to Paris",
         long: "An in-depth walk through the heart of Paris, across the Île de la Cité, the Latin Quarter and both banks of the Seine. We get to know the key sites of the 1st arrondissement, learn how Paris grew, what its signature architecture is and who shaped it. The route passes a wealth of must-sees along the river (Notre-Dame, the Seine bridges, the Louvre plaza and pyramid, the Carrousel arch and more), with the city's finest views and a real grasp of its history, culture and daily life." } },
     {
-      poster: "poster-montmartre.jpg", img: "tour-montmartre.jpg",
+      slug: "montmartre-tour-hebrew", poster: "poster-montmartre.jpg", img: "tour-montmartre.jpg",
       he: { dur: "כ-3 שעות", title: "סיור פרטי מרתק ואינסטגרמי בשכונת המונמרטר",
         long: "סיור של כ-3 שעות בעקבות אהבות ואמנים, בין רחובות יפים המתפתלים במעלה גבעת מונמרטר ועד הנקודה הגבוהה בפריז, בזיליקת הלב הקדוש (Sacré-Cœur). נבקר ונצטלם ליד המולן רוז', נפגוש אתרים מתוך הסרט 'אמלי', ונשמע את סיפורם של האמנים הגדולים שפעלו במונמרטר ופיתחו בה את סגנונותיהם, בהם פיקאסו, מודיליאני וואן גוך. סיור סוחף ומרגש ברחובות פסטורליים וססגוניים." },
       en: { dur: "about 3 hours", title: "Captivating, Instagram-worthy Tour of Montmartre",
         long: "A 3-hour journey in the footsteps of artists and love affairs, up the pretty winding lanes of Montmartre hill to the highest point in Paris, the Basilica of Sacré-Cœur. We photograph the Moulin Rouge, find spots from the film 'Amélie', and hear the stories of the great artists who worked here, among them Picasso, Modigliani and Van Gogh. A moving, sweeping walk through colourful, picturesque streets." } },
     {
-      img: "tour-louvre.jpg", poster: "poster-louvre.jpg",
+      img: "tour-louvre.jpg", slug: "louvre-tour-hebrew", poster: "poster-louvre.jpg",
       he: { dur: "כשעתיים וחצי", title: "סיור פרטי מודרך בעברית בלובר",
         long: "סיור חובה למגיעים לפריז. הדרכה סוחפת ומרתקת בעברית בין מיטב יצירות האנושות: מהמונה ליזה ועד ונוס ממילוס, מאוצרות מצרים והמומיות ועד מצבת מישע, מהכתרת נפוליאון ועד מצבת חוקי חמורבי. כל הטוב הזה בהובלה יעילה במסדרונות המוזיאון החשוב בעולם, עם ההקשרים ההיסטוריים, התרבותיים והאמנותיים של כל יצירה. סקירה של למעלה מ-20 המוצגים המשמעותיים ביותר. כשעתיים וחצי." },
       en: { dur: "about 2.5 hours", title: "Private Guided Visit to the Louvre",
         long: "A must for anyone visiting Paris. A captivating guided walk among humanity's greatest works: from the Mona Lisa to the Venus de Milo, from the treasures and mummies of Egypt to the Mesha Stele, from Napoleon's coronation to the Code of Hammurabi. All led efficiently through the halls of the world's most important museum, with the historical, cultural and artistic context of each piece. Over 20 of the most significant exhibits. About two and a half hours." } },
     {
-      poster: "poster-marais.jpg", img: "tour-marais.jpg",
+      slug: "marais-tour-hebrew", poster: "poster-marais.jpg", img: "tour-marais.jpg",
       he: { dur: "כ-3 שעות", title: "סיור עומק פרטי בשכונת המארה הטרנדית",
         long: "סיור מרתק ומהנה בשכונה שהפכה לשם דבר. נחרוש את הרחובות היפים, נגלה את ההיסטוריה של בתי הרובע, נחשוף שכבה אחר שכבה ונבין את המקום ואת המורשת היהודית בשכונה השיקית בפריז. בסיור זה נגיע לכל הפינות הקסומות והיפות של המארה ונבין כיצד המהפכה הצרפתית שינתה את גורלם של יהודי צרפת. כ-3 שעות." },
       en: { dur: "about 3 hours", title: "In-depth Private Tour of the Trendy Marais",
         long: "A fascinating, enjoyable tour of the neighbourhood that became a byword for cool. We comb its beautiful streets, uncover the history of its mansions layer by layer, and come to understand the place and the Jewish heritage of the chicest quarter in Paris. On this tour we reach all the magical, beautiful corners of the Marais and understand how the French Revolution changed the fate of France's Jews. About 3 hours." } },
     {
-      poster: "poster-perelachaise.jpg", img: "tour-perelachaise.jpg",
+      slug: "pere-lachaise-tour-hebrew", poster: "poster-perelachaise.jpg", img: "tour-perelachaise.jpg",
       he: { dur: "כשעתיים וחצי", title: "הסיור המושלם בבית הקברות האגדי \"פר לשז\"",
         lead: "תשכחו כל מה שאתם יודעים או מדמיינים על בתי קברות!",
         long: "זהו סיור למתקדמים, למי שכבר ביקרו בפריז. הפנתיאון המפורסם בעולם: מסע מרתק ומרגש בין מצבות יפיפיות ועצים ירוקים בני 150 שנה במקום הקסום והנדיר הזה. נשמע על חייהם של ג'ים מוריסון סולן הדלתות, אדית פיאף, מרגלים, אנשי כמורה וראש ממשלה אחד, ועל חיסולים, אהבות, אמנים ואמניות. כשעתיים וחצי סוחפות." },
@@ -160,19 +160,19 @@
         lead: "Forget everything you know or imagine about cemeteries!",
         long: "This is a tour for the seasoned traveller who has already seen Paris. The world's most famous cemetery: a moving, fascinating walk among gorgeous tombs and 150-year-old trees in this rare, magical place. We'll hear about the lives of Jim Morrison of The Doors, Édith Piaf, spies, clergy and one prime minister, and about assassinations, loves and artists. Two and a half captivating hours." } },
     {
-      poster: "poster-revolution.jpg", img: "tour-revolution.jpg",
+      slug: "french-revolution-tour-hebrew", poster: "poster-revolution.jpg", img: "tour-revolution.jpg",
       he: { dur: "כ-3 שעות", title: "סיור פרטי בעקבות המהפכה הצרפתית ונפוליאון",
         long: "סיור לחובבי היסטוריה, מקורי וייחודי, העובר בין רחובות פריז ברבעים 1, 2, 5 ו-6 ומעניק חוויה היסטורית שאין שנייה לה: הבנה מלאה של תהליכי העומק שהובילו למהפכה הצרפתית ולעלייתו של נפוליאון. נבקר באתרים שבהם קרו הדברים ונבין כיצד הפכה צרפת למי שהיא היום. כ-3 שעות." },
       en: { dur: "about 3 hours", title: "Private Tour: The French Revolution & Napoleon",
         long: "An original, one-of-a-kind tour for history lovers, winding through the streets of the 1st, 2nd, 5th and 6th arrondissements and offering an unmatched historical experience: a full understanding of the deep currents that led to the French Revolution and the rise of Napoleon. We visit the places where it all happened and grasp how France became what it is today. About 3 hours." } },
     {
-      poster: "poster-secrets6.jpg", img: "tour-shadows.jpg",
+      slug: "paris-6th-arrondissement-tour-hebrew", poster: "poster-secrets6.jpg", img: "tour-shadows.jpg",
       he: { dur: "כשעתיים וחצי", title: "סודות הרובע השישי",
         long: "בואו לגלות את אחד האזורים האלגנטיים, היפים והמסקרנים ביותר בפריז, הרובע השישי. במהלך הסיור נצא למסע בין סמטאות עתיקות, כיכרות ציוריות, בתי קפה איקוניים, נבקר בכנסיות מרשימות המסתירות סודות. בדרך נחשוף סיפורים שלא יאומנו, פרשיות היסטוריות מסעירות, מזימות וריגול בינלאומי, מהפכנים, פילוסופים, אמנים ואישים שעיצבו את פניה של צרפת. נגלה פינות חמד נסתרות שרוב המבקרים כלל אינם מגיעים אליהן ונקנח באחד הגנים היפים באירופה." },
       en: { dur: "about 2.5 hours", title: "Secrets of the 6th Arrondissement",
         long: "Come discover one of the most elegant, beautiful and intriguing areas of Paris: the 6th arrondissement. On this tour we set out on a journey through ancient alleys, picturesque squares and iconic cafés, and visit impressive churches that hide secrets. Along the way we uncover unbelievable stories, gripping historical affairs, international plots and espionage, revolutionaries, philosophers, artists and figures who shaped the face of France. We'll discover hidden corners that most visitors never reach, and finish in one of the most beautiful gardens in Europe." } },
     {
-      img: "daytrips-scene.jpg", trip: true,
+      slug: "day-trips-from-paris-hebrew", img: "daytrips-scene.jpg", trip: true,
       he: { dur: "יום / חצי יום", title: "טיולי יום פרטיים אל מחוץ לעיר",
         long: "הדרכה צמודה בעברית אל היעדים הקסומים שמסביב לפריז ובצפון צרפת. בין האפשרויות:",
         hl: ["נורמנדי עלית: העיירה אונפלור היפה, צוקי הגיר של אֶטְרֶטַה (מנופים היפים באירופה), ולקינוח ביקור בכפר Veules-les-Roses, אחד היפים ביותר בצרפת (יום שלם)", "טירת שנטיי והכפר אובר-סור-אואז, מקום מגוריו האחרון של ואן גוך", "ארמון וורסאי והגנים (כחצי יום)", "ביתו וגניו של קלוד מונה בג'יברני והעיירה האינסטגרמית La Roche-Guyon, וסיור קניות באאוטלט המותגים הנחשב והמוצלח בג'יברני, McArthur Glen", "העיירה הימי-ביניימית Provins (כחצי יום)", "עמק הלואר, כולל ביקור בשתי טירות קסומות", "הערים ריימס, טרואה (בית רש\"י ובית הכנסת) ורואן"] },
@@ -320,8 +320,10 @@
     const cls = isPoster ? "tour-card is-poster" : "tour-card is-photo";
     const cta = tr.trip ? `<a class="btn btn-wa tour-card__cta" href="${waHrefTrip(LANG)}" target="_blank" rel="noopener">${esc(t("cta.bookTrip"))}</a>` : "";
     const band = isPoster ? "" : `<div class="tour-card__band"><h3>${esc(d.title)}</h3>${cta}</div>`;
-    return `<article class="${cls}" data-tour="${i}" tabindex="0" role="button">
-      <img src="${src}" alt="${esc(d.title)}" loading="lazy">
+    // a real link to the tour's own page (good for search + sharing); in English the popup is used
+    return `<article class="${cls}">
+      <a class="tour-card__cover" href="${tr.slug}/" data-tour-en="${i}" aria-label="${esc(d.title)}"></a>
+      <img src="${src}" alt="${esc(d.title)}" loading="lazy" width="${isPoster ? 800 : 900}" height="${isPoster ? 1000 : 1350}">
       ${band}
       <span class="tour-card__hint">${t("ui.more")} +</span>
     </article>`;
@@ -360,7 +362,7 @@
 
   function renderGallery() {
     $("#galleryGrid").innerHTML = GALLERY.map((g, i) => `
-      <figure data-idx="${i}"><img src="${IMG(g + ".jpg")}" alt="Paris" loading="lazy"></figure>`).join("");
+      <figure data-idx="${i}"><img src="${IMG(g + ".jpg")}" alt="${LANG === "he" ? "תמונה מסיור פרטי בפריז עם ג'רי ווקר" : "A moment from a private Paris tour with Jerry Walker"}" loading="lazy"></figure>`).join("");
   }
 
   let BLOG_POSTS = [];
@@ -509,13 +511,15 @@
   function closeTour() { if (!tm) return; tm.classList.remove("open"); tm.setAttribute("aria-hidden", "true"); document.body.style.overflow = ""; }
   document.addEventListener("click", (e) => {
     if (e.target.closest(".tour-card__cta")) return; // let the "book a day trip" link work
-    const card = e.target.closest("[data-tour]");
-    if (card) { openTour(+card.dataset.tour); return; }
+    const cover = e.target.closest("[data-tour-en]");
+    if (cover) {
+      // Hebrew: follow the link to the tour page. English: keep the quick popup.
+      if (LANG === "en") { e.preventDefault(); openTour(+cover.dataset.tourEn); }
+      return;
+    }
     if (e.target.closest("#tourModalClose") || e.target === tm) closeTour();
   });
   document.addEventListener("keydown", (e) => {
-    const card = e.target.closest && e.target.closest("[data-tour]");
-    if (card && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openTour(+card.dataset.tour); }
     if (e.key === "Escape" && tm && tm.classList.contains("open")) closeTour();
   });
 

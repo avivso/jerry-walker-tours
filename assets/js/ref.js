@@ -36,7 +36,11 @@ window.JWRef = (() => {
   /* run cb once the partner list has loaded (or immediately if it already has) */
   function whenReady(cb) { if (ready) { cb(); } else { waiting.push(cb); } }
 
-  fetch("assets/data/partners.json", { cache: "no-cache" })
+  // resolve the list relative to this script, so it also works from pages in sub-folders
+  const SELF = document.currentScript && document.currentScript.src;
+  const PARTNERS_URL = SELF ? new URL("../data/partners.json", SELF).href : "assets/data/partners.json";
+
+  fetch(PARTNERS_URL, { cache: "no-cache" })
     .then((r) => (r.ok ? r.json() : null))
     .then((list) => {
       if (!list) return;
@@ -63,7 +67,7 @@ window.JWRef = (() => {
       const tagged = clean(q.get("ref") || q.get("utm_source"));
       if (tagged) { save(tagged, cleanLabel(q.get("via"))); return tagged; }
 
-      const host = clean((document.referrer || "").split("/")[2] || "").replace(/^www\./i, "");
+      const host = clean((document.referrer || "").split("/")[2] || "").replace(/^www\./i, "").replace(/:\d+$/, "");
       if (host && !OWN.test(host) && !get()) { save(host, ""); return host; }
     } catch (e) {}
     return get();

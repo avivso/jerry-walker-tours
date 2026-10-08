@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# ChatGPT Search visibility
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://jerrywalkertrips.com/sitemap.xml
