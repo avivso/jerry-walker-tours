@@ -6,7 +6,21 @@
    ============================================================ */
 window.JWBlog = (() => {
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const slug = (s, i) => "post-" + (i + 1);
+  // Stable, readable id for each post, e.g. "provins". It comes from the post's first
+  // image file name, which is the same in the Hebrew and English versions, so a link
+  // works in both languages and survives new posts / reordering / deleting.
+  // (Positional ids like "post-3" broke every time a post was added or removed.)
+  // Posts without an image fall back to a hash of the title.
+  const slug = (title, body) => {
+    const m = /!\[[^\]]*\]\(([^)]+)\)/.exec((body || []).join("\n"));
+    if (m) {
+      const base = m[1].split("/").pop().replace(/\.[a-z0-9]+$/i, "").toLowerCase().replace(/^\d{10,}-/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+      if (base) return base;
+    }
+    let h = 0x811c9dc5;
+    for (const ch of String(title).trim()) { h ^= ch.codePointAt(0); h = Math.imul(h, 0x01000193) >>> 0; }
+    return "p-" + h.toString(36);
+  };
 
   function bodyToHtml(lines) {
     const blocks = lines.join("\n").split(/\n\s*\n/); // blank line = new paragraph
@@ -38,7 +52,7 @@ window.JWBlog = (() => {
       if (!title) return;
       const plain = rest.join(" ").replace(/!\[[^\]]*\]\([^)]+\)/g, "").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").replace(/\s+/g, " ").trim();
       posts.push({
-        id: slug(title, i), title, date,
+        id: slug(title, rest), title, date,
         html: bodyToHtml(rest),
         excerpt: plain.length > 130 ? plain.slice(0, 130).trim() + "…" : plain,
       });
@@ -57,5 +71,5 @@ window.JWBlog = (() => {
     } catch (e) { return []; }
   }
 
-  return { load, parse, esc };
+  return { load, parse, esc, slug };
 })();

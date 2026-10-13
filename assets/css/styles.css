@@ -581,3 +581,4 @@ html[dir="rtl"] .cmethod-val{ text-align:right; }
 }
 .post-author{ font-size:.92rem; color:var(--text-soft); margin:-.2rem 0 .6rem; } .post-author a{ color:var(--gold-deep); font-weight:700; text-decoration:underline; text-underline-offset:3px; }
 .facts dl > div, .contact-list > div{ line-height:1.5; }
+.facts dd, .contact-list dd{ min-width:0; overflow-wrap:anywhere; } .contact-list dt{ flex:0 0 6.5rem; }

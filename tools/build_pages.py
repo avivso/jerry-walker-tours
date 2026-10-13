@@ -49,6 +49,52 @@ def load_js_data():
 DATA = load_js_data()
 TOURS, REVIEWS = DATA["TOURS"], DATA["REVIEWS"]
 
+def post_slug(title, body):
+    """same id the blog uses: the first image's file name (identical in HE and EN)"""
+    m = re.search(r"!\[[^\]]*\]\(([^)]+)\)", body)
+    if m:
+        base = re.sub(r"\.[a-z0-9]+$", "", m.group(1).split("/")[-1], flags=re.I).lower()
+        base = re.sub(r"^\d{10,}-", "", base)
+        base = re.sub(r"[^a-z0-9]+", "-", base).strip("-")
+        if base:
+            return base
+    h = 0x811c9dc5
+    for ch in title.strip():
+        h ^= ord(ch)
+        h = (h * 0x01000193) & 0xFFFFFFFF
+    n, out = h, ""
+    while True:
+        out = "0123456789abcdefghijklmnopqrstuvwxyz"[n % 36] + out
+        n //= 36
+        if n == 0:
+            break
+    return "p-" + out
+
+
+def blog_posts():
+    txt = io.open(os.path.join(ROOT, "blog/posts.md"), encoding="utf-8").read()
+    posts = []
+    for chunk in re.split(r"\n=+\n", txt):
+        lines = chunk.strip().split("\n")
+        while lines and not lines[0].strip():
+            lines.pop(0)
+        if lines:
+            title = re.sub(r"^#+\s*", "", lines[0]).strip()
+            posts.append((title, "\n".join(lines[1:])))
+    return posts
+
+
+BLOG_POSTS = blog_posts()
+
+
+def post_link(starts_with):
+    """link to the blog post whose title starts with the given text (fails loudly if missing)"""
+    for title, body in BLOG_POSTS:
+        if title.startswith(starts_with):
+            return "blog.html#" + post_slug(title, body)
+    raise SystemExit("blog post not found for link: " + starts_with)
+
+
 # per-tour SEO copy. Facts only: everything below comes from the tour descriptions
 # on the site; logistics that are not fixed (meeting point, tickets, price) are
 # described as "agreed when booking".
@@ -147,11 +193,11 @@ PAGES = {
    special="מאחר שהטיולים פרטיים, אפשר להתאים את היעד, את הקצב ואת המסלול. היעדים מגוונים: טירות, כפרים, גנים, ערים עתיקות וחוף הים של נורמנדי.",
    who="מתאים למי שכבר ראו את פריז ורוצים לצאת מהעיר, לזוגות, למשפחות ולקבוצות קטנות שמעדיפות הדרכה בעברית ותכנון אישי.",
    dest=[
-     ("נורמנדי עלית", "העיירה אונפלור היפה, צוקי הגיר של אֶטְרֶטַה (מנופים היפים באירופה), ולקינוח ביקור בכפר Veules-les-Roses, אחד היפים ביותר בצרפת. יום שלם.", "blog.html#post-20", "קראו על צוקי אטרטה"),
+     ("נורמנדי עלית", "העיירה אונפלור היפה, צוקי הגיר של אֶטְרֶטַה (מנופים היפים באירופה), ולקינוח ביקור בכפר Veules-les-Roses, אחד היפים ביותר בצרפת. יום שלם.", post_link("צוקי אֶטרֶטָה"), "קראו על צוקי אטרטה"),
      ("שנטיי ואובר-סור-אואז", "טירת שנטיי והכפר אובר-סור-אואז, מקום מגוריו האחרון של ואן גוך.", None, None),
      ("ארמון וורסאי", "ארמון וורסאי והגנים. כחצי יום.", None, None),
-     ("ג'יברני ו-La Roche-Guyon", "ביתו וגניו של קלוד מונה בג'יברני והעיירה האינסטגרמית La Roche-Guyon, וסיור קניות באאוטלט המותגים הנחשב והמוצלח בג'יברני, McArthur Glen.", "blog.html#post-19", "קראו על ג'יברני"),
-     ("פרובאן", "העיירה הימי-ביניימית Provins. כחצי יום.", "blog.html#post-3", "קראו על פרובאן"),
+     ("ג'יברני ו-La Roche-Guyon", "ביתו וגניו של קלוד מונה בג'יברני והעיירה האינסטגרמית La Roche-Guyon, וסיור קניות באאוטלט המותגים הנחשב והמוצלח בג'יברני, McArthur Glen.", post_link("ג'יברני"), "קראו על ג'יברני"),
+     ("פרובאן", "העיירה הימי-ביניימית Provins. כחצי יום.", post_link("פְּרוֹבַן"), "קראו על פרובאן"),
      ("עמק הלואר", "עמק הלואר, כולל ביקור בשתי טירות קסומות.", None, None),
      ("ריימס, טרואה ורואן", "הערים ריימס, טרואה (בית רש\"י ובית הכנסת) ורואן.", None, None),
    ],
