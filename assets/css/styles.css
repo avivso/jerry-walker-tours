@@ -486,7 +486,7 @@ html[dir="rtl"] .cmethod-val{ text-align:right; }
   .contact-text{ flex:1.3; } .contact-card{ flex:1; position:sticky; top:90px; }
   .trips-grid{ grid-template-columns:repeat(3,1fr); }
   .trip-card--wide{ grid-column:span 2; }
-  .tours-grid{ grid-template-columns:repeat(4,1fr); }     /* desktop: 2 rows of 4 */
+  .tours-grid{ grid-template-columns:repeat(3,1fr); }     /* desktop: 3 rows of 3 (9 tours) */
   .reviews-grid{ column-count:4; }   /* desktop: balanced 4-column wall */
 }
 @media (max-width:679px){
