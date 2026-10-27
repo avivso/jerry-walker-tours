@@ -13,7 +13,7 @@
      Source of truth: the Google Business profile linked below. */
   const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/8Wr8nkBKFtFrFZjH7";
   const GOOGLE_RATING = "5.0";
-  const GOOGLE_REVIEWS_COUNT = 19;
+  const GOOGLE_REVIEWS_COUNT = 23;
   // where the visitor came from, named inside the sentence itself
   // (a tagged partner link, otherwise just "האתר")
   const waSource = (lang) =>
