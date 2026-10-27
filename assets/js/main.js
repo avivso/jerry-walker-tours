@@ -257,6 +257,14 @@
       en: { q: "Jerry, thank you for today's truly enlightening tour!", n: "Amir S." } },
     { he: { q: "ג'רי המדריך הכי טוב שאפשר להכיר! הייתה לנו זכות לטייל איתו יומיים בפריז, ואין לנו מילים לתאר כמה נהנינו. מהרגע הראשון הוא היה מקצועי, סבלני, אדיב ומלא ידע. הוא לקח אותנו לכל המקומות החשובים והיפים שחייבים לראות בפריז והפך את החוויה למיוחדת ומהנה הרבה יותר. מעבר לטיולים עצמם, הוא היה זמין עבורנו גם בוואטסאפ לאורך כל הדרך, ענה בשמחה על כל שאלה, נתן המלצות מצוינות ועזר בכל דבר. אם אתם מחפשים מדריך שיהפוך את הטיול לחוויה בלתי נשכחת, עם יחס אישי, אכפתיות והמון מקצועיות, אנחנו ממליצים עליו מכל הלב!", n: "מאריה ח'" },
       en: { q: "Jerry is the best guide you could ever meet! We had the privilege of touring with him for two days in Paris, and we have no words to describe how much we enjoyed it. From the first moment he was professional, patient, kind and full of knowledge. He took us to all the important, beautiful must-sees in Paris and made the experience so much more special and fun. Beyond the tours, he was available for us on WhatsApp throughout, happily answered every question, gave great recommendations and helped with everything. If you're looking for a guide who'll turn your trip into an unforgettable experience, with a personal touch, care and tons of professionalism, we recommend him with all our hearts!", n: "Maria H." } },
+    { he: { q: "תודה ג'רי, זו הייתה חוויה מיוחדת במינה. שילוב מדהים של טבע והיסטוריה. ההנחיה שלך והידיעות המרחיבות היו לנו לעונג רב. שבת שלום 🌺", n: "דליה מ'" },
+      en: { q: "Thank you Jerry, it was a truly unique experience. An amazing blend of nature and history. Your guidance and in-depth knowledge were a real pleasure for us. Shabbat Shalom 🌺", n: "Dalia M." } },
+    { he: { q: "ג'רי, היה נפלא, תודה רבה. נהנינו מאוד.", n: "דליה ש'" },
+      en: { q: "Jerry, it was wonderful, thank you so much. We really enjoyed it.", n: "Dalia S." } },
+    { he: { q: "ג'רי, היה לנו יום מקסים, בזכותך. גם המקומות, ובייחוד ההובלה שלך את הטיול וההסברים. בהחלט נמליץ הלאה. מקווה שנתראה בהקדם. בהצלחה 🙏🌹", n: "שמעון ה'" },
+      en: { q: "Jerry, we had a lovely day, thanks to you. The places, and especially the way you led the trip and your explanations. We'll definitely recommend you. Hope to see you again soon. Good luck 🙏🌹", n: "Shimon H." } },
+    { he: { q: "ג'רי האלוף! תודה רבה לך על השירות המעולה, היחס המקסים, האכפתיות והדאגה לנו שהכל יהיה על הצד הטוב ביותר. כעת אנחנו בלונדון ומצפים להיפגש איתך שוב בהזדמנות הקרובה. בהערכה רבה", n: "מימי ודוד" },
+      en: { q: "Jerry, you're a champion! Thank you so much for the excellent service, the lovely attitude, and the care you took to make sure everything was at its very best. We're in London now and look forward to meeting you again soon. With great appreciation", n: "Mimi & David" } },
   ];
 
   /* ---------- short rotating review snippets (hero rating) ---------- */
