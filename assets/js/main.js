@@ -183,10 +183,10 @@
       slug: "day-trips-from-paris-hebrew", img: "daytrips-scene.jpg", trip: true,
       he: { dur: "יום / חצי יום", title: "טיולי יום פרטיים אל מחוץ לעיר",
         long: "הדרכה צמודה בעברית אל היעדים הקסומים שמסביב לפריז ובצפון צרפת. בין האפשרויות:",
-        hl: ["נורמנדי עלית: העיירה אונפלור היפה, צוקי הגיר של אֶטְרֶטַה (מנופים היפים באירופה), ולקינוח ביקור בכפר Veules-les-Roses, אחד היפים ביותר בצרפת (יום שלם)", "טירת שנטיי והכפר אובר-סור-אואז, מקום מגוריו האחרון של ואן גוך", "ארמון וורסאי והגנים (כחצי יום)", "ביתו וגניו של קלוד מונה בג'יברני והעיירה האינסטגרמית La Roche-Guyon, וסיור קניות באאוטלט המותגים הנחשב והמוצלח בג'יברני, McArthur Glen", "העיירה הימי-ביניימית Provins (כחצי יום)", "עמק הלואר, כולל ביקור בשתי טירות קסומות", "הערים ריימס, טרואה (בית רש\"י ובית הכנסת) ורואן"] },
+        hl: ["נורמנדי עלית: העיירה אונפלור היפה, צוקי הגיר של אֶטְרֶטַה (מנופים היפים באירופה), ולקינוח ביקור בכפר Veules-les-Roses, אחד היפים ביותר בצרפת (יום שלם)", "טירת שנטיי והכפר אובר-סור-אואז, מקום מגוריו האחרון של ואן גוך", "ארמון וורסאי והגנים (כחצי יום)", "ביתו וגניו של קלוד מונה בג'יברני והעיירה האינסטגרמית La Roche-Guyon, וסיור קניות באאוטלט המותגים הנחשב והמוצלח בג'יברני, McArthur Glen", "העיירה הימי-ביניימית Provins (כחצי יום)", "עמק הלואר, כולל ביקור בשתי טירות קסומות", "הערים ריימס, טרואה (בית רש\"י ובית הכנסת) ורואן", "שאבּלי שבבורגונדי: כרמים, העיר העתיקה לאורך הנהר, מרתפי יין מסורתיים וטעימות שבלי (יום שלם)"] },
       en: { dur: "full / half day", title: "Private Day Trips Outside the City",
         long: "Personal Hebrew-language guiding to the magical destinations around Paris and across northern France. Options include:",
-        hl: ["Upper Normandy: the lovely town of Honfleur, the chalk cliffs of Étretat (among Europe's most beautiful views) and, to finish, a visit to Veules-les-Roses, one of France's prettiest villages (full day)", "Château de Chantilly and the village of Auvers-sur-Oise, Van Gogh's final home", "The Palace of Versailles and its gardens (about half a day)", "Claude Monet's house and gardens in Giverny, the Instagram-famous village of La Roche-Guyon, and a shopping trip to the renowned McArthur Glen designer outlet near Giverny", "The medieval town of Provins (about half a day)", "The Loire Valley, including two enchanting châteaux", "The cities of Reims, Troyes (Rashi's house and synagogue) and Rouen"] },
+        hl: ["Upper Normandy: the lovely town of Honfleur, the chalk cliffs of Étretat (among Europe's most beautiful views) and, to finish, a visit to Veules-les-Roses, one of France's prettiest villages (full day)", "Château de Chantilly and the village of Auvers-sur-Oise, Van Gogh's final home", "The Palace of Versailles and its gardens (about half a day)", "Claude Monet's house and gardens in Giverny, the Instagram-famous village of La Roche-Guyon, and a shopping trip to the renowned McArthur Glen designer outlet near Giverny", "The medieval town of Provins (about half a day)", "The Loire Valley, including two enchanting châteaux", "The cities of Reims, Troyes (Rashi's house and synagogue) and Rouen", "Chablis in Burgundy: vineyards, the old town along the river, traditional wine cellars and Chablis tastings (full day)"] },
     },
   ];
 
@@ -237,6 +237,11 @@
         d: "ג'יברני, ביתו וגנו של קלוד מונה, בריכת חבצלות המים והגשר היפני שהיו השראה לציוריו המפורסמים." },
       en: { tag: "Gardens", title: "Giverny: Monet's House",
         d: "Giverny, Claude Monet's house and garden, the water-lily pond and the Japanese bridge that inspired his most famous paintings." } },
+    { img: "trip-chablis.jpg", size: "sm",
+      he: { tag: "בורגונדי", title: "שאבּלי: יין בלב בורגונדי",
+        d: "שעתיים וחצי מפריז: כרמים פנורמיים, העיר העתיקה לאורך הנהר, מרתפי יין מסורתיים וטעימות שבלי קלאסי – קר, מינרלי ומדויק." },
+      en: { tag: "Burgundy", title: "Chablis: Wine in the Heart of Burgundy",
+        d: "Just 2.5 hours from Paris: panoramic vineyards, the old town along the river, traditional wine cellars and tastings of classic Chablis, crisp, mineral and precise." } },
   ];
 
   /* ---------- testimonials ---------- */
