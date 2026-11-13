@@ -180,6 +180,14 @@
         lead: "The city you know, from a new and surprising angle",
         long: "Think you already know Paris? You've seen the famous sites, strolled the beautiful boulevards and fallen in love with the city? Now it's time to discover the Paris beyond the postcards. A private boutique tour for people who have already been to Paris and want to get to know it a little differently: in depth, but also for fun. We'll set out on a fascinating journey through beautiful, surprising corners, uncover the stories hidden behind the facades, and meet kings, revolutionaries, artists and colourful characters who left their mark on the city. We'll hear about loves and scandals, intrigues and secrets, moments that changed history and anecdotes you won't find in the guidebooks. It blends knowledge, culture and history with gripping stories, humour and a magical Parisian atmosphere, with no heavy lectures and not a dull moment. Especially suited to second, third or fourth visits, and to anyone who loves discovering new things. A walking tour, private only, at a relaxed pace and tailored to you. Because even when you think you know Paris, she always has another story to surprise you." } },
     {
+      slug: "chablis-day-trip-hebrew", poster: "trip-chablis.jpg", img: "trip-chablis.jpg",
+      he: { dur: "יום שלם", title: "טיול יום מפריז לשאבּלי שבבורגונדי",
+        lead: "טעימות יין, כרמים ירוקים ונופים: בריחה מושלמת מהעיר",
+        long: "כשעתיים וחצי מפריז, בלב בורגונדי, שוכנת שאבּלי, בירת היין הלבן המפורסם. נטייל בין כרמים פנורמיים, נשוטט בעיר העתיקה לאורך הנהר, נרד למרתפי יין מסורתיים ונטעם את השאבּלי הקלאסי: רענן, מינרלי ומדויק. טיול יום פרטי בעברית עם מדריך אקדמאי מוסמך ומנוסה." },
+      en: { dur: "full day", title: "Day Trip from Paris to Chablis, Burgundy",
+        lead: "Wine tastings, green vineyards and views: the perfect escape from the city",
+        long: "About two and a half hours from Paris, in the heart of Burgundy, lies Chablis, home of the famous white wine. We stroll among panoramic vineyards, wander the old town along the river, descend into traditional wine cellars and taste classic Chablis: crisp, mineral and precise. A private day trip with an experienced, certified guide." } },
+    {
       slug: "day-trips-from-paris-hebrew", img: "daytrips-scene.jpg", trip: true,
       he: { dur: "יום / חצי יום", title: "טיולי יום פרטיים אל מחוץ לעיר",
         long: "הדרכה צמודה בעברית אל היעדים הקסומים שמסביב לפריז ובצפון צרפת. בין האפשרויות:",
